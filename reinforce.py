@@ -96,6 +96,7 @@ class PiApprox(object):
         #self._network.cuda()
         self._optimizer = torch.optim.Adam(self._network.parameters(), alpha, [0.9, 0.999])
         self.tau = 0.5 # temperature for gumbel_softmax
+        print("Input Feat Dim of Graph : ",dimStates," Output Channel Dim of Graph : ", numActs)
 
     def __call__(self, s, graph, phaseTrain=True):
         self._network.eval()
@@ -229,6 +230,7 @@ class Reinforce(object):
         self.memTrajectory = [] # the memorized trajectories. sorted by value
         self.memLength = 4
         self.sumRewards = []
+    
     def genTrajectory(self, phaseTrain=True):
         self._env.reset()
         state = self._env.state()
@@ -252,11 +254,13 @@ class Reinforce(object):
             if len(states) > 20:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
+    
     def episode(self, phaseTrain=True):
         trajectory = self.genTrajectory(phaseTrain=phaseTrain) # Generate a trajectory of episode of states, actions, rewards
         self.updateTrajectory(trajectory, phaseTrain)
         self._pi.episode()
         return self._env.returns()
+    
     def updateTrajectory(self, trajectory, phaseTrain=True):
         states = trajectory.states
         rewards = trajectory.rewards

@@ -5,6 +5,8 @@
 # @brief The functions and classes for processing the graph
 #
 
+import networkx as nx
+import matplotlib.pyplot as plt
 import abc_py as abcPy
 import numpy as np
 from numpy import linalg as LA
@@ -47,6 +49,7 @@ def extract_dgl_graph(abc):
     for nodeIdx in range(numNodes):
         aigNode = abc.aigNode(nodeIdx)
         nodeType = aigNode.nodeType()
+        if nodeType == 6: continue
         features[nodeIdx][nodeType] = 1.0
         if (aigNode.hasFanin0()):
             fanin = aigNode.fanin0()
@@ -54,6 +57,7 @@ def extract_dgl_graph(abc):
         if (aigNode.hasFanin1()):
             fanin = aigNode.fanin1()
             G.add_edge(fanin, nodeIdx)
-    G.ndata['feat'] = torch.tensor(features)
+    G = dgl.add_self_loop(G)
+    G.ndata['feat'] = features
     return G
 

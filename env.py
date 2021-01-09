@@ -154,6 +154,7 @@ class EnvNaive2(object):
         #combined = np.expand_dims(combined, axis=0)
         #return stateArray.astype(np.float32)
         return torch.from_numpy(combined.astype(np.float32)).float()
+
     def reward(self):
         if self.lastAct == 5: #term
             return 0
@@ -206,7 +207,8 @@ class EnvGraph(object):
         resyn2Stats = self._abc.aigStats()
         totalReward = self.statValue(initStats) - self.statValue(resyn2Stats)
         self._rewardBaseline = totalReward / 20.0 # 18 is the length of compress2rs sequence
-        print("baseline num AND ", resyn2Stats.numAnd, " total reward ", totalReward )
+        print("Baseline Num AND ", resyn2Stats.numAnd, "Baseline Level ", resyn2Stats.lvl, " Total Reward ", totalReward)
+    
     def resyn2(self):
         self._abc.balance(l=False)
         self._abc.rewrite(l=False)
@@ -218,6 +220,7 @@ class EnvGraph(object):
         self._abc.refactor(l=False, z=True)
         self._abc.rewrite(l=False, z=True)
         self._abc.balance(l=False)
+    
     def reset(self):
         self.lenSeq = 0
         self._abc.end()
@@ -231,8 +234,10 @@ class EnvGraph(object):
         self.lastAct4 = self.numActions() - 1
         self.actsTaken = np.zeros(self.numActions())
         return self.state()
+    
     def close(self):
         self.reset()
+    
     def step(self, actionIdx):
         self.takeAction(actionIdx)
         nextState = self.state()
@@ -241,6 +246,7 @@ class EnvGraph(object):
         if (self.lenSeq >= 20):
             done = True
         return nextState,reward,done,0
+
     def takeAction(self, actionIdx):
         """
         @return true: episode is end
@@ -253,7 +259,6 @@ class EnvGraph(object):
         #self.actsTaken[actionIdx] += 1
         self.lenSeq += 1
         """
-        # Compress2rs actions
         if actionIdx == 0:
             self._abc.balance(l=True) # b -l
         elif actionIdx == 1:
@@ -293,7 +298,7 @@ class EnvGraph(object):
         elif actionIdx == 3:
             self._abc.rewrite(l=False, z=True) #rw -z
         elif actionIdx == 4:
-            self._abc.refactor(l=False, z=True) #rs
+            self._abc.refactor(l=False, z=True) #rf -z
         elif actionIdx == 5:
             self._abc.end()
             return True
@@ -311,6 +316,7 @@ class EnvGraph(object):
         self._lastStats = self._curStats
         self._curStats = self._abc.aigStats()
         return False
+    
     def state(self):
         """
         @brief current state
@@ -330,6 +336,7 @@ class EnvGraph(object):
         combined_torch =  torch.from_numpy(combined.astype(np.float32)).float()
         graph = GE.extract_dgl_graph(self._abc)
         return (combined_torch, graph)
+    
     def reward(self):
         if self.lastAct == 5: #term
             return 0
@@ -343,20 +350,27 @@ class EnvGraph(object):
             return 1
         else:
             return -2
+    
     def numActions(self):
         return 5
+    
     def dimState(self):
         return 4 + self.numActions() * 1 + 1
+    
     def returns(self):
         return [self._curStats.numAnd , self._curStats.lev]
+    
     def statValue(self, stat):
-        return float(stat.lev)  / float(self.initLev)
-        return float(stat.numAnd)  / float(self.initNumAnd) #  + float(stat.lev)  / float(self.initLev)
+        # return float(stat.lev)  / float(self.initLev)
+        return float(stat.numAnd)  / float(self.initNumAnd) + float(stat.lev)  / float(self.initLev)
         #return stat.numAnd + stat.lev * 10
+    
     def curStatsValue(self):
         return self.statValue(self._curStats)
+    
     def seed(self, sd):
         pass
+    
     def compress2rs(self):
         self._abc.compress2rs()
 

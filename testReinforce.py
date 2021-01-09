@@ -33,7 +33,7 @@ def testReinforce(filename, ben):
     print("Time ", dateTime)
     env = Env(filename)
     #vApprox = Linear(env.dimState(), env.numActions())
-    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 8e-4, RF.FcModelGraph)
+    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph)
     baseline = RF.Baseline(0)
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel)
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
@@ -48,6 +48,7 @@ def testReinforce(filename, ben):
             lastfive.append(AbcReturn(returns))
         print(line)
         #reinforce.replay()
+
     resultName = "./results/" + ben + ".csv"
     #lastfive.sort(key=lambda x : x.level)
     lastfive = sorted(lastfive)
@@ -59,7 +60,7 @@ def testReinforce(filename, ben):
         line += "\n"
         andLog.write(line)
     rewards = reinforce.sumRewards
-    """
+    
     with open('./results/sum_rewards.csv', 'a') as rewardLog:
         line = ""
         for idx in range(len(rewards)):
@@ -76,7 +77,6 @@ def testReinforce(filename, ben):
         line += str(returns[1])
         line += "\n"
         convergeLog.write(line)
-    """
 
 
 
@@ -94,14 +94,17 @@ if __name__ == "__main__":
         vbaseline.update(np.array([2264. / 2675,   45. / 50, 2282. / 2675,   45. / 50]), 11.97 / 2675)
         vbaseline.update(np.array([2255. / 2675,   44. / 50, 2264. / 2675,   44. / 50]), 3 / 2675)
     """
-    testReinforce("./bench/MCNC/Combinational/blif/dalu.blif", "dalu")
-    testReinforce("./bench/MCNC/Combinational/blif/prom1.blif", "prom1")
-    testReinforce("./bench/MCNC/Combinational/blif/mainpla.blif", "mainpla")
-    testReinforce("./bench/MCNC/Combinational/blif/k2.blif", "k2")
-    testReinforce("./bench/ISCAS/blif/c5315.blif", "c5315")
-    testReinforce("./bench/ISCAS/blif/c6288.blif", "c6288")
-    testReinforce("./bench/MCNC/Combinational/blif/apex1.blif", "apex1")
-    testReinforce("./bench/MCNC/Combinational/blif/bc0.blif", "bc0")
-    #testReinforce("./bench/i10.aig", "i10")
+    testReinforce("./bench/EPFL/benchmarks/random_control/ctrl.blif", "epflALU")
+    # testReinforce("./bench/MCNC/Combinational/blif/prom1.blif", "prom1")
+    # testReinforce("./bench/MCNC/Combinational/blif/mainpla.blif", "mainpla")
+    # testReinforce("./bench/MCNC/Combinational/blif/k2.blif", "k2")
+    # testReinforce("./bench/ISCAS/blif/c5315.blif", "c5315")
+    # testReinforce("./bench/ISCAS/blif/c6288.blif", "c6288")
+    # testReinforce("./bench/MCNC/Combinational/blif/apex1.blif", "apex1")
+    # testReinforce("./bench/MCNC/Combinational/blif/bc0.blif", "bc0")
+    # testReinforce("./bench/i10.aig", "i10")
     #testReinforce("./bench/ISCAS/blif/c1355.blif", "c1355")
     #testReinforce("./bench/ISCAS/blif/c7552.blif", "c7552")
+    # from inspect import getmembers, isfunction
+    # import abc_py as abc
+    # help(abc)
