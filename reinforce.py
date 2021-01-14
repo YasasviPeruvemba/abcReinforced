@@ -20,15 +20,14 @@ class GCN(torch.nn.Module):
         super(GCN, self).__init__()
         self.conv1 = GraphConv(in_feats, hidden_size)
         self.conv2 = GraphConv(hidden_size, hidden_size)
-        self.conv3 = GraphConv(hidden_size, hidden_size)
-        self.conv4 = GraphConv(hidden_size, out_len)
+        self.conv3 = GraphConv(hidden_size, out_len)
 
     def forward(self, g):
         h = self.conv1(g, g.ndata['feat'])
         h = torch.relu(h)
         h = self.conv2(g, h)
         h = torch.relu(h)
-        h = self.conv4(g, h)
+        h = self.conv3(g, h)
         g.ndata['h'] = h
         hg = dgl.mean_nodes(g, 'h')
         return torch.squeeze(hg)
@@ -48,8 +47,8 @@ class FcModel(nn.Module):
     def forward(self, x):
         x = self.fc1(x)
         x = self.act1(x)
-        #x = self.fc2(x)
-        #x = self.act2(x)
+        x = self.fc2(x)
+        x = self.act2(x)
         x = self.fc3(x)
         return x
 
@@ -128,7 +127,7 @@ class PiApprox(object):
         prob = self._network(s, graph)#.cuda())
         #logProb = -F.gumbel_softmax(prob, dim=-1, tau = self.tau, hard=True)
         logProb = torch.log_softmax(prob, dim=-1)
-        loss = -gammaT * delta *logProb
+        loss = -gammaT * delta * logProb
         """
         with open('log', 'a', 0) as outLog:
             line = "\n\n\nlogProb " + str(logProb) + '\n' 
@@ -236,22 +235,25 @@ class Reinforce(object):
         state = self._env.state()
         term = False
         states, rewards, actions = [], [0], []
+        time_elapsed = 0
+        runtimeBaseline = self._env.getRuntimeBaseline()
         while not term:
             action = self._pi(state[0], state[1], phaseTrain)
-            term = self._env.takeAction(action)
+            term, t = self._env.takeAction(action)
             """
             with open('log', 'a', 0) as outLog:
                 line = "take action "+ str(action) + "\n"
                 line += "gain reward "+ str(self._env.reward()) + "\n"
                 outLog.write(line)
             """
+            time_elapsed += t
             nextState = self._env.state()
             nextReward = self._env.reward()
             states.append(state)
             rewards.append(nextReward)
             actions.append(action)
             state = nextState
-            if len(states) > 20:
+            if time_elapsed > runtimeBaseline:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
     
@@ -259,7 +261,7 @@ class Reinforce(object):
         trajectory = self.genTrajectory(phaseTrain=phaseTrain) # Generate a trajectory of episode of states, actions, rewards
         self.updateTrajectory(trajectory, phaseTrain)
         self._pi.episode()
-        return self._env.returns()
+        return self._env.returns(), self._env.getCommand(trajectory.actions)
     
     def updateTrajectory(self, trajectory, phaseTrain=True):
         states = trajectory.states
@@ -283,7 +285,7 @@ class Reinforce(object):
             self._baseline.update(state[0], G)
             self._pi.update(state[0], state[1], action, self._gamma ** tIdx, delta)
         self.sumRewards.append(sum(rewards))
-        print(sum(rewards))
+        # print("\nEpisode Reward : ",sum(rewards))
 
     def replay(self):
         for idx in range(min(self.memLength, int(len(self.memTrajectory) / 10))):

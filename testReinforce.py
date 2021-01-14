@@ -1,3 +1,5 @@
+#!/usr/bin/python3.8
+
 ##
 # @file testReinforce.py
 # @author Keren Zhu
@@ -7,18 +9,22 @@
 
 from datetime import datetime
 import os
+import pandas as pd
+import time
 
 import reinforce as RF
 from env import EnvGraph as Env
+from util import writeABC, runABC, extract_data
 
 import numpy as np
+from tqdm import tqdm
 import statistics
 
-
 class AbcReturn:
-    def __init__(self, returns):
+    def __init__(self, returns, command):
         self.numNodes = float(returns[0])
         self.level = float(returns[1])
+        self.command = command
     def __lt__(self, other):
         if (int(self.level) == int(other.level)):
             return self.numNodes < other.numNodes
@@ -32,37 +38,37 @@ def testReinforce(filename, ben):
     dateTime = now.strftime("%m/%d/%Y, %H:%M:%S") + "\n"
     print("Time ", dateTime)
     env = Env(filename)
-    #vApprox = Linear(env.dimState(), env.numActions())
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph)
     baseline = RF.Baseline(0)
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel)
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
 
-    lastfive = []
+    lastTen = []
 
-    for idx in range(200):
-        returns = reinforce.episode(phaseTrain=True)
+    for idx in tqdm(range(200), total = 200, ncols = 100, desc ="Episode : "):
+        returns, command = reinforce.episode(phaseTrain=True)
         seqLen = reinforce.lenSeq
         line = "iter " + str(idx) + " returns "+ str(returns) + " seq Length " + str(seqLen) + "\n"
-        if idx >= 195:
-            lastfive.append(AbcReturn(returns))
-        print(line)
+        if idx >= 190:
+            lastTen.append(AbcReturn(returns, command))
+        # print(line)
         #reinforce.replay()
 
     resultName = "./results/" + ben + ".csv"
     #lastfive.sort(key=lambda x : x.level)
-    lastfive = sorted(lastfive)
+    lastTen = sorted(lastTen)
     with open(resultName, 'a') as andLog:
         line = ""
-        line += str(lastfive[0].numNodes)
+        line += str(lastTen[0].numNodes)
         line += " "
-        line += str(lastfive[0].level)
+        line += str(lastTen[0].level)
         line += "\n"
+        line += lastTen[0].command + "\n" + str(len(lastTen[0].command.split(";"))) + "\n"
         andLog.write(line)
     rewards = reinforce.sumRewards
     
     with open('./results/sum_rewards.csv', 'a') as rewardLog:
-        line = ""
+        line = ben+","
         for idx in range(len(rewards)):
             line += str(rewards[idx]) 
             if idx != len(rewards) - 1:
@@ -70,16 +76,27 @@ def testReinforce(filename, ben):
         line += "\n"
         rewardLog.write(line)
     with open ('./results/converge.csv', 'a') as convergeLog:
-        line = ""
-        returns = reinforce.episode(phaseTrain=False)
+        line = ben+","
+        returns, command = reinforce.episode(phaseTrain=False)
         line += str(returns[0])
         line += ","
         line += str(returns[1])
         line += "\n"
+        line += command + "\n"
         convergeLog.write(line)
+    
+    return lastTen[0].command
 
+def visualize(df_area, df_delay):
+    hA = df_area.to_pickle()
+    fA = open("Reinforced_Survey_Area.html", "w")
+    fA.write(hA)
+    fA.close()
 
-
+    hA = df_delay.to_pickle()
+    fA = open("Reinforced_Survey_Delay.html", "w")
+    fA.write(hA)
+    fA.close()
 
 if __name__ == "__main__":
     """
@@ -94,7 +111,9 @@ if __name__ == "__main__":
         vbaseline.update(np.array([2264. / 2675,   45. / 50, 2282. / 2675,   45. / 50]), 11.97 / 2675)
         vbaseline.update(np.array([2255. / 2675,   44. / 50, 2264. / 2675,   44. / 50]), 3 / 2675)
     """
-    testReinforce("./bench/EPFL/benchmarks/random_control/ctrl.blif", "epflALU")
+
+    # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/arithmetic/adder.aig", "epflAdder")
+    # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/random_control/dec.aig", "epflDec")
     # testReinforce("./bench/MCNC/Combinational/blif/prom1.blif", "prom1")
     # testReinforce("./bench/MCNC/Combinational/blif/mainpla.blif", "mainpla")
     # testReinforce("./bench/MCNC/Combinational/blif/k2.blif", "k2")
@@ -103,8 +122,47 @@ if __name__ == "__main__":
     # testReinforce("./bench/MCNC/Combinational/blif/apex1.blif", "apex1")
     # testReinforce("./bench/MCNC/Combinational/blif/bc0.blif", "bc0")
     # testReinforce("./bench/i10.aig", "i10")
-    #testReinforce("./bench/ISCAS/blif/c1355.blif", "c1355")
-    #testReinforce("./bench/ISCAS/blif/c7552.blif", "c7552")
-    # from inspect import getmembers, isfunction
-    # import abc_py as abc
-    # help(abc)
+
+    
+    dir = "./bench/"
+
+    if os.path.exists("./Reinforced_Survey_Area.pkl"):
+        df_area = pd.read_pickle("Reinforced_Survey_Area.pkl")
+    else:
+        df_area = pd.DataFrame(columns=["Benchmark","Compress2rs Area","Reinforced Area"])
+
+    if os.path.exists("./Reinforced_Survey_Delay.pkl"):
+        df_delay = pd.read_pickle("Reinforced_Survey_Delay.pkl")
+    else:
+        df_delay = pd.DataFrame(columns=["Benchmark","Compress2rs Delay","Reinforced Delay"])
+
+    for subdir, dirs, files in os.walk(dir,topdown=True):
+        for file in files:
+            filepath = subdir + os.sep + file
+            if filepath.endswith(".aig"):
+                start = time.time()
+                print("Running Reinforce on ",file,".....",sep='')
+                command = testReinforce(filepath, file[:-4])
+                # Comparing the runs of compress2rs and new sequence
+                print("Running ABC on ",file,".....",sep='')
+                # Find compress2rs stats
+                writeABC(filepath, command, opt=0)
+                runABC()
+                c_area, c_delay = extract_data()
+                # Find custom script stats
+                writeABC(filepath, command, opt=1)
+                runABC()
+                r_area, r_delay = extract_data()
+                # Aggregate the results
+                df_area.loc[0 if pd.isnull(df_area.index.max()) else df_area.index.max() + 1] = [file, c_area, r_area]
+                df_delay.loc[0 if pd.isnull(df_delay.index.max()) else df_delay.index.max() + 1] = [file, c_delay, r_delay]
+                print("\n", df_area.loc[df_area.index.max()], "\n")
+                print("\n", df_delay.loc[df_delay.index.max()], "\n")
+                # Update the pickle files
+                df_area.to_pickle("Reinforced_Survey_Area.pkl")
+                df_delay.to_pickle("Reinforced_Survey_Delay.pkl")            
+                end = time.time()
+                print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
+    
+    visualize(df_area, df_delay)
+
