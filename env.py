@@ -9,6 +9,7 @@ import abc_py as abcPy
 import numpy as np
 import graphExtractor as GE
 import torch
+import pandas as pd
 from dgl.nn.pytorch import GraphConv
 import dgl
 
@@ -193,11 +194,12 @@ class EnvGraph(object):
     """
     @brief the overall concept of environment, the different. use the compress2rs as target
     """
-    def __init__(self, aigfile):
+    def __init__(self, aigfile, cmds):
         self._abc = abcPy.AbcInterface()
         self._aigfile = aigfile
         self._abc.start()
-        self.lenSeq = 0
+        self._actionSpace = cmds
+        self.timeSeq = 0
         self._readtime = self._abc.read(self._aigfile)
         initStats = self._abc.aigStats() # The initial AIG statistics
         self.initNumAnd = float(initStats.numAnd)
@@ -205,7 +207,7 @@ class EnvGraph(object):
         self._runtimeBaseline = self.compress2rs()
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(initStats) - self.statValue(compress2rsStats)
-        self._rewardBaseline = totalReward / 18.0 # 18 is the length of compress2rs sequence
+        self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
 
     def getRuntimeBaseline(self):
@@ -226,7 +228,7 @@ class EnvGraph(object):
         return t
     
     def reset(self):
-        self.lenSeq = 0
+        self.timeSeq = 0
         self._abc.end()
         self._abc.start()
         self._abc.read(self._aigfile)
@@ -247,55 +249,54 @@ class EnvGraph(object):
         nextState = self.state()
         reward = self.reward()
         done = False
-        if (self.lenSeq >= 20):
+        if (self.timeSeq >= self._runtimeBaseline):
             done = True
-        return nextState,reward,done,0
+        return nextState, reward, done, 0
 
     def takeAction(self, actionIdx):
         """
         @return true: episode is end
         """
-        # "b -l; rs -K 6 -l; rw -l; rs -K 6 -N 2 -l; rf -l; rs -K 8 -l; b -l; rs -K 8 -N 2 -l; rw -l; rs -K 10 -l; rwz -l; rs -K      10 -N 2 -l; b -l; rs -K 12 -l; rfz -l; rs -K 12 -N 2 -l; rwz -l; b -l
+        action = self._actionSpace[actionIdx] # Map User Action Space to the Complete. 
         self.lastAct4 = self.lastAct3
         self.lastAct3 = self.lastAct2
         self.lastAct2 = self.lastAct
         self.lastAct = actionIdx
-        #self.actsTaken[actionIdx] += 1
-        self.lenSeq += 1
         t = 0
-        if actionIdx == 0:
+        if action == 0:
             t = self._abc.balance(l=False) # b
-        elif actionIdx == 1:
+        elif action == 1:
             t = self._abc.balance(l=True) # b -l
-        elif actionIdx == 2:
+        elif action == 2:
             t = self._abc.rewrite(l=False) # rw
-        elif actionIdx == 3:
+        elif action == 3:
             t = self._abc.rewrite(l=True) # rw -l
-        elif actionIdx == 4:
+        elif action == 4:
             t = self._abc.rewrite(l=False, z=True) # rw -z
-        elif actionIdx == 5:
+        elif action == 5:
             t = self._abc.rewrite(l=True, z=True) # rw -z -l
-        elif actionIdx == 6:
+        elif action == 6:
             t = self._abc.refactor(l=False) # rf
-        elif actionIdx == 7:
+        elif action == 7:
             t = self._abc.refactor(l=True) # rf -l
-        elif actionIdx == 8:
+        elif action == 8:
             t = self._abc.refactor(l=False, z=True) # rf -z
-        elif actionIdx == 9:
+        elif action == 9:
             t = self._abc.refactor(l=True, z=True) # rf - z -l
-        elif actionIdx == 10:
+        elif action == 10:
             t = self._abc.resub(k=4, l=True) # rs -k 4 -l
-        elif actionIdx == 11:
+        elif action == 11:
             t = self._abc.resub(k=5, l=True) # rs -k 5 -l
-        elif actionIdx == 12:
+        elif action == 12:
             t = self._abc.resub(k=6, l=True) # rs -k 6 -l
-        elif actionIdx == 13:
+        elif action == 13:
             self._abc.end()
             return True, -1.0
         else:
             assert(False)
 
         # update the statitics
+        self.timeSeq += t
         self._lastStats = self._curStats
         self._curStats = self._abc.aigStats()
         return False, t
@@ -306,31 +307,32 @@ class EnvGraph(object):
         """
         cmd = ""
         for action in actions:
-            if action == 0:
+            act = self._actionSpace[action]
+            if act == 0:
                 cmd += "balance; "
-            elif action == 1:
+            elif act == 1:
                 cmd += "balance -l; "
-            elif action == 2:
+            elif act == 2:
                 cmd += "rewrite; "
-            elif action == 3:
+            elif act == 3:
                 cmd += "rewrite -l; "
-            elif action == 4:
+            elif act == 4:
                 cmd += "rewrite -z; "
-            elif action == 5:
+            elif act == 5:
                 cmd += "rewrite -z -l; "
-            elif action == 6:
+            elif act == 6:
                 cmd += "refactor; "
-            elif action == 7:
+            elif act == 7:
                 cmd += "refactor -l; "
-            elif action == 8:
+            elif act == 8:
                 cmd += "refactor -z; "
-            elif action == 9:
+            elif act == 9:
                 cmd += "refactor -z -l; "
-            elif action == 10:
+            elif act == 10:
                 cmd += "resub -K 4 -l; "
-            elif action == 11:
+            elif act == 11:
                 cmd += "resub -K 5 -l; "
-            elif action == 12:
+            elif act == 12:
                 cmd += "resub -K 6 -l; "
         return cmd
 
@@ -346,7 +348,7 @@ class EnvGraph(object):
         lastOneHotActs[self.lastAct] += 1/3
         stateArray = np.array([self._curStats.numAnd / self.initNumAnd, self._curStats.lev / self.initLev,
             self._lastStats.numAnd / self.initNumAnd, self._lastStats.lev / self.initLev])
-        stepArray = np.array([float(self.lenSeq) / 18.0])
+        stepArray = np.array([float(self.timeSeq) / self._runtimeBaseline])
         combined = np.concatenate((stateArray, lastOneHotActs, stepArray), axis=-1)
         #combined = np.expand_dims(combined, axis=0)
         #return stateArray.astype(np.float32)
@@ -369,7 +371,7 @@ class EnvGraph(object):
             return -2
     
     def numActions(self):
-        return 13
+        return len(self._actionSpace)
     
     def dimState(self):
         return 4 + self.numActions() * 1 + 1
@@ -379,7 +381,7 @@ class EnvGraph(object):
     
     def statValue(self, stat):
         # return float(stat.lev)  / float(self.initLev)
-        return (float(stat.numAnd)/float(self.initNumAnd)) + 3*(float(stat.lev)/float(self.initLev))
+        return 2*(float(stat.numAnd)/float(self.initNumAnd)) + 5*(float(stat.lev)/float(self.initLev))
         #return stat.numAnd + stat.lev * 10
     
     def curStatsValue(self):

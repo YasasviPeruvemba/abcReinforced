@@ -33,13 +33,26 @@ class AbcReturn:
     def __eq__(self, other):
         return int(self.level) == int(other.level) and int(self.numNodes) == int(self.numNodes)
 
-def testReinforce(filename, ben):
+def getActionSpace(opt=None):
+    cmds = ["balance; ","balance -l; ","rewrite; ","rewrite -l; ","rewrite -z; ","rewrite -z -l; ","refactor; ","refactor -l; ","refactor -z; ","refactor -z -l; ","resub -K 4 -l; ","resub -K 5 -l; ","resub -K 6 -l; "]
+    if opt is None:
+        for idx, cmd in enumerate(cmds):
+            print(str(idx+1)+". "+cmd)
+        ids = input("\nSelect the commands that you wish to use : \n(Enter the index numbers in a comma separated manner - eg 1,4,5)\n")
+        ids = ids.split(",")
+        ids = [int(x)-1 for x in ids]
+    else:
+        ids = np.arange(len(cmds))
+    return ids
+
+def testReinforce(filename, ben, opt=None):
     now = datetime.now()
     dateTime = now.strftime("%m/%d/%Y, %H:%M:%S") + "\n"
     print("Time ", dateTime)
-    env = Env(filename)
+    print("###################################\n")
+    cmds = getActionSpace(opt=opt)
+    env = Env(filename, cmds)
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph)
-    baseline = RF.Baseline(0)
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel)
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
 
@@ -88,29 +101,19 @@ def testReinforce(filename, ben):
     return lastTen[0].command
 
 def visualize(df_area, df_delay):
-    hA = df_area.to_pickle()
+    print(df_area)
+    hA = df_area.to_html()
     fA = open("Reinforced_Survey_Area.html", "w")
     fA.write(hA)
     fA.close()
-
-    hA = df_delay.to_pickle()
+    print("\n######################################################################\n")
+    print(df_delay)
+    hA = df_delay.to_html()
     fA = open("Reinforced_Survey_Delay.html", "w")
     fA.write(hA)
     fA.close()
 
 if __name__ == "__main__":
-    """
-    env = Env("./bench/i10.aig")
-    vbaseline = RF.BaselineVApprox(4, 3e-3, RF.FcModel)
-    for i in range(10000000):
-        with open('log', 'a', 0) as outLog:
-            line = "iter  "+ str(i) + "\n"
-            outLog.write(line)
-        vbaseline.update(np.array([2675.0 / 2675, 50.0 / 50, 2675. / 2675, 50.0 / 50]), 422.5518 / 2675)
-        vbaseline.update(np.array([2282. / 2675,   47. / 50, 2675. / 2675,   47. / 50]), 29.8503 / 2675)
-        vbaseline.update(np.array([2264. / 2675,   45. / 50, 2282. / 2675,   45. / 50]), 11.97 / 2675)
-        vbaseline.update(np.array([2255. / 2675,   44. / 50, 2264. / 2675,   44. / 50]), 3 / 2675)
-    """
 
     # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/arithmetic/adder.aig", "epflAdder")
     # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/random_control/dec.aig", "epflDec")
@@ -142,7 +145,7 @@ if __name__ == "__main__":
             if filepath.endswith(".aig"):
                 start = time.time()
                 print("Running Reinforce on ",file,".....",sep='')
-                command = testReinforce(filepath, file[:-4])
+                command = testReinforce(filepath, file[:-4], opt="All")
                 # Comparing the runs of compress2rs and new sequence
                 print("Running ABC on ",file,".....",sep='')
                 # Find compress2rs stats
