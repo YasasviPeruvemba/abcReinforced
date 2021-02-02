@@ -6,6 +6,7 @@
 #
 
 import numpy as np
+import os
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -80,7 +81,7 @@ class PiApprox(object):
     n dimensional continous states
     m discret actions
     """
-    def __init__(self, dimStates, numActs, alpha, network):
+    def __init__(self, dimStates, numActs, alpha, network, path=None):
         """
         @brief approximate policy pi(. | st)
         @param dimStates: Number of dimensions of state space
@@ -88,6 +89,7 @@ class PiApprox(object):
         @param alpha: learning rate
         @param network: a pytorch model
         """
+        self._path = path
         self._dimStates = dimStates
         self._numActs = numActs
         self._alpha = alpha
@@ -95,6 +97,14 @@ class PiApprox(object):
         #self._network.cuda()
         self._optimizer = torch.optim.Adam(self._network.parameters(), alpha, [0.9, 0.999])
         self.tau = 0.5 # temperature for gumbel_softmax
+        
+        if self._path is not None:
+            if os.path.exists(self._path+"_pi.pth"): 
+                checkpoint = torch.load(self._path+"_pi.pth")
+                self._network.load_state_dict(checkpoint['model_state_dict'])
+                self._optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+                self._network.train()
+
         print("Input Feat Dim of Graph : ",dimStates," Output Channel Dim of Graph : ", numActs)
 
     def __call__(self, s, graph, phaseTrain=True):
@@ -146,6 +156,16 @@ class PiApprox(object):
         #self._tau = self._tau * 0.98
         pass
 
+    def save(self, benchmarks):
+        if self._path is not None:
+            torch.save({
+                'model_state_dict' : self._network.state_dict(),
+                'optimizer_state_dict' : self._optimizer.state_dict(),
+                'benchmarks' : benchmarks
+            }, self._path+"_pi.pth")
+        else: return
+
+
 
 
 class Baseline(object):
@@ -165,7 +185,7 @@ class BaselineVApprox(object):
     """
     The baseline with approximation of state value V
     """
-    def __init__(self, dimStates, alpha, network):
+    def __init__(self, dimStates, alpha, network, path=None):
         """
         @brief approximate policy pi(. | st)
         @param dimStates: Number of dimensions of state space
@@ -173,6 +193,7 @@ class BaselineVApprox(object):
         @param alpha: learning rate
         @param network: a pytorch model
         """
+        self._path = path
         self._dimStates = dimStates
         self._alpha = alpha
         self._network = network(dimStates, 1)
@@ -184,6 +205,13 @@ class BaselineVApprox(object):
                 m.weight.data.fill_(0.0)
         self._network.apply(initZeroWeights)
         """
+        if self._path is not None:
+            if os.path.exists(self._path+"_baseline.pth"): 
+                checkpoint = torch.load(self._path+"_baseline.pth")
+                self._network.load_state_dict(checkpoint['model_state_dict'])
+                self._optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+                self._network.train()
+
     def __call__(self, state):
         self._network.eval()
         return self.value(state).data
@@ -206,6 +234,15 @@ class BaselineVApprox(object):
         self._optimizer.zero_grad()
         loss.backward()
         self._optimizer.step()
+    
+    def save(self, benchmarks):
+        if self._path is not None:
+            torch.save({
+                'model_state_dict' : self._network.state_dict(),
+                'optimizer_state_dict' : self._optimizer.state_dict(),
+                'benchmarks' : benchmarks
+            }, self._path+"_baseline.pth")
+        else: return
 
 
 class Trajectory(object):
