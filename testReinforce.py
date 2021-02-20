@@ -23,11 +23,12 @@ import statistics
 
 import sys
 
-option = "2_5_with_balance"
+option = "1_0_with_balance"
+
 class Logger(object):
     def __init__(self):
         self.terminal = sys.stdout
-        self.log = open(option + ".log", "a")
+        self.log = open("./logs/"+option + ".log", "a")
 
     def write(self, message):
         self.terminal.write(message)
@@ -37,6 +38,7 @@ class Logger(object):
         pass
 
 sys.stdout = Logger()
+
 class AbcReturn:
     def __init__(self, returns, command):
         self.numNodes = float(returns[0])
@@ -54,9 +56,9 @@ def getActionSpace(opt=None):
     
     if "without_balance" in option:
         print("Without Balance Run\n\n")
-        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 4 -l; ","resub -K 5 -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","rs -K 8 -N 2 -l; ","rs -K 10 -l; ","rs -K 10 -N 2 -l; ","rs -K 12 -l; ","rs -K 12 -N 2 -l; "]
+        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]
     else:
-        cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 4 -l; ","resub -K 5 -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","rs -K 8 -N 2 -l; ","rs -K 10 -l; ","rs -K 10 -N 2 -l; ","rs -K 12 -l; ","rs -K 12 -N 2 -l; "]
+        cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","rs -K 8 -N 2 -l; ","rs -K 10 -l; ","rs -K 10 -N 2 -l; ","rs -K 12 -l; ","rs -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
     
     if opt is None:
         for idx, cmd in enumerate(cmds):
@@ -162,16 +164,6 @@ if __name__ == "__main__":
     
     dir = "./bench/"
 
-    if os.path.exists("./Reinforced_Survey_Area.pkl"):
-        df_area = pd.read_pickle("Reinforced_Survey_Area.pkl")
-    else:
-        df_area = pd.DataFrame(columns=["Benchmark","Compress2rs Area","Reinforced Area"])
-
-    if os.path.exists("./Reinforced_Survey_Delay.pkl"):
-        df_delay = pd.read_pickle("Reinforced_Survey_Delay.pkl")
-    else:
-        df_delay = pd.DataFrame(columns=["Benchmark","Compress2rs Delay","Reinforced Delay"])
-
     for subdir, dirs, files in os.walk(dir,topdown=True):
         for file in files:
             filepath = subdir + os.sep + file
@@ -197,6 +189,7 @@ if __name__ == "__main__":
                 # # Update the pickle files
                 # df_area.to_pickle("Reinforced_Survey_Area.pkl")
                 # df_delay.to_pickle("Reinforced_Survey_Delay.pkl")            
+                print("\n",command,"\n")
                 end = time.time()
                 print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
     

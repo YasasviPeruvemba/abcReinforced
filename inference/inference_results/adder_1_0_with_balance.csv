@@ -1,0 +1,18 @@
+894.0 256.0
+balance -l; balance -l; resub -K 6 -l; 
+3
+1019.0 255.0
+balance -l; balance -l; refactor -z -l; 
+3
+893.0 256.0
+balance -l; balance -l; resub -K 16 -N 2 -l; 
+3
+1020.0 255.0
+balance -l; balance -l; rewrite -l; 
+3
+1019.0 255.0
+balance -l; balance -l; refactor -z -l; 
+3
+1020.0 255.0
+balance -l; balance -l; rewrite -l; 
+3

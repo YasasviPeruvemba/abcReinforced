@@ -1,0 +1,6 @@
+16981.0 248.0
+rewrite -l; balance -l; balance -l; rewrite -l; rewrite -z -l; 
+5
+15958.0 249.0
+balance -l; balance -l; rewrite -z -l; resub -K 6 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -l; 
+7

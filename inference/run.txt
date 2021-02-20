@@ -1,0 +1,6 @@
+read_library ../../ALS/abc/mcnc.genlib
+read ./inference_bench/voter.aig
+strash
+resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; 
+map
+print_stats

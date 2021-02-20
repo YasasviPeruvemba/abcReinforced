@@ -1,0 +1,369 @@
+Running Reinforce on adder.aig.....
+Time  02/19/2021, 16:36:33
+
+###################################
+
+Baseline Time Taken 0.20779800415039062  Baseline Nodes  892 Baseline Level  256  Total Reward  0.23921568627450984
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.20779800415039062
+Env_Time :  0.02187499962747097
+Time_Elapsed :  0.02187499962747097
+Env_Time :  0.02662000060081482
+Time_Elapsed :  0.04849500022828579
+Env_Time :  0.48562899231910706
+Time_Elapsed :  0.5341239925473928
+Seq Length : 3
+Time Elapsed for  adder.aig  :  5.484764337539673 seconds
+Command : balance -l; balance -l; resub -K 6 -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/19/2021, 16:36:39
+
+###################################
+
+Baseline Time Taken 1.1265709400177002  Baseline Nodes  3141 Baseline Level  12  Total Reward  0.11690647482014427
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  1.1265709400177002
+Env_Time :  0.052907999604940414
+Time_Elapsed :  0.052907999604940414
+Env_Time :  0.7892190217971802
+Time_Elapsed :  0.8421270214021206
+Env_Time :  0.7970489859580994
+Time_Elapsed :  1.63917600736022
+Seq Length : 3
+Time Elapsed for  bar.aig  :  15.536677837371826 seconds
+Command : balance -l; refactor -z -l; refactor -z -l;  
+
+
+Running Reinforce on i10.aig.....
+Time  02/19/2021, 16:36:54
+
+###################################
+
+Baseline Time Taken 1.0889949798583984  Baseline Nodes  1741 Baseline Level  37  Total Reward  1.478317757009346
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  1.0889949798583984
+Env_Time :  0.07310599833726883
+Time_Elapsed :  0.07310599833726883
+Env_Time :  0.07329300045967102
+Time_Elapsed :  0.14639899879693985
+Env_Time :  0.7686389684677124
+Time_Elapsed :  0.9150379672646523
+Env_Time :  0.05921899899840355
+Time_Elapsed :  0.9742569662630558
+Env_Time :  0.8286659717559814
+Time_Elapsed :  1.8029229380190372
+Seq Length : 5
+Time Elapsed for  i10.aig  :  16.9268639087677 seconds
+Command : balance -l; balance -l; refactor -z -l; balance -l; resub -K 8 -N 2 -l;  
+
+
+Running Reinforce on log2.aig.....
+Time  02/19/2021, 16:37:11
+
+###################################
+
+Baseline Time Taken 12.999714851379395  Baseline Nodes  29192 Baseline Level  387  Total Reward  0.5640496703815483
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+Running Reinforce on adder.aig.....
+Time  02/19/2021, 16:42:50
+
+###################################
+
+Baseline Time Taken 0.19949699938297272  Baseline Nodes  892 Baseline Level  256  Total Reward  0.23921568627450984
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.19949699938297272
+Env_Time :  0.026597000658512115
+Choice Index :  0
+Time_Elapsed :  0.026597000658512115
+Env_Time :  0.036628998816013336
+Choice Index :  0
+Time_Elapsed :  0.06322599947452545
+Env_Time :  0.22592000663280487
+Choice Index :  4
+Time_Elapsed :  0.2891460061073303
+Seq Length : 3
+Time Elapsed for  adder.aig  :  5.6931233406066895 seconds
+Command : balance -l; balance -l; refactor -z -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/19/2021, 16:42:56
+
+###################################
+
+Baseline Time Taken 1.411316990852356  Baseline Nodes  3141 Baseline Level  12  Total Reward  0.11690647482014427
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  1.411316990852356
+Env_Time :  0.014980999752879143
+Choice Index :  0
+Time_Elapsed :  0.014980999752879143
+Env_Time :  0.8074560165405273
+Choice Index :  3
+Time_Elapsed :  0.8224370162934065
+Env_Time :  1.2260810136795044
+Choice Index :  13
+Time_Elapsed :  2.048518029972911
+Seq Length : 3
+Time Elapsed for  bar.aig  :  17.437840223312378 seconds
+Command : balance -l; refactor -l; resub -K 16 -l;  
+
+
+Running Reinforce on i10.aig.....
+Time  02/19/2021, 16:43:13
+
+###################################
+
+Baseline Time Taken 0.7407429814338684  Baseline Nodes  1741 Baseline Level  37  Total Reward  1.478317757009346
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.7407429814338684
+Env_Time :  0.048298999667167664
+Choice Index :  0
+Time_Elapsed :  0.048298999667167664
+Env_Time :  1.0465519428253174
+Choice Index :  1
+Time_Elapsed :  1.094850942492485
+Seq Length : 2
+Time Elapsed for  i10.aig  :  5.849554777145386 seconds
+Command : balance -l; rewrite -l;  
+
+
+Running Reinforce on log2.aig.....
+Time  02/19/2021, 16:43:19
+
+###################################
+
+Running Reinforce on adder.aig.....
+Time  02/19/2021, 19:01:37
+
+###################################
+
+Baseline Time Taken 0.16770743799999988  Baseline Nodes  892 Baseline Level  256  Total Reward  0.23921568627450984
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.16770743799999988
+Env_Time :  0.0009907590000004518
+Choice Index :  0
+Time_Elapsed :  0.0009907590000004518
+Env_Time :  0.04668205399999792
+Choice Index :  0
+Time_Elapsed :  0.04767281299999837
+Env_Time :  0.8261924159999978
+Choice Index :  1
+Time_Elapsed :  0.8738652289999962
+Seq Length : 3
+Time Elapsed for  adder.aig  :  4.7058515548706055 seconds
+Command : balance -l; balance -l; rewrite -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/19/2021, 19:01:42
+
+###################################
+
+Baseline Time Taken 0.646985720999993  Baseline Nodes  3141 Baseline Level  12  Total Reward  0.11690647482014427
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.646985720999993
+Env_Time :  0.09334657000000846
+Choice Index :  0
+Time_Elapsed :  0.09334657000000846
+Env_Time :  0.8667769540000023
+Choice Index :  1
+Time_Elapsed :  0.9601235240000108
+Seq Length : 2
+Time Elapsed for  bar.aig  :  8.582664489746094 seconds
+Command : balance -l; rewrite -l;  
+
+
+Running Reinforce on i10.aig.....
+Time  02/19/2021, 19:01:51
+
+###################################
+
+Baseline Time Taken 0.7901059229999987  Baseline Nodes  1741 Baseline Level  37  Total Reward  1.478317757009346
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+Running Reinforce on adder.aig.....
+Time  02/19/2021, 19:02:46
+
+###################################
+
+Baseline Time Taken 0.1663235219999999  Baseline Nodes  892 Baseline Level  256  Total Reward  0.23921568627450984
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.1663235219999999
+Env_Time :  0.0006170970000001219
+Choice Index :  0
+Time_Elapsed :  0.0006170970000001219
+Env_Time :  0.04772913499999998
+Choice Index :  0
+Time_Elapsed :  0.0483462320000001
+Env_Time :  0.384765475
+Choice Index :  4
+Time_Elapsed :  0.4331117070000001
+Seq Length : 3
+Time Elapsed for  adder.aig  :  3.062161922454834 seconds
+Command : balance -l; balance -l; refactor -z -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/19/2021, 19:02:49
+
+###################################
+
+Baseline Time Taken 0.9516891189999992  Baseline Nodes  3141 Baseline Level  12  Total Reward  0.11690647482014427
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.9516891189999992
+Env_Time :  0.04834842899999714
+Choice Index :  0
+Time_Elapsed :  0.04834842899999714
+Env_Time :  0.048625947000001446
+Choice Index :  0
+Time_Elapsed :  0.09697437599999859
+Env_Time :  1.0748093250000004
+Choice Index :  4
+Time_Elapsed :  1.171783700999999
+Seq Length : 3
+Time Elapsed for  bar.aig  :  9.360025644302368 seconds
+Command : balance -l; balance -l; refactor -z -l;  
+
+
+Running Reinforce on i10.aig.....
+Time  02/19/2021, 19:02:58
+
+###################################
+
+Baseline Time Taken 1.1050681599999983  Baseline Nodes  1741 Baseline Level  37  Total Reward  1.478317757009346
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  1.1050681599999983
+Env_Time :  0.09545853800000259
+Choice Index :  0
+Time_Elapsed :  0.09545853800000259
+Running Reinforce on adder.aig.....
+Time  02/19/2021, 19:05:06
+
+###################################
+
+0.1627819985151291  :  0.16280531700000012
+Baseline Time Taken 0.16280531700000012  Baseline Nodes  892 Baseline Level  256  Total Reward  0.23921568627450984
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+
+
+Runtime Baseline :  0.16280531700000012
+Env_Time :  0.04598468000000011
+Choice Index :  0
+Time_Elapsed :  0.04598468000000011
+Env_Time :  0.04766768700000057
+Choice Index :  0
+Time_Elapsed :  0.09365236700000068
+Env_Time :  0.8249178079999986
+Choice Index :  1
+Time_Elapsed :  0.9185701749999993
+Seq Length : 3
+Time Elapsed for  adder.aig  :  3.6604020595550537 seconds
+Command : balance -l; balance -l; rewrite -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/19/2021, 19:05:09
+
+###################################
+
+1.250627040863037  :  1.2506553019999984
+Baseline Time Taken 1.2506553019999984  Baseline Nodes  3141 Baseline Level  12  Total Reward  0.11690647482014427
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15

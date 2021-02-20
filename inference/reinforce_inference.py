@@ -100,6 +100,7 @@ class PiApprox(object):
         
         if self._path is not None:
             if os.path.exists(self._path+"_pi.pth"): 
+                print("\n\nFound pre-existing Model\n\n")
                 checkpoint = torch.load(self._path+"_pi.pth")
                 self._network.load_state_dict(checkpoint['model_state_dict'])
                 self._optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -127,7 +128,8 @@ class PiApprox(object):
             action = m.sample()
             #action = torch.argmax(probs)
         else:
-            action = torch.argmax(out)
+            m = Categorical(probs)
+            action = m.sample()
             #action = torch.argmax(probs)
 
         return action.data.item()
@@ -274,7 +276,7 @@ class Reinforce(object):
         states, rewards, actions = [], [0], []
         time_elapsed = 0
         runtimeBaseline = self._env.getRuntimeBaseline()
-        #print("Runtim_Baseline : ", runtimeBaseline)
+        print("\n\nRuntime Baseline : ", runtimeBaseline)
         while not term:
             action = self._pi(state[0], state[1], phaseTrain)
             term, t = self._env.takeAction(action)
@@ -285,7 +287,7 @@ class Reinforce(object):
                 outLog.write(line)
             """
             time_elapsed += t
-           # print(time_elapsed)
+            print("Time_Elapsed : ",time_elapsed)
             nextState = self._env.state()
             nextReward = self._env.reward()
             states.append(state)

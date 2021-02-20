@@ -1,0 +1,36 @@
+i10,2018,40
+rewrite -z -l; 
+1
+i2c,1149,16
+resub -K 12 -N 2 -l; 
+1
+int2float,235,15
+refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+8
+max,2865,229
+refactor -l; 
+1
+priority,640,140
+resub -K 10 -N 2 -l; 
+1
+router,246,27
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+3
+sin,5173,185
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+2
+square,16597,249
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+5
+voter,8211,66
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+2
+bar,3141,13
+resub -K 10 -N 2 -l; 
+1
+cavlc,653,17
+resub -K 10 -N 2 -l; 
+1
+ctrl,125,9
+refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+8
