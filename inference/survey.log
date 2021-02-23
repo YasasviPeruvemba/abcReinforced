@@ -1,4 +1,4 @@
 ABC command line: "source run.txt".
 
 Entered genlib library with 23 gates from file "../../ALS/abc/mcnc.genlib".
-[1;37m./inference_bench/voter       :[0m i/o = 1001/    1  lat =    0  nd =   8192  edge =   17501  area = 23410.00  delay = 57.60  lev = 49
+[1;37m./inference_bench/int2float   :[0m i/o =   11/    7  lat =    0  nd =    166  edge =     401  area = 404.00  delay = 13.70  lev = 11

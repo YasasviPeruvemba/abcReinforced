@@ -276,7 +276,7 @@ class Reinforce(object):
         states, rewards, actions = [], [0], []
         time_elapsed = 0
         runtimeBaseline = self._env.getRuntimeBaseline()
-        print("\n\nRuntime Baseline : ", runtimeBaseline)
+        #print("\n\nRuntime Baseline : ", runtimeBaseline)
         while not term:
             action = self._pi(state[0], state[1], phaseTrain)
             term, t = self._env.takeAction(action)
@@ -287,7 +287,7 @@ class Reinforce(object):
                 outLog.write(line)
             """
             time_elapsed += t
-            print("Time_Elapsed : ",time_elapsed)
+            #print("Time_Elapsed : ",time_elapsed)
             nextState = self._env.state()
             nextReward = self._env.reward()
             states.append(state)

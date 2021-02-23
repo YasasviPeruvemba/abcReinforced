@@ -6,7 +6,7 @@
 #
 
 import sys
-sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
+#sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
 import abc_py as abcPy
 import numpy as np
 import graphExtractor_inference as GE
@@ -231,21 +231,21 @@ class EnvGraph(object):
     """
     @brief the overall concept of environment, the different. use the compress2rs as target
     """
-    def __init__(self, aigfile, cmds):
+    def __init__(self, aigfile, cmds, coef):
         self._abc = abcPy.AbcInterface()
         self._aigfile = aigfile
         self._abc.start()
         self._actionSpace = cmds
         self.timeSeq = 0
+        self.coefnum = coef[0]
+        self.coeflev = coef[1]
         self._readtime = self._abc.read(self._aigfile)
         self.initStats = self._abc.aigStats() # The initial AIG statistics
         self.initNumAnd = float(self.initStats.numAnd)
         self.initLev = float(self.initStats.lev)
-        t1 = process_time()
-        t = self.compress2rs()
-        t2 = process_time()
-        self._runtimeBaseline = t2-t1
-        print(t," : ",self._runtimeBaseline)
+        self._runtimeBaseline = self.compress2rs()
+        #self._runtimeBaseline = t2-t1
+        #print(t," : ",self._runtimeBaseline)
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
@@ -292,100 +292,47 @@ class EnvGraph(object):
         self.lastAct = actionIdx
         # "b -l; rs -K 6 -l; rw -l; rs -K 6 -N 2 -l; rf -l; rs -K 8 -l; b -l; rs -K 8 -N 2 -l; rw -l; rs -K 10 -l; rwz -l; rs -K 10 -N 2 -l; b -l; rs -K 12 -l; rfz -l; rs -K 12 -N 2 -l; rwz -l; b -l
         if action == 0:
-            t1 = process_time()
-            self._abc.balance(l=True) # b -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.balance(l=True) # b -l
         elif action == 1:
-            t1 = process_time()
-            self._abc.rewrite(l=True) # rw -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.rewrite(l=True) # rw -l
         elif action == 2:
-            t1 = process_time()
-            self._abc.rewrite(l=True, z=True) # rw -z -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.rewrite(l=True, z=True) # rw -z -l
         elif action == 3:
-            t1 = process_time()
-            self._abc.refactor(l=True) # rf -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.refactor(l=True) # rf -l
         elif action == 4:
-            t1 = process_time()
-            self._abc.refactor(l=True, z=True) # rf - z -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.refactor(l=True, z=True) # rf - z -l
         # elif action == 5:
-        # t1 = process_time()    
-        #= self._abc.resub(k=4, l=True) # rs -k 4 -l
-        # t2 = process_time()
-        # t = t2 - t1
-
+        #    t = self._abc.resub(k=4, l=True) # rs -k 4 -l
         # elif action == 6:
-        # t1 = process_time()    
-        #= self._abc.resub(k=5, l=True) # rs -k 5 -l
-        # t2 = process_time()
-        # t = t2 - t1
-
+        #    t = self._abc.resub(k=5, l=True) # rs -k 5 -l
         elif action == 5:
-            t1 = process_time()
-            self._abc.resub(k=6, l=True) # rs -k 6 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=6, l=True) # rs -k 6 -l
         elif action == 6:
-            t1 = process_time()
-            self._abc.resub(k=6, n=2, l=True) # rs -K 6 -N 2 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=6, n=2, l=True) # rs -K 6 -N 2 -l
         elif action == 7:
-            t1 = process_time()
-            self._abc.resub(k=8, l=True) # rs -K 8 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=8, l=True) # rs -K 8 -l
         elif action == 8:
-            t1 = process_time()
-            self._abc.resub(k=8, n=2, l=True) # rs -K 8 -N 2 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=8, n=2, l=True) # rs -K 8 -N 2 -l
         elif action == 9:
-            t1 = process_time()
-            self._abc.resub(k=10, l=True) # rs -K 10 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=10, l=True) # rs -K 10 -l
         elif action == 10:
-            t1 = process_time()
-            self._abc.resub(k=10, n=2, l=True) # rs -K 10 -N 2 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=10, n=2, l=True) # rs -K 10 -N 2 -l
         elif action == 11:
-            t1 = process_time()
-            self._abc.resub(k=12, l=True) # rs -K 12 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=12, l=True) # rs -K 12 -l
         elif action == 12:
-            t1 = process_time()
-            self._abc.resub(k=12, n=2, l=True) # rs - K 12 -N 2 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=12, n=2, l=True) # rs - K 12 -N 2 -l
         elif action == 13:
-            t1 = process_time()
-            self._abc.resub(k=16, l=True) # rs -K 16 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=16, l=True) # rs -K 16 -l
         elif action == 14:
-            t1 = process_time()
-            self._abc.resub(k=16, n=2, l=True) # rs - K 16 -N 2 -l
-            t2 = process_time()
-            t = t2 - t1
+            t = self._abc.resub(k=16, n=2, l=True) # rs - K 16 -N 2 -l
         elif action == 15:
             self._abc.end()
             return True, -1.0
         else:
             assert(False)
         # update the statitics
-        print("Env_Time : ",t)
-        print("Choice Index : ",action)
+        #print("Env_Time : ",t)
+        #print("Choice Index : ",action)
         self.lenSeq += 1
         self.timeSeq += t
         self.lastActionTime = t
@@ -481,7 +428,7 @@ class EnvGraph(object):
     
     def statValue(self, stat):
         # return float(stat.lev)  / float(self.initLev)
-        return 2*(float(stat.numAnd)/float(self.initNumAnd)) + 3*(float(stat.lev)/float(self.initLev))
+        return self.coefnum*(float(stat.numAnd)/float(self.initNumAnd)) + self.coeflev*(float(stat.lev)/float(self.initLev))
         #return stat.numAnd + stat.lev * 10
     
     def curStatsValue(self):

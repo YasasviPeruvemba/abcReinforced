@@ -1,0 +1,468 @@
+Running Reinforce on router.aig.....
+Time  02/23/2021, 00:04:30
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.09421099722385406  Baseline Nodes  203 Baseline Level  24  Total Reward  0.7535667963683528
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 18
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 12
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 3
+Command : resub -K 16 -l; resub -K 6 -l; resub -K 16 -l; 
+
+Time Elapsed for  router.aig  :  5.186577558517456 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on priority.aig.....
+Time  02/23/2021, 00:04:35
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.16007000207901  Baseline Nodes  465 Baseline Level  116  Total Reward  2.4992067915791276
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 5
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 5
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 5
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  priority.aig  :  8.059070110321045 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on square.aig.....
+Time  02/23/2021, 00:04:43
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 4.37748384475708  Baseline Nodes  15938 Baseline Level  249  Total Reward  0.27099830684362836
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  square.aig  :  333.33091711997986 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on bar.aig.....
+Time  02/23/2021, 00:10:16
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.587723970413208  Baseline Nodes  2952 Baseline Level  14  Total Reward  -0.26978417266187016
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  bar.aig  :  53.130924701690674 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on sin.aig.....
+Time  02/23/2021, 00:11:09
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 1.646301031112671  Baseline Nodes  5028 Baseline Level  191  Total Reward  0.05402373130845284
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 13
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 13
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 13
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  sin.aig  :  121.17364144325256 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on max.aig.....
+Time  02/23/2021, 00:13:10
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.4494650065898895  Baseline Nodes  2834 Baseline Level  330  Total Reward  -1.301503616147298
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  max.aig  :  39.18871855735779 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on mem_ctrl.aig.....
+Time  02/23/2021, 00:13:50
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 9.896324157714844  Baseline Nodes  43490 Baseline Level  128  Total Reward  -0.22593610836984368
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 21
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 21
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; resub -K 6 -l; 
+
+Seq Length : 21
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  mem_ctrl.aig  :  2146.4801802635193 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; resub -K 6 -l;  
+
+
+Running Reinforce on ctrl.aig.....
+Time  02/23/2021, 00:49:36
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.04576199874281883  Baseline Nodes  90 Baseline Level  12  Total Reward  0.6746411483253594
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 14
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 18
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 11
+Command : refactor -l; refactor -l; refactor -l; refactor -z -l; resub -K 6 -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; rewrite -l; 
+
+Time Elapsed for  ctrl.aig  :  4.1656365394592285 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -z -l; resub -K 6 -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; rewrite -l;  
+
+
+Running Reinforce on cavlc.aig.....
+Time  02/23/2021, 00:49:40
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.2577750086784363  Baseline Nodes  635 Baseline Level  20  Total Reward  -0.5905797101449277
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 10
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 10
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  cavlc.aig  :  12.48651123046875 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on sqrt.aig.....
+Time  02/23/2021, 00:49:53
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 4.662367820739746  Baseline Nodes  18256 Baseline Level  6050  Total Reward  -0.0924737188673177
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 23
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 23
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 23
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  sqrt.aig  :  964.6689064502716 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on voter.aig.....
+Time  02/23/2021, 01:05:57
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 2.305398941040039  Baseline Nodes  7957 Baseline Level  66  Total Reward  0.9337555274092839
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  voter.aig  :  164.1873481273651 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on multiplier.aig.....
+Time  02/23/2021, 01:08:42
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 6.366844177246094  Baseline Nodes  24337 Baseline Level  267  Total Reward  0.1828374873666192
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 9
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  multiplier.aig  :  537.0434591770172 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on i10.aig.....
+Time  02/23/2021, 01:17:39
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.48376500606536865  Baseline Nodes  1756 Baseline Level  53  Total Reward  -0.7772804409972549
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 8
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 8
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 8
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  i10.aig  :  34.895726442337036 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on i2c.aig.....
+Time  02/23/2021, 01:18:14
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.25769901275634766  Baseline Nodes  1084 Baseline Level  16  Total Reward  0.30492572322126676
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 7
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  i2c.aig  :  18.122353553771973 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on log2.aig.....
+Time  02/23/2021, 01:18:32
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 8.875630378723145  Baseline Nodes  29282 Baseline Level  397  Total Reward  0.2615590207248353
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 12
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 13
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 12
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  log2.aig  :  846.3710606098175 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+Running Reinforce on int2float.aig.....
+Time  02/23/2021, 01:32:38
+
+###################################
+
+2.0 7.0
+Without Balance Run
+
+
+Baseline Time Taken 0.10412599891424179  Baseline Nodes  211 Baseline Level  16  Total Reward  0.011864406779660719
+
+
+Found pre-existing Model
+
+
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Seq Length : 13
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 14
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Seq Length : 11
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+
+Time Elapsed for  int2float.aig  :  5.942925930023193 seconds
+Command : refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+
+
+Total time elapsed in2_7_without_balance : 5294.435737133026 seconds
+
+

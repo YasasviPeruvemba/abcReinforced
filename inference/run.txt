@@ -1,6 +1,6 @@
 read_library ../../ALS/abc/mcnc.genlib
-read ./inference_bench/voter.aig
+read ./inference_bench/int2float.aig
 strash
-resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; 
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; rewrite -z -l; 
 map
 print_stats

@@ -1,12 +1,5 @@
 #!/usr/bin/python3.8
 
-##
-# @file testReinforce.py
-# @author Keren Zhu
-# @date 10/31/2019
-# @brief The main for test REINFORCE
-#
-
 from datetime import datetime
 import os
 import pandas as pd
@@ -23,10 +16,10 @@ import statistics
 
 import sys
 
-option = "1_0_with_balance"
+options = ["2_9_without_balance", "2_9_with_balance", "2_7_without_balance", "2_7_with_balance", "2_5_without_balance", "2_5_with_balance", "1_0_without_balance", "1_0_with_balance", "0_1_without_balance", "0_1_with_balance"]
 
 class Logger(object):
-    def __init__(self):
+    def __init__(self, option):
         self.terminal = sys.stdout
         self.log = open("./inference_logs/"+option + ".log", "a")
 
@@ -36,8 +29,6 @@ class Logger(object):
 
     def flush(self):
         pass
-
-sys.stdout = Logger()
 
 class AbcReturn:
     def __init__(self, returns, command):
@@ -72,16 +63,19 @@ def getActionSpace(opt=None):
 
 benchmarks = []
 
-def testReinforce(filename, ben, opt=None):
+def testReinforce(filename, ben, option, opt=None):
     now = datetime.now()
     dateTime = now.strftime("%m/%d/%Y, %H:%M:%S") + "\n"
     print("Time ", dateTime)
     print("###################################\n")
+    coefnum = float(option[0])
+    coeflev = float(option[2])
+    print(coefnum, coeflev)
     cmds = getActionSpace(opt=opt)
     if "without_balance" in option:
         env = EnvBalance(filename, cmds)
     else:
-        env = Env(filename, cmds)
+        env = Env(filename, cmds, [coefnum, coeflev])
     
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, path="../models/"+option)
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, path="../models/"+option)
@@ -89,10 +83,10 @@ def testReinforce(filename, ben, opt=None):
 
     lastTen = []
 
-    for idx in tqdm(range(1), total = 1, ncols = 100, desc ="Episode : "):
+    for idx in tqdm(range(3), total = 3, ncols = 100, desc ="Episode : "):
         returns, command = reinforce.episode(phaseTrain=False)
         seqLen = reinforce.lenSeq
-        line = "Seq Length : " + str(seqLen)
+        line = "Seq Length : " + str(seqLen) + "\nCommand : " + command + "\n"
         lastTen.append(AbcReturn(returns, command))
         print(line)
         # reinforce.replay()
@@ -114,15 +108,17 @@ def testReinforce(filename, ben, opt=None):
 if __name__ == "__main__":
     
     dir = "./inference_bench/"
-    start_f = time.time()
-    for subdir, dirs, files in os.walk(dir,topdown=True):
-        for file in files:
-            filepath = subdir + os.sep + file
-            if filepath.endswith(".aig"):
-                start = time.time()
-                print("Running Reinforce on ",file,".....",sep='')
-                command = testReinforce(filepath, file[:-4], opt="All")
-                end = time.time()
-                print("Time Elapsed for ", file, " : ", end-start, "seconds\nCommand :",command,"\n\n")
-    end_f = time.time()
-    print("\nTotal time elapsed :",end_f - start_f,"seconds\n")
+    for option in options:
+        sys.stdout = Logger(option) 
+        start_f = time.time()
+        for subdir, dirs, files in os.walk(dir,topdown=True):
+            for file in files:
+                filepath = subdir + os.sep + file
+                if filepath.endswith(".aig"):
+                    start = time.time()
+                    print("Running Reinforce on ",file,".....",sep='')
+                    command = testReinforce(filepath, file[:-4], option, opt="All")
+                    end = time.time()
+                    print("Time Elapsed for ", file, " : ", end-start, "seconds\nCommand :",command,"\n\n")
+        end_f = time.time()
+        print("\nTotal time elapsed in" + option + " :",end_f - start_f,"seconds\n")
