@@ -1,10 +1,3 @@
-##
-# @file env.py
-# @author Keren Zhu
-# @date 10/25/2019
-# @brief The environment classes
-#
-
 import sys
 #sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
 import abc_py as abcPy
