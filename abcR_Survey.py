@@ -10,10 +10,8 @@ def visualize(df, opt):
     fA.write(hA)
     fA.close()
 
-if __name__ == "__main__":
+def reinforced_survey(opt):
 
-    opt = "_1_0_with_balance"
-    
     print("Option : ", opt[1:],"\n\n")
 
     if os.path.exists("./Survey/Reinforced_Survey"+opt+".pkl"):

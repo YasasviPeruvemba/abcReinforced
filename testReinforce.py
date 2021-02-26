@@ -1,12 +1,5 @@
 #!/usr/bin/python3.8
 
-##
-# @file testReinforce.py
-# @author Keren Zhu
-# @date 10/31/2019
-# @brief The main for test REINFORCE
-#
-
 from datetime import datetime
 import os
 import pandas as pd
@@ -16,6 +9,7 @@ import reinforce as RF
 from env import EnvGraph as Env
 from env import EnvGraphBalance as EnvBalance
 from util import writeABC, runABC, extract_data
+from abcR_Survey import reinforced_survey
 
 import numpy as np
 from tqdm import tqdm
@@ -23,10 +17,10 @@ import statistics
 
 import sys
 
-option = "1_0_with_balance"
+options = ["2_1_without_balance"]#, "2_1_with_balance", "2_3_without_balance", "2_3_without_balance", "2_7_without_balance", "2_7_with_balance", "2_9_without_balance", "2_9_with_balance", "1_0_without_balance", "1_0_with_balance"]
 
 class Logger(object):
-    def __init__(self):
+    def __init__(self, option):
         self.terminal = sys.stdout
         self.log = open("./logs/"+option + ".log", "a")
 
@@ -36,8 +30,6 @@ class Logger(object):
 
     def flush(self):
         pass
-
-sys.stdout = Logger()
 
 class AbcReturn:
     def __init__(self, returns, command):
@@ -72,16 +64,18 @@ def getActionSpace(opt=None):
 
 benchmarks = []
 
-def testReinforce(filename, ben, opt=None):
+def testReinforce(filename, ben, option, opt=None):
     now = datetime.now()
     dateTime = now.strftime("%m/%d/%Y, %H:%M:%S") + "\n"
     print("Time ", dateTime)
     print("###################################\n")
+    coefs = [float(option[0]), float(option[2])]
+    print(coefs)
     cmds = getActionSpace(opt=opt)
     if "without_balance" in option:
-        env = EnvBalance(filename, cmds)
+        env = EnvBalance(filename, cmds, coefs)
     else:
-        env = Env(filename, cmds)
+        env = Env(filename, cmds, coefs)
     
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, path="./models/"+option)
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, path="./models/"+option)
@@ -93,7 +87,7 @@ def testReinforce(filename, ben, opt=None):
         returns, command = reinforce.episode(phaseTrain=True)
         seqLen = reinforce.lenSeq
         line = "Episode : " + str(idx) + " Seq Length : " + str(seqLen)
-        if idx >= 190:
+        if idx >= 180:
             lastTen.append(AbcReturn(returns, command))
         if idx % 10 == 0:
             print(line)
@@ -135,63 +129,24 @@ def testReinforce(filename, ben, opt=None):
     
     return lastTen[0].command
 
-def visualize(df_area, df_delay):
-    print(df_area)
-    hA = df_area.to_html()
-    fA = open("Reinforced_Survey_Area.html", "w")
-    fA.write(hA)
-    fA.close()
-    print("\n######################################################################\n")
-    print(df_delay)
-    hA = df_delay.to_html()
-    fA = open("Reinforced_Survey_Delay.html", "w")
-    fA.write(hA)
-    fA.close()
-
 if __name__ == "__main__":
-
-    # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/arithmetic/adder.aig", "epflAdder")
-    # testReinforce("./bench/EPFLBenchmarkSuite/benchmarks/random_control/dec.aig", "epflDec")
-    # testReinforce("./bench/MCNC/Combinational/blif/prom1.blif", "prom1")
-    # testReinforce("./bench/MCNC/Combinational/blif/mainpla.blif", "mainpla")
-    # testReinforce("./bench/MCNC/Combinational/blif/k2.blif", "k2")
-    # testReinforce("./bench/ISCAS/blif/c5315.blif", "c5315")
-    # testReinforce("./bench/ISCAS/blif/c6288.blif", "c6288")
-    # testReinforce("./bench/MCNC/Combinational/blif/apex1.blif", "apex1")
-    # testReinforce("./bench/MCNC/Combinational/blif/bc0.blif", "bc0")
-    # testReinforce("./bench/i10.aig", "i10")
-
     
     dir = "./bench/"
-
-    for subdir, dirs, files in os.walk(dir,topdown=True):
-        for file in files:
-            filepath = subdir + os.sep + file
-            if filepath.endswith(".aig"):
-                start = time.time()
-                print("Running Reinforce on ",file,".....",sep='')
-                command = testReinforce(filepath, file[:-4], opt="All")
-                # Comparing the runs of compress2rs and new sequence
-                # print("Running ABC on ",file,".....",sep='')
-                # # Find compress2rs stats
-                # writeABC(filepath, command, opt=0)
-                # runABC()
-                # c_area, c_delay = extract_data()
-                # # Find custom script stats
-                # writeABC(filepath, command, opt=1)
-                # runABC()
-                # r_area, r_delay = extract_data()
-                # # Aggregate the results
-                # df_area.loc[0 if pd.isnull(df_area.index.max()) else df_area.index.max() + 1] = [file, c_area, r_area]
-                # df_delay.loc[0 if pd.isnull(df_delay.index.max()) else df_delay.index.max() + 1] = [file, c_delay, r_delay]
-                # print("\n", df_area.loc[df_area.index.max()], "\n")
-                # print("\n", df_delay.loc[df_delay.index.max()], "\n")
-                # # Update the pickle files
-                # df_area.to_pickle("Reinforced_Survey_Area.pkl")
-                # df_delay.to_pickle("Reinforced_Survey_Delay.pkl")            
-                print("\n",command,"\n")
-                end = time.time()
-                print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
-    
-    # visualize(df_area, df_delay)
+    for option in options:
+        sys.stdout = Logger(option)
+        start_c = time.time()
+        for subdir, dirs, files in os.walk(dir,topdown=True):
+            for file in files:
+                filepath = subdir + os.sep + file
+                if filepath.endswith(".aig"):
+                    start = time.time()
+                    print("Running Reinforce on ",file,".....",sep='')
+                    command = testReinforce(filepath, file[:-4], option, opt="All")
+                    print("\n",command,"\n")
+                    end = time.time()
+                    print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
+        end_c = time.time()
+        print("Total time taken for option "+option+" : ", end_c - start_c)
+        # Collect results over ABC and Custim Optimizations
+        reinforced_survey("_"+option)
 

@@ -1,12 +1,5 @@
-##
-# @file env.py
-# @author Keren Zhu
-# @date 10/25/2019
-# @brief The environment classes
-#
-
 import sys
-sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
+#sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
 import abc_py as abcPy
 import numpy as np
 import graphExtractor as GE
@@ -21,9 +14,11 @@ class EnvGraphBalance(object):
     """
     @brief the overall concept of environment, the different. use the compress2rs as target
     """
-    def __init__(self, aigfile, cmds):
+    def __init__(self, aigfile, cmds, coefs):
         self._abc = abcPy.AbcInterface()
         self._aigfile = aigfile
+        self.and_coef = coefs[0]
+        self.level_coef = coefs[1]
         self._abc.start()
         self._actionSpace = cmds
         self.timeSeq = 0
@@ -211,9 +206,7 @@ class EnvGraphBalance(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        # return float(stat.lev)  / float(self.initLev)
-        return 1*(float(stat.numAnd)/float(self.initNumAnd)) + 0*(float(stat.lev)/float(self.initLev))
-        #return stat.numAnd + stat.lev * 10
+        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -230,9 +223,11 @@ class EnvGraph(object):
     """
     @brief the overall concept of environment, the different. use the compress2rs as target
     """
-    def __init__(self, aigfile, cmds):
+    def __init__(self, aigfile, cmds, coefs):
         self._abc = abcPy.AbcInterface()
         self._aigfile = aigfile
+        self.and_coef = coefs[0]
+        self.level_coef = coefs[1]
         self._abc.start()
         self._actionSpace = cmds
         self.timeSeq = 0
@@ -422,9 +417,7 @@ class EnvGraph(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        # return float(stat.lev)  / float(self.initLev)
-        return 1*(float(stat.numAnd)/float(self.initNumAnd)) + 0*(float(stat.lev)/float(self.initLev))
-        #return stat.numAnd + stat.lev * 10
+        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
     
     def curStatsValue(self):
         return self.statValue(self._curStats)

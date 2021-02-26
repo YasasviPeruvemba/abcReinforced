@@ -1,0 +1,421 @@
+Running Reinforce on router.aig.....
+Time  02/25/2021, 05:29:18
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.06603600084781647  Baseline Nodes  203 Baseline Level  24  Total Reward  0.21011673151750976
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 1
+Episode : 10 Seq Length : 1
+Episode : 20 Seq Length : 3
+Episode : 30 Seq Length : 1
+Episode : 40 Seq Length : 6
+Episode : 50 Seq Length : 2
+Episode : 60 Seq Length : 2
+Episode : 70 Seq Length : 1
+Episode : 80 Seq Length : 2
+Episode : 90 Seq Length : 6
+Episode : 100 Seq Length : 10
+Episode : 110 Seq Length : 8
+Episode : 120 Seq Length : 12
+Episode : 130 Seq Length : 7
+Episode : 140 Seq Length : 10
+Episode : 150 Seq Length : 9
+Episode : 160 Seq Length : 10
+Episode : 170 Seq Length : 12
+Episode : 180 Seq Length : 7
+Episode : 190 Seq Length : 11
+
+ refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -z -l; refactor -l; resub -K 8 -N 2 -l; refactor -z -l; refactor -z -l; refactor -l; refactor -l; refactor -l;  
+
+Time Elapsed for  router.aig  :  213.71777176856995 seconds
+
+Running Reinforce on priority.aig.....
+Time  02/25/2021, 05:32:52
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.13688400387763977  Baseline Nodes  465 Baseline Level  116  Total Reward  0.4483985765124555
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 4
+Episode : 10 Seq Length : 4
+Episode : 20 Seq Length : 4
+Episode : 30 Seq Length : 4
+Episode : 40 Seq Length : 4
+Episode : 50 Seq Length : 4
+Episode : 60 Seq Length : 4
+Episode : 70 Seq Length : 4
+Episode : 80 Seq Length : 4
+Episode : 90 Seq Length : 4
+Episode : 100 Seq Length : 4
+Episode : 110 Seq Length : 4
+Episode : 120 Seq Length : 5
+Episode : 130 Seq Length : 4
+Episode : 140 Seq Length : 4
+Episode : 150 Seq Length : 4
+Episode : 160 Seq Length : 4
+Episode : 170 Seq Length : 4
+Episode : 180 Seq Length : 4
+Episode : 190 Seq Length : 4
+
+ refactor -z -l; refactor -l; refactor -l; refactor -l;  
+
+Time Elapsed for  priority.aig  :  458.49754214286804 seconds
+
+Running Reinforce on square.aig.....
+Time  02/25/2021, 05:40:30
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 4.371365070343018  Baseline Nodes  15938 Baseline Level  249  Total Reward  0.1294991534218144
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 9
+Episode : 10 Seq Length : 9
+Episode : 20 Seq Length : 9
+Episode : 30 Seq Length : 9
+Episode : 40 Seq Length : 9
+Episode : 50 Seq Length : 9
+Episode : 60 Seq Length : 9
+Episode : 70 Seq Length : 9
+Episode : 80 Seq Length : 9
+Episode : 90 Seq Length : 9
+Episode : 100 Seq Length : 9
+Episode : 110 Seq Length : 9
+Episode : 120 Seq Length : 9
+Episode : 130 Seq Length : 9
+Episode : 140 Seq Length : 10
+Episode : 150 Seq Length : 10
+Episode : 160 Seq Length : 9
+Episode : 170 Seq Length : 9
+Episode : 180 Seq Length : 9
+Episode : 190 Seq Length : 9
+
+ refactor -l; refactor -l; refactor -l; refactor -z -l; refactor -z -l; refactor -l; refactor -l; refactor -l; refactor -l;  
+
+Time Elapsed for  square.aig  :  22803.690044641495 seconds
+
+Running Reinforce on sin.aig.....
+Time  02/25/2021, 12:00:34
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 1.621912956237793  Baseline Nodes  5028 Baseline Level  191  Total Reward  0.0673344462993879
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 13
+Episode : 10 Seq Length : 13
+Episode : 20 Seq Length : 13
+Episode : 30 Seq Length : 13
+Episode : 40 Seq Length : 12
+Episode : 50 Seq Length : 13
+Episode : 60 Seq Length : 13
+Episode : 70 Seq Length : 13
+Episode : 80 Seq Length : 12
+Episode : 90 Seq Length : 12
+Episode : 100 Seq Length : 11
+Episode : 110 Seq Length : 13
+Episode : 120 Seq Length : 13
+Episode : 130 Seq Length : 13
+Episode : 140 Seq Length : 13
+Episode : 150 Seq Length : 12
+Episode : 160 Seq Length : 12
+Episode : 170 Seq Length : 3
+Episode : 180 Seq Length : 13
+Episode : 190 Seq Length : 12
+
+ resub -K 10 -N 2 -l; refactor -z -l; refactor -z -l; refactor -z -l; resub -K 6 -N 2 -l; refactor -z -l; refactor -l; resub -K 6 -N 2 -l; refactor -l; rewrite -z -l; refactor -z -l; resub -K 8 -N 2 -l;  
+
+Time Elapsed for  sin.aig  :  7799.555096626282 seconds
+
+Running Reinforce on max.aig.....
+Time  02/25/2021, 14:10:34
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.44676798582077026  Baseline Nodes  2834 Baseline Level  330  Total Reward  0.010820244328097695
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 7
+Episode : 10 Seq Length : 6
+Episode : 20 Seq Length : 6
+Episode : 30 Seq Length : 6
+Episode : 40 Seq Length : 7
+Episode : 50 Seq Length : 7
+Episode : 60 Seq Length : 6
+Episode : 70 Seq Length : 7
+Episode : 80 Seq Length : 3
+Episode : 90 Seq Length : 7
+Episode : 100 Seq Length : 6
+Episode : 110 Seq Length : 6
+Episode : 120 Seq Length : 3
+Episode : 130 Seq Length : 7
+Episode : 140 Seq Length : 6
+Episode : 150 Seq Length : 6
+Episode : 160 Seq Length : 7
+Episode : 170 Seq Length : 7
+Episode : 180 Seq Length : 7
+Episode : 190 Seq Length : 6
+
+ refactor -z -l; resub -K 12 -N 2 -l; refactor -z -l; refactor -z -l; resub -K 8 -l; refactor -l; resub -K 12 -l;  
+
+Time Elapsed for  max.aig  :  2363.9471633434296 seconds
+
+Running Reinforce on voter.aig.....
+Time  02/25/2021, 14:49:58
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 2.3135249614715576  Baseline Nodes  7957 Baseline Level  66  Total Reward  0.3811634779903562
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 11
+Episode : 10 Seq Length : 11
+Episode : 20 Seq Length : 8
+Episode : 30 Seq Length : 9
+Episode : 40 Seq Length : 11
+Episode : 50 Seq Length : 3
+Episode : 60 Seq Length : 9
+Episode : 70 Seq Length : 9
+Episode : 80 Seq Length : 6
+Episode : 90 Seq Length : 14
+Episode : 100 Seq Length : 12
+Episode : 110 Seq Length : 7
+Episode : 120 Seq Length : 14
+Episode : 130 Seq Length : 14
+Episode : 140 Seq Length : 12
+Episode : 150 Seq Length : 13
+Episode : 160 Seq Length : 16
+Episode : 170 Seq Length : 12
+Episode : 180 Seq Length : 14
+Episode : 190 Seq Length : 8
+
+ refactor -z -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 10 -l; resub -K 8 -l; resub -K 10 -N 2 -l; resub -K 6 -N 2 -l; refactor -l; resub -K 10 -N 2 -l; refactor -z -l; resub -K 6 -N 2 -l;  
+
+Time Elapsed for  voter.aig  :  13056.1816675663 seconds
+
+Running Reinforce on i10.aig.....
+Time  02/25/2021, 18:27:34
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.4636960029602051  Baseline Nodes  1756 Baseline Level  53  Total Reward  0.2600084281500211
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 7
+Episode : 10 Seq Length : 8
+Episode : 20 Seq Length : 6
+Episode : 30 Seq Length : 5
+Episode : 40 Seq Length : 5
+Episode : 50 Seq Length : 1
+Episode : 60 Seq Length : 2
+Episode : 70 Seq Length : 7
+Episode : 80 Seq Length : 3
+Episode : 90 Seq Length : 3
+Episode : 100 Seq Length : 2
+Episode : 110 Seq Length : 2
+Episode : 120 Seq Length : 2
+Episode : 130 Seq Length : 2
+Episode : 140 Seq Length : 4
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 3
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 3
+Episode : 190 Seq Length : 2
+
+ resub -K 6 -N 2 -l; resub -K 10 -N 2 -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  i10.aig  :  1314.4462158679962 seconds
+
+Running Reinforce on i2c.aig.....
+Time  02/25/2021, 18:49:28
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.22769500315189362  Baseline Nodes  1084 Baseline Level  16  Total Reward  0.15246286161063327
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 2
+Episode : 10 Seq Length : 3
+Episode : 20 Seq Length : 2
+Episode : 30 Seq Length : 2
+Episode : 40 Seq Length : 2
+Episode : 50 Seq Length : 2
+Episode : 60 Seq Length : 2
+Episode : 70 Seq Length : 1
+Episode : 80 Seq Length : 1
+Episode : 90 Seq Length : 2
+Episode : 100 Seq Length : 2
+Episode : 110 Seq Length : 2
+Episode : 120 Seq Length : 2
+Episode : 130 Seq Length : 2
+Episode : 140 Seq Length : 2
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 2
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 2
+Episode : 190 Seq Length : 3
+
+ resub -K 6 -N 2 -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  i2c.aig  :  600.0328469276428 seconds
+
+Running Reinforce on int2float.aig.....
+Time  02/25/2021, 18:59:28
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.08774299919605255  Baseline Nodes  211 Baseline Level  16  Total Reward  0.10593220338983056
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 2
+Episode : 10 Seq Length : 2
+Episode : 20 Seq Length : 3
+Episode : 30 Seq Length : 4
+Episode : 40 Seq Length : 3
+Episode : 50 Seq Length : 3
+Episode : 60 Seq Length : 3
+Episode : 70 Seq Length : 2
+Episode : 80 Seq Length : 3
+Episode : 90 Seq Length : 3
+Episode : 100 Seq Length : 3
+Episode : 110 Seq Length : 3
+Episode : 120 Seq Length : 2
+Episode : 130 Seq Length : 3
+Episode : 140 Seq Length : 2
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 4
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 2
+Episode : 190 Seq Length : 2
+
+ resub -K 6 -N 2 -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  int2float.aig  :  130.76062536239624 seconds
+
+Running Reinforce on bar.aig.....
+Time  02/25/2021, 19:01:39
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.5666710138320923  Baseline Nodes  2952 Baseline Level  14  Total Reward  0.1151079136690647
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 2
+Episode : 10 Seq Length : 2
+Episode : 20 Seq Length : 2
+Episode : 30 Seq Length : 2
+Episode : 40 Seq Length : 2
+Episode : 50 Seq Length : 2
+Episode : 60 Seq Length : 2
+Episode : 70 Seq Length : 2
+Episode : 80 Seq Length : 2
+Episode : 90 Seq Length : 2
+Episode : 100 Seq Length : 2
+Episode : 110 Seq Length : 2
+Episode : 120 Seq Length : 2
+Episode : 130 Seq Length : 2
+Episode : 140 Seq Length : 2
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 2
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 2
+Episode : 190 Seq Length : 2
+
+ resub -K 6 -N 2 -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  bar.aig  :  1581.914333820343 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  02/25/2021, 19:28:01
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.058070000261068344  Baseline Nodes  90 Baseline Level  12  Total Reward  0.4736842105263158
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 2
+Episode : 10 Seq Length : 2
+Episode : 20 Seq Length : 2
+Episode : 30 Seq Length : 2
+Episode : 40 Seq Length : 2
+Episode : 50 Seq Length : 2
+Episode : 60 Seq Length : 2
+Episode : 70 Seq Length : 2
+Episode : 80 Seq Length : 2
+Episode : 90 Seq Length : 2
+Episode : 100 Seq Length : 2
+Episode : 110 Seq Length : 2
+Episode : 120 Seq Length : 4
+Episode : 130 Seq Length : 2
+Episode : 140 Seq Length : 2
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 2
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 2
+Episode : 190 Seq Length : 2
+
+ resub -K 6 -N 2 -l; refactor -z -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  ctrl.aig  :  76.49258637428284 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  02/25/2021, 19:29:17
+
+###################################
+
+Without Balance Run
+
+
+Baseline Time Taken 0.2553049921989441  Baseline Nodes  635 Baseline Level  20  Total Reward  0.07971014492753625
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 3
+Episode : 10 Seq Length : 3
+Episode : 20 Seq Length : 2
+Episode : 30 Seq Length : 2
+Episode : 40 Seq Length : 2
+Episode : 50 Seq Length : 3
+Episode : 60 Seq Length : 3
+Episode : 70 Seq Length : 3
+Episode : 80 Seq Length : 2
+Episode : 90 Seq Length : 2
+Episode : 100 Seq Length : 3
+Episode : 110 Seq Length : 2
+Episode : 120 Seq Length : 2
+Episode : 130 Seq Length : 2
+Episode : 140 Seq Length : 2
+Episode : 150 Seq Length : 2
+Episode : 160 Seq Length : 2
+Episode : 170 Seq Length : 2
+Episode : 180 Seq Length : 2
+Episode : 190 Seq Length : 3
+
+ resub -K 6 -N 2 -l; resub -K 16 -N 2 -l;  
+
+Time Elapsed for  cavlc.aig  :  391.145795583725 seconds
+
+Total time taken is :  50790.38271212578

@@ -1,10 +1,3 @@
-##
-# @file reinforce.py
-# @author Keren Zhu
-# @date 10/30/2019
-# @brief The REINFORCE algorithm
-#
-
 import numpy as np
 import os
 import torch

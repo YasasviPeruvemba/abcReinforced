@@ -1,0 +1,6 @@
+read_library ../ALS/abc/mcnc.genlib
+read ./bench/EPFL/router.aig
+strash
+refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -z -l; 
+map
+print_stats

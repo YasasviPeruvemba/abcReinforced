@@ -1,0 +1,49 @@
+Running Reinforce on router.aig.....
+Time  02/26/2021, 12:24:08
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.06556200236082077  Baseline Nodes  203 Baseline Level  24  Total Reward  0.5313445741461305
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 3
+Episode : 10 Seq Length : 1
+Episode : 20 Seq Length : 2
+Episode : 30 Seq Length : 2
+Episode : 40 Seq Length : 1
+Episode : 50 Seq Length : 2
+Episode : 60 Seq Length : 1
+Episode : 70 Seq Length : 4
+Episode : 80 Seq Length : 7
+Episode : 90 Seq Length : 9
+Episode : 100 Seq Length : 8
+Episode : 110 Seq Length : 9
+Episode : 120 Seq Length : 9
+Episode : 130 Seq Length : 15
+Episode : 140 Seq Length : 6
+Episode : 150 Seq Length : 8
+Episode : 160 Seq Length : 11
+Episode : 170 Seq Length : 9
+Episode : 180 Seq Length : 11
+Episode : 190 Seq Length : 9
+
+ refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -z -l;  
+
+Time Elapsed for  router.aig  :  224.7941222190857 seconds
+
+Total time taken for option 2_1_without_balance :  224.79434394836426
+Option :  2_1_without_balance 
+
+
+Running ABC on .... router.aig
+Custom Command
+ refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -l; refactor -z -l; refactor -z -l; 
+
+    Benchmark  ABC_Area  Reinforced_Area  ABC_Delay  Reinforced_Delay
+0  router.aig     405.0            373.0       16.4              19.9
+
+
+Option : 2_1_without_balance
