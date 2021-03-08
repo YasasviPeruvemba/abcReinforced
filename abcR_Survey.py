@@ -6,20 +6,24 @@ from util import runABC, writeABC, extract_data
 def visualize(df, opt):
     print(df)
     hA = df.to_html()
-    fA = open("./Survey/Reinforced_Survey"+ opt +".html", "w")
+    fA = open("./Survey/" + opt[5:] + "/Reinforced_Survey"+ opt +".html", "w")
     fA.write(hA)
     fA.close()
 
-def reinforced_survey(opt):
+def reinforced_survey(option, coef):
 
+    opt = "_" + coef + "_" + option
     print("Option : ", opt[1:],"\n\n")
 
-    if os.path.exists("./Survey/Reinforced_Survey"+opt+".pkl"):
-        df = pd.read_pickle("./Survey/Reinforced_Survey"+opt+".pkl")
+    if not os.path.exists("./Survey/" + option):
+        os.system("mkdir ./Survey/" + option)
+
+    if os.path.exists("./Survey/" + option + "/Reinforced_Survey"+opt+".pkl"):
+        df = pd.read_pickle("./Survey/" + option + "/Reinforced_Survey"+opt+".pkl")
     else:
         df = pd.DataFrame(columns=["Benchmark","ABC_Area","Reinforced_Area","ABC_Delay","Reinforced_Delay"])
 
-    dir = "./results"
+    dir = "./results/" + option
     bench_dir = "./bench"
 
     for subdir, dirs, files in os.walk(bench_dir,topdown=True):
@@ -44,7 +48,7 @@ def reinforced_survey(opt):
                     # Now aggregate the stats
                     df.loc[0 if pd.isnull(df.index.max()) else df.index.max() + 1] = [file, c_area, r_area, c_delay, r_delay]
                     # Update the pickle files
-                    df.to_pickle("./Survey/Reinforced_Survey"+opt+".pkl")
+                    df.to_pickle("./Survey/" + option + "/Reinforced_Survey"+opt+".pkl")
                     # df_delay.to_pickle("Reinforced_Survey_Delay"+opt+".pkl")            
 
     visualize(df, opt)

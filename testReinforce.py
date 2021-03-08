@@ -8,6 +8,7 @@ import time
 import reinforce as RF
 from env import EnvGraph as Env
 from env import EnvGraphBalance as EnvBalance
+from env import EnvGraphDch as EnvDch
 from util import writeABC, runABC, extract_data
 from abcR_Survey import reinforced_survey
 
@@ -17,19 +18,30 @@ import statistics
 
 import sys
 
-options = ["2_1_without_balance"]#, "2_1_with_balance", "2_3_without_balance", "2_3_without_balance", "2_7_without_balance", "2_7_with_balance", "2_9_without_balance", "2_9_with_balance", "1_0_without_balance", "1_0_with_balance"]
+options = ["dch", "with_balance", "without_balance"]
+coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
     def __init__(self, option):
+        self.flag = True
         self.terminal = sys.stdout
-        self.log = open("./logs/"+option + ".log", "a")
+        if not os.path.exists("./logs/" + option[4:]):
+            os.system("mkdir ./logs/" + option[4:])
+        self.log = open("./logs/" + option[4:] + "/" + option + ".log", "a")
 
     def write(self, message):
         self.terminal.write(message)
-        self.log.write(message)  
+        if self.flag:
+            self.log.write(message)  
+        else:
+            pass
 
     def flush(self):
         pass
+
+    def close(self):
+        self.flag = False
+        self.log.close()
 
 class AbcReturn:
     def __init__(self, returns, command):
@@ -44,13 +56,17 @@ class AbcReturn:
     def __eq__(self, other):
         return int(self.level) == int(other.level) and int(self.numNodes) == int(self.numNodes)
 
-def getActionSpace(opt=None):
+def getActionSpace(option, opt=None):
     
     if "without_balance" in option:
         print("Without Balance Run\n\n")
         cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]
-    else:
-        cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","rs -K 8 -N 2 -l; ","rs -K 10 -l; ","rs -K 10 -N 2 -l; ","rs -K 12 -l; ","rs -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
+    elif "dch" in option:
+        print("DCH Run\n\n")
+        cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; ", "dch; ", "dc2; "]
+    else:    
+        print("With Balance Run\n\n")
+        cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
     
     if opt is None:
         for idx, cmd in enumerate(cmds):
@@ -71,14 +87,16 @@ def testReinforce(filename, ben, option, opt=None):
     print("###################################\n")
     coefs = [float(option[0]), float(option[2])]
     print(coefs)
-    cmds = getActionSpace(opt=opt)
+    cmds = getActionSpace(option, opt=opt)
     if "without_balance" in option:
         env = EnvBalance(filename, cmds, coefs)
+    elif "dch" in option:
+        env = EnvDch(filename, cmds, coefs)
     else:
         env = Env(filename, cmds, coefs)
     
-    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, path="./models/"+option)
-    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, path="./models/"+option)
+    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="./models/"+option[4:])
+    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="./models/"+option[4:])
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
 
     lastTen = []
@@ -91,13 +109,15 @@ def testReinforce(filename, ben, option, opt=None):
             lastTen.append(AbcReturn(returns, command))
         if idx % 10 == 0:
             print(line)
-        # reinforce.replay()
+
     benchmarks.append(ben)
     reinforce._pi.save(benchmarks)
     reinforce._baseline.save(benchmarks)
 
-    resultName = "./results/" + ben + "_"  + option + ".csv"
-    #lastfive.sort(key=lambda x : x.level)
+    if not os.path.exists("./results/" + option[4:]):
+        os.system("mkdir ./results/" + option[4:])
+
+    resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
     lastTen = sorted(lastTen)
     with open(resultName, 'a') as andLog:
         line = ""
@@ -109,7 +129,7 @@ def testReinforce(filename, ben, option, opt=None):
         andLog.write(line)
     rewards = reinforce.sumRewards
     
-    with open('./results/sum_rewards_'+ option +'.csv', 'a') as rewardLog:
+    with open("./results/" + option[4:] + "/sum_rewards_" + option +'.csv', 'a') as rewardLog:
         line = ben+","
         for idx in range(len(rewards)):
             line += str(rewards[idx]) 
@@ -117,7 +137,7 @@ def testReinforce(filename, ben, option, opt=None):
                 line += ","
         line += "\n"
         rewardLog.write(line)
-    with open ('./results/converge_'+ option +'.csv', 'a') as convergeLog:
+    with open ("./results/" + option[4:] + "/converge_" + option +'.csv', 'a') as convergeLog:
         line = ben+","
         returns, command = reinforce.episode(phaseTrain=False)
         line += str(returns[0])
@@ -132,21 +152,23 @@ def testReinforce(filename, ben, option, opt=None):
 if __name__ == "__main__":
     
     dir = "./bench/"
-    for option in options:
-        sys.stdout = Logger(option)
-        start_c = time.time()
-        for subdir, dirs, files in os.walk(dir,topdown=True):
-            for file in files:
-                filepath = subdir + os.sep + file
-                if filepath.endswith(".aig"):
-                    start = time.time()
-                    print("Running Reinforce on ",file,".....",sep='')
-                    command = testReinforce(filepath, file[:-4], option, opt="All")
-                    print("\n",command,"\n")
-                    end = time.time()
-                    print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
-        end_c = time.time()
-        print("Total time taken for option "+option+" : ", end_c - start_c)
-        # Collect results over ABC and Custim Optimizations
-        reinforced_survey("_"+option)
-
+    for opt in options:
+        for coef in coefs:
+            option = coef + "_" + opt
+            sys.stdout = Logger(option)
+            start_c = time.time()
+            for subdir, dirs, files in os.walk(dir,topdown=True):
+                for file in files:
+                    filepath = subdir + os.sep + file
+                    if filepath.endswith(".aig"):
+                        start = time.time()
+                        print("Running Reinforce on ",file,".....",sep='')
+                        command = testReinforce(filepath, file[:-4], option, opt="All")
+                        print("\n",command,"\n")
+                        end = time.time()
+                        print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
+            end_c = time.time()
+            print("Total time taken for option "+option+" : ", end_c - start_c)
+            # Collect results over ABC and Custim Optimizations
+            reinforced_survey(opt, coef)
+            sys.stdout.close()
