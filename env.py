@@ -519,7 +519,7 @@ class EnvGraphDch(object):
         elif action == 12:
             t = self._abc.resub(k=16, n=2, l=True) # rs - K 16 -N 2 -l
         elif action == 13:
-            t = self._abc.dch() # dch
+            t = self._abc.dch() + self._abc.balance(l=True) # dch
         elif action == 14:
             t = self._abc.dc2() # dc2
         elif action == 15:
@@ -570,7 +570,7 @@ class EnvGraphDch(object):
             elif act == 12:
                 cmd += "resub -K 16 -N 2 -l; "
             elif action == 13:
-                cmd += "dch; "
+                cmd += "dch; balance -l;"
             elif action == 14:
                 cmd += "dc2; "
         return cmd
