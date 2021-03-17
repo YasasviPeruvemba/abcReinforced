@@ -302,6 +302,8 @@ class Reinforce(object):
         return self._env.returns(), self._env.getCommand(trajectory.actions)
     
     def updateTrajectory(self, trajectory, phaseTrain=True):
+        if not phaseTrain:
+            return
         states = trajectory.states
         rewards = trajectory.rewards
         actions = trajectory.actions

@@ -570,7 +570,7 @@ class EnvGraphDch(object):
             elif act == 12:
                 cmd += "resub -K 16 -N 2 -l; "
             elif action == 13:
-                cmd += "dch; balance -l;"
+                cmd += "dch; balance -l; "
             elif action == 14:
                 cmd += "dc2; "
         return cmd
