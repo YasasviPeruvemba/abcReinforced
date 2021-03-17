@@ -1,6 +1,7 @@
 __pycache__
+inference/__pycache__/*
 *.pyc
-./bench
-./inference/inference_bench
-./inference/inference_results
-./resluts
+bench/*
+inference/inference_bench/*
+inference/inference_results/*
+results/*
