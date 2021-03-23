@@ -108,6 +108,8 @@ def testReinforce(filename, option, opt=None):
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
 
     lastTen = []
+    resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
+    andLog =  open(resultName, 'a')
 
     for idx in tqdm(range(200), total = 200, ncols = 100, desc ="Episode : "):
         returns, command = reinforce.episode(phaseTrain=True)
@@ -117,6 +119,13 @@ def testReinforce(filename, option, opt=None):
             lastTen.append(AbcReturn(returns, command))
         if idx % 10 == 0:
             print(line)
+        line = ""
+        line += str(float(returns[0]))
+        line += " "
+        line += str(float(returns[1]))
+        line += "\n"
+        line += command + "\n" + str(len(command.split(";"))-1) + "\n"
+        andLog.write(line)
 
     benchmarks.append(ben)
     reinforce._pi.save(benchmarks)
@@ -125,16 +134,16 @@ def testReinforce(filename, option, opt=None):
     if not os.path.exists("./results/" + option[4:]):
         os.system("mkdir ./results/" + option[4:])
 
-    resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
     lastTen = sorted(lastTen)
-    with open(resultName, 'a') as andLog:
-        line = ""
-        line += str(lastTen[0].numNodes)
-        line += " "
-        line += str(lastTen[0].level)
-        line += "\n"
-        line += lastTen[0].command + "\n" + str(len(lastTen[0].command.split(";"))-1) + "\n"
-        andLog.write(line)
+    line = ""
+    line += str(lastTen[0].numNodes)
+    line += " "
+    line += str(lastTen[0].level)
+    line += "\n"
+    line += lastTen[0].command + "\n" + str(len(lastTen[0].command.split(";"))-1) + "\n"
+    andLog.write(line)
+    andLog.close()
+    
     rewards = reinforce.sumRewards
     
     with open("./results/" + option[4:] + "/sum_rewards_" + option +'.csv', 'a') as rewardLog:
@@ -145,6 +154,7 @@ def testReinforce(filename, option, opt=None):
                 line += ","
         line += "\n"
         rewardLog.write(line)
+    
     with open ("./results/" + option[4:] + "/converge_" + option +'.csv', 'a') as convergeLog:
         line = ben+","
         returns, command = reinforce.episode(phaseTrain=False)
