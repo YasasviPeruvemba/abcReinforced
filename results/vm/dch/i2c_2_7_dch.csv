@@ -1,0 +1,3 @@
+1064.0 12.0
+balance -l; dc2; resub -K 8 -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; resub -K 8 -l; balance -l; refactor -z -l; balance -l; resub -K 10 -l; balance -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 8 -N 2 -l; balance -l; resub -K 10 -N 2 -l; resub -K 8 -N 2 -l; 
+22

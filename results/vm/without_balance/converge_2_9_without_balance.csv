@@ -1,0 +1,36 @@
+i2c,1119,16
+resub -K 16 -N 2 -l; 
+1
+router,246,27
+resub -K 16 -N 2 -l; 
+1
+square,16604,249
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+max,2865,229
+resub -K 16 -N 2 -l; 
+1
+voter,8382,68
+resub -K 16 -N 2 -l; 
+1
+priority,625,132
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+2
+i10,1941,37
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+6
+int2float,218,15
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+2
+sin,5172,185
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+9
+cavlc,648,17
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+3
+ctrl,93,12
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+2
+bar,3141,13
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+6
