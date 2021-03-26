@@ -31,6 +31,8 @@ class EnvGraphBalance(object):
         self._runtimeBaseline = self.compress2rs_balance()
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
+        if totalReward < 0:
+            totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
 
@@ -222,6 +224,8 @@ class EnvGraph(object):
         self._runtimeBaseline = self.compress2rs()
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
+        if totalReward < 0:
+            totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
 
@@ -412,9 +416,11 @@ class EnvGraphDch(object):
         self.initStats = self._abc.aigStats() # The initial AIG statistics
         self.initNumAnd = float(self.initStats.numAnd)
         self.initLev = float(self.initStats.lev)
-        self._runtimeBaseline = 2*(self.compress2rs() + self.dch()) 
+        self._runtimeBaseline = 2*(self.compress2rs() + self.dch() + self._abc.balance(l=True)) 
         targetStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(targetStats)# Accounting for 18 steps 
+        if totalReward < 0:
+            totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", targetStats.numAnd, "Baseline Level ", targetStats.lev, " Total Reward ", totalReward)
 

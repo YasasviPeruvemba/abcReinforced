@@ -1,9 +1,12 @@
 #!/usr/bin/python3.8
 
+from functools import partial
 from datetime import datetime
 import os
 import pandas as pd
 import time
+import multiprocessing as  mp
+
 
 import reinforce as RF
 from env import EnvGraph as Env
@@ -18,8 +21,8 @@ import statistics
 
 import sys
 
-options = ["dch", "with_balance", "without_balance"]
-coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
+options = ["dch"]#, "with_balance", "without_balance"]
+coefs = ["2_1"]#, "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
     def __init__(self, option):
@@ -80,7 +83,12 @@ def getActionSpace(option, opt=None):
 
 benchmarks = []
 
-def testReinforce(filename, ben, option, opt=None):
+def testReinforce(filename, option, opt=None):
+
+    ben = filename.split("/")[-1][:-4]
+    start = time.time()
+    print("Running Reinforce on ",ben,".....",sep='')
+
     now = datetime.now()
     dateTime = now.strftime("%m/%d/%Y, %H:%M:%S") + "\n"
     print("Time ", dateTime)
@@ -100,6 +108,8 @@ def testReinforce(filename, ben, option, opt=None):
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
 
     lastTen = []
+    resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
+    andLog =  open(resultName, 'a')
 
     for idx in tqdm(range(200), total = 200, ncols = 100, desc ="Episode : "):
         returns, command = reinforce.episode(phaseTrain=True)
@@ -109,6 +119,13 @@ def testReinforce(filename, ben, option, opt=None):
             lastTen.append(AbcReturn(returns, command))
         if idx % 10 == 0:
             print(line)
+        line = ""
+        line += str(float(returns[0]))
+        line += " "
+        line += str(float(returns[1]))
+        line += "\n"
+        line += command + "\n" + str(len(command.split(";"))-1) + "\n"
+        andLog.write(line)
 
     benchmarks.append(ben)
     reinforce._pi.save(benchmarks)
@@ -117,16 +134,16 @@ def testReinforce(filename, ben, option, opt=None):
     if not os.path.exists("./results/" + option[4:]):
         os.system("mkdir ./results/" + option[4:])
 
-    resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
     lastTen = sorted(lastTen)
-    with open(resultName, 'a') as andLog:
-        line = ""
-        line += str(lastTen[0].numNodes)
-        line += " "
-        line += str(lastTen[0].level)
-        line += "\n"
-        line += lastTen[0].command + "\n" + str(len(lastTen[0].command.split(";"))-1) + "\n"
-        andLog.write(line)
+    line = ""
+    line += str(lastTen[0].numNodes)
+    line += " "
+    line += str(lastTen[0].level)
+    line += "\n"
+    line += lastTen[0].command + "\n" + str(len(lastTen[0].command.split(";"))-1) + "\n"
+    andLog.write(line)
+    andLog.close()
+    
     rewards = reinforce.sumRewards
     
     with open("./results/" + option[4:] + "/sum_rewards_" + option +'.csv', 'a') as rewardLog:
@@ -137,6 +154,7 @@ def testReinforce(filename, ben, option, opt=None):
                 line += ","
         line += "\n"
         rewardLog.write(line)
+    
     with open ("./results/" + option[4:] + "/converge_" + option +'.csv', 'a') as convergeLog:
         line = ben+","
         returns, command = reinforce.episode(phaseTrain=False)
@@ -147,26 +165,55 @@ def testReinforce(filename, ben, option, opt=None):
         line += command + "\n" + str(len(command.split(";"))-1) + "\n"
         convergeLog.write(line)
     
+    print("\n",lastTen[0].command,"\n")
+    end = time.time()
+    print("Time Elapsed for ", ben, " : ", end-start, "seconds\n")
+
     return lastTen[0].command
 
 if __name__ == "__main__":
     
+    # dir = "./bench/"
+    # for opt in options:
+    #     for coef in coefs:
+    #         option = coef + "_" + opt
+    #         sys.stdout = Logger(option)
+    #         start_c = time.time()
+    #         for subdir, dirs, files in os.walk(dir,topdown=True):
+    #             for file in files:
+    #                 filepath = subdir + os.sep + file
+    #                 if filepath.endswith(".aig"):
+    #                     start = time.time()
+    #                     print("Running Reinforce on ",file,".....",sep='')
+    #                     command = testReinforce(filepath, option, opt="All")
+    #                     print("\n",command,"\n")
+    #                     end = time.time()
+    #                     print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
+    #         end_c = time.time()
+    #         print("Total time taken for option "+option+" : ", end_c - start_c)
+    #         # Collect results over ABC and Custim Optimizations
+    #         reinforced_survey(opt, coef)
+    #         sys.stdout.close()
+
     dir = "./bench/"
+    filepaths = []
+    for subdir, dirs, files in os.walk(dir,topdown=True):
+        for file in files:
+            filepath = subdir + os.sep + file
+            if filepath.endswith(".aig"):
+                filepaths.append(filepath)
+
+    pool = mp.Pool(processes=4)
+    
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt
             sys.stdout = Logger(option)
+            tempreinforce = partial(testReinforce, opt="All")
+            treinforce = partial(tempreinforce, option=option)
             start_c = time.time()
-            for subdir, dirs, files in os.walk(dir,topdown=True):
-                for file in files:
-                    filepath = subdir + os.sep + file
-                    if filepath.endswith(".aig"):
-                        start = time.time()
-                        print("Running Reinforce on ",file,".....",sep='')
-                        command = testReinforce(filepath, file[:-4], option, opt="All")
-                        print("\n",command,"\n")
-                        end = time.time()
-                        print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
+            commands = pool.map(treinforce, filepaths)
+            print(commands)
             end_c = time.time()
             print("Total time taken for option "+option+" : ", end_c - start_c)
             # Collect results over ABC and Custim Optimizations

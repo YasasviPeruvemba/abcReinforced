@@ -1,0 +1,6 @@
+16020.0 249.0
+balance -l; rewrite -z -l; resub -K 16 -l; resub -K 10 -N 2 -l; 
+4
+16559.0 248.0
+balance -l; balance -l; balance -l; resub -K 12 -N 2 -l; resub -K 10 -N 2 -l; balance -l; balance -l; balance -l; resub -K 12 -l; 
+9
