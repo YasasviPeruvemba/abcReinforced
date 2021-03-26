@@ -1,0 +1,6 @@
+245.0 27.0
+balance -l; balance -l; rewrite -l; 
+3
+222.0 26.0
+balance -l; balance -l; balance -l; balance -l; refactor -z -l; resub -K 8 -N 2 -l; 
+6

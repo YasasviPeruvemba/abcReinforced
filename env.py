@@ -30,6 +30,8 @@ class EnvGraphBalance(object):
         self._runtimeBaseline = self.compress2rs_balance()
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
+        if totalReward < 0:
+            totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
 
@@ -83,10 +85,6 @@ class EnvGraphBalance(object):
             t += self._abc.refactor(l=True) # rf -l
         elif action == 3:
             t += self._abc.refactor(l=True, z=True) # rf - z -l
-        # elif action == 4:
-        #    t = self._abc.resub(k=4, l=True) # rs -k 4 -l
-        # elif action == 5:
-        #    t = self._abc.resub(k=5, l=True) # rs -k 5 -l
         elif action == 4:
             t += self._abc.resub(k=6, l=True) # rs -k 6 -l
         elif action == 5:
@@ -136,10 +134,6 @@ class EnvGraphBalance(object):
                 cmd += "refactor -l; "
             elif act == 3:
                 cmd += "refactor -z -l; "
-            # elif act == 4:
-            #    cmd += "resub -K 4 -l; "
-            # elif act == 5:
-            #    cmd += "resub -K 5 -l; "
             elif act == 4:
                 cmd += "resub -K 6 -l; "
             elif act == 5:
@@ -186,15 +180,6 @@ class EnvGraphBalance(object):
         if self.lastAct == self.numActions(): #terminate
             return 0
         return (self.statValue(self._lastStats) - self.statValue(self._curStats))/self.lastActionTime - self._rewardBaseline
-        #return -self._lastStats.numAnd + self._curStats.numAnd - 1
-        if (self._curStats.numAnd < self._lastStats.numAnd and self._curStats.lev < self._lastStats.lev):
-            return 2
-        elif (self._curStats.numAnd < self._lastStats.numAnd and self._curStats.lev == self._lastStats.lev):
-            return 0
-        elif (self._curStats.numAnd == self._lastStats.numAnd and self._curStats.lev < self._lastStats.lev):
-            return 1
-        else:
-            return -2
     
     def numActions(self):
         return len(self._actionSpace)
@@ -238,6 +223,8 @@ class EnvGraph(object):
         self._runtimeBaseline = self.compress2rs()
         compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
+        if totalReward < 0:
+            totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
 
@@ -292,10 +279,6 @@ class EnvGraph(object):
             t = self._abc.refactor(l=True) # rf -l
         elif action == 4:
             t = self._abc.refactor(l=True, z=True) # rf - z -l
-        # elif action == 5:
-        #    t = self._abc.resub(k=4, l=True) # rs -k 4 -l
-        # elif action == 6:
-        #    t = self._abc.resub(k=5, l=True) # rs -k 5 -l
         elif action == 5:
             t = self._abc.resub(k=6, l=True) # rs -k 6 -l
         elif action == 6:
@@ -347,10 +330,6 @@ class EnvGraph(object):
                 cmd += "refactor -l; "
             elif act == 4:
                 cmd += "refactor -z -l; "
-            # elif act == 5:
-            #    cmd += "resub -K 4 -l; "
-            # elif act == 6:
-            #    cmd += "resub -K 5 -l; "
             elif act == 5:
                 cmd += "resub -K 6 -l; "
             elif act == 6:
@@ -397,15 +376,6 @@ class EnvGraph(object):
         if self.lastAct == self.numActions(): #terminate
             return 0
         return (self.statValue(self._lastStats) - self.statValue(self._curStats))/self.lastActionTime - self._rewardBaseline
-        #return -self._lastStats.numAnd + self._curStats.numAnd - 1
-        if (self._curStats.numAnd < self._lastStats.numAnd and self._curStats.lev < self._lastStats.lev):
-            return 2
-        elif (self._curStats.numAnd < self._lastStats.numAnd and self._curStats.lev == self._lastStats.lev):
-            return 0
-        elif (self._curStats.numAnd == self._lastStats.numAnd and self._curStats.lev < self._lastStats.lev):
-            return 1
-        else:
-            return -2
     
     def numActions(self):
         return len(self._actionSpace)
@@ -445,9 +415,11 @@ class EnvGraphDch(object):
         self.initStats = self._abc.aigStats() # The initial AIG statistics
         self.initNumAnd = float(self.initStats.numAnd)
         self.initLev = float(self.initStats.lev)
-        self._runtimeBaseline = 2*(self.compress2rs() + self.dch()) 
+        self._runtimeBaseline = 2*(self.compress2rs() + self.dch() + self._abc.balance(l=True)) 
         targetStats = self._abc.aigStats()
-        totalReward = self.statValue(self.initStats) - self.statValue(targetStats)# Accounting for 18 steps 
+        totalReward = self.statValue(self.initStats) - self.statValue(targetStats)# Accounting for 18 steps
+        if totalReward < 0:
+            totalReward = 0 
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
         print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", targetStats.numAnd, "Baseline Level ", targetStats.lev, " Total Reward ", totalReward)
 
