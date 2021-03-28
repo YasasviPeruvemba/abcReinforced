@@ -1,0 +1,33 @@
+i2c,1278,16
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+66
+router,152,22
+balance -l; balance -l; balance -l; dc2; balance -l; balance -l; balance -l; dc2; dc2; balance -l; balance -l; dc2; 
+12
+max,2818,234
+dc2; dc2; dc2; dc2; dc2; dc2; dc2; 
+7
+voter,8580,61
+balance -l; dc2; dc2; dc2; balance -l; dc2; dc2; dc2; balance -l; dc2; dc2; dc2; balance -l; dc2; dc2; dc2; balance -l; dc2; 
+18
+priority,801,239
+balance -l; balance -l; balance -l; rewrite -z -l; balance -l; balance -l; balance -l; rewrite -z -l; balance -l; balance -l; balance -l; rewrite -z -l; balance -l; balance -l; balance -l; rewrite -z -l; 
+16
+i10,1711,36
+balance -l; dc2; dc2; dc2; balance -l; dc2; dc2; dc2; balance -l; dc2; dc2; 
+11
+int2float,198,15
+balance -l; balance -l; dc2; dc2; balance -l; balance -l; balance -l; dc2; 
+8
+sin,4990,169
+balance -l; dc2; dc2; dc2; balance -l; rewrite -z -l; rewrite -z -l; balance -l; balance -l; dc2; dc2; rewrite -z -l; balance -l; balance -l; dc2; dc2; rewrite -z -l; balance -l; balance -l; rewrite -z -l; rewrite -z -l; balance -l; balance -l; rewrite -z -l; rewrite -z -l; balance -l; balance -l; rewrite -z -l; 
+28
+cavlc,603,15
+balance -l; dc2; dc2; balance -l; balance -l; dc2; dc2; balance -l; balance -l; dc2; balance -l; balance -l; balance -l; dc2; balance -l; balance -l; balance -l; dc2; balance -l; balance -l; balance -l; dc2; 
+22
+ctrl,117,9
+rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; 
+20
+bar,2952,14
+rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; 
+16

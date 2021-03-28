@@ -1,0 +1,72 @@
+i2c,1119,16
+resub -K 16 -N 2 -l; 
+1
+router,246,27
+resub -K 16 -N 2 -l; 
+1
+square,16604,249
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+max,2865,229
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+voter,8195,66
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+priority,599,135
+resub -K 16 -N 2 -l; 
+1
+i10,1964,37
+resub -K 16 -N 2 -l; 
+1
+int2float,218,15
+resub -K 16 -N 2 -l; 
+1
+sin,5117,184
+resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; rewrite -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; resub -K 10 -N 2 -l; 
+8
+cavlc,687,16
+rewrite -l; rewrite -l; rewrite -l; 
+3
+ctrl,114,9
+resub -K 12 -l; 
+1
+bar,3336,12
+resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; 
+7
+i2c,1189,16
+resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; resub -K 12 -l; 
+4
+router,246,27
+resub -K 16 -N 2 -l; 
+1
+square,16604,249
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+max,2865,229
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+voter,8254,64
+resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; 
+19
+priority,632,137
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+2
+i10,2077,37
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+6
+int2float,219,15
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+2
+sin,5171,188
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+15
+cavlc,650,17
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+4
+ctrl,97,12
+resub -K 8 -N 2 -l; 
+1
+bar,3141,13
+resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; 
+6

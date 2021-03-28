@@ -1,0 +1,36 @@
+i2c,1119,16
+resub -K 16 -N 2 -l; 
+1
+router,246,27
+resub -K 16 -N 2 -l; 
+1
+square,16604,249
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+max,2865,229
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+voter,8195,66
+resub -K 16 -N 2 -l; resub -K 16 -N 2 -l; 
+2
+priority,632,137
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+3
+i10,2077,37
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+7
+int2float,219,15
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+2
+sin,5171,188
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+16
+cavlc,650,17
+resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; 
+5
+ctrl,114,9
+resub -K 12 -l; 
+1
+bar,3141,12
+refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; refactor -l; 
+7
