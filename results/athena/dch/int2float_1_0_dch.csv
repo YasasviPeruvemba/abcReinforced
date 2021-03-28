@@ -1,3 +1,603 @@
-235.0 15.0
-balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+207.0 10.0
+dch; balance -l; 
+2
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+222.0 15.0
+refactor -l; rewrite -l; 
+2
+225.0 15.0
+rewrite -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+234.0 19.0
+refactor -z -l; resub -K 8 -l; 
+2
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+237.0 16.0
+resub -K 8 -l; resub -K 8 -l; 
+2
+225.0 15.0
+rewrite -l; 
+1
+230.0 19.0
+refactor -z -l; resub -K 16 -N 2 -l; 
+2
+207.0 10.0
+dch; balance -l; 
+2
+208.0 13.0
+dc2; 
+1
+225.0 15.0
+rewrite -l; 
+1
+211.0 13.0
+resub -K 8 -l; dc2; 
+2
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+239.0 16.0
+resub -K 12 -l; 
+1
+239.0 16.0
+resub -K 12 -l; 
+1
+231.0 16.0
+resub -K 10 -l; resub -K 16 -N 2 -l; 
+2
+208.0 13.0
+dc2; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+209.0 11.0
+resub -K 8 -l; dch; balance -l; 
+3
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+209.0 10.0
+refactor -l; dch; balance -l; 
+3
+231.0 16.0
+resub -K 10 -l; resub -K 12 -N 2 -l; 
+2
+234.0 16.0
+refactor -l; resub -K 16 -l; 
+2
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+230.0 16.0
+resub -K 8 -l; refactor -l; refactor -l; resub -K 16 -N 2 -l; 
+4
+239.0 16.0
+resub -K 16 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+208.0 13.0
+dc2; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+218.0 15.0
+balance -l; resub -K 10 -N 2 -l; 
+2
+225.0 15.0
+rewrite -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+218.0 15.0
+balance -l; resub -K 12 -N 2 -l; 
+2
+221.0 15.0
+refactor -l; refactor -l; rewrite -l; 
+3
+208.0 13.0
+dc2; 
+1
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+204.0 13.0
+dc2; resub -K 16 -N 2 -l; 
+2
+239.0 16.0
+resub -K 16 -l; 
+1
+230.0 16.0
+resub -K 12 -l; refactor -l; resub -K 8 -N 2 -l; 
+3
+239.0 16.0
+resub -K 12 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+239.0 16.0
+resub -K 12 -l; 
+1
+239.0 16.0
+resub -K 10 -l; 
+1
+209.0 11.0
+resub -K 8 -l; dch; balance -l; 
+3
+222.0 18.0
+rewrite -z -l; 
+1
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+229.0 16.0
+refactor -l; resub -K 10 -l; resub -K 10 -N 2 -l; 
+3
+203.0 10.0
+refactor -l; resub -K 10 -l; dch; balance -l; 
+4
+231.0 16.0
+resub -K 8 -N 2 -l; resub -K 8 -N 2 -l; 
+2
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+218.0 16.0
+resub -K 12 -l; resub -K 12 -l; balance -l; resub -K 12 -N 2 -l; 
+4
+222.0 15.0
+balance -l; resub -K 12 -l; 
+2
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+208.0 13.0
+dc2; 
+1
+208.0 13.0
+dc2; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+233.0 16.0
+refactor -l; resub -K 10 -l; resub -K 8 -l; resub -K 10 -l; 
+4
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+231.0 16.0
+resub -K 12 -l; resub -K 10 -N 2 -l; 
+2
+231.0 16.0
+resub -K 8 -l; resub -K 8 -N 2 -l; 
+2
+239.0 16.0
+resub -K 16 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+222.0 18.0
+rewrite -z -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+239.0 16.0
+resub -K 16 -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+234.0 16.0
+refactor -l; resub -K 12 -l; 
+2
+222.0 16.0
+resub -K 12 -l; balance -l; resub -K 8 -l; 
+3
+231.0 16.0
+resub -K 8 -l; resub -K 8 -N 2 -l; 
+2
+239.0 16.0
+resub -K 12 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+230.0 18.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -l; 
+3
+222.0 18.0
+rewrite -z -l; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+237.0 16.0
+resub -K 12 -l; resub -K 16 -l; 
+2
+222.0 18.0
+rewrite -z -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+250.0 19.0
+refactor -z -l; 
+1
+239.0 16.0
+resub -K 12 -l; 
+1
+206.0 13.0
+dc2; rewrite -l; 
+2
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+208.0 13.0
+dc2; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+207.0 10.0
+dch; balance -l; 
+2
+211.0 12.0
+refactor -l; resub -K 8 -l; dc2; 
+3
+239.0 16.0
+resub -K 16 -l; 
+1
+205.0 10.0
+balance -l; dch; balance -l; 
+3
+217.0 18.0
+resub -K 12 -l; rewrite -z -l; 
+2
+218.0 16.0
+resub -K 8 -l; balance -l; rewrite -l; 
+3
+211.0 13.0
+resub -K 10 -l; dc2; 
+2
+208.0 13.0
+dc2; 
+1
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+225.0 15.0
+rewrite -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+205.0 10.0
+balance -l; dch; balance -l; 
+3
+206.0 10.0
+resub -K 8 -l; resub -K 10 -l; dch; balance -l; 
+4
+208.0 13.0
+dc2; 
+1
+218.0 15.0
+balance -l; resub -K 16 -N 2 -l; 
+2
+222.0 18.0
+rewrite -z -l; 
+1
+200.0 12.0
+refactor -z -l; dch; balance -l; 
+3
+216.0 17.0
+balance -l; resub -K 10 -N 2 -l; rewrite -z -l; 
+3
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+235.0 16.0
+resub -K 12 -l; refactor -l; 
+2
+231.0 16.0
+resub -K 10 -l; resub -K 16 -N 2 -l; 
+2
+217.0 18.0
+resub -K 8 -l; resub -K 12 -l; resub -K 8 -l; rewrite -z -l; 
+4
+234.0 16.0
+resub -K 12 -N 2 -l; 
+1
+199.0 10.0
+balance -l; refactor -z -l; balance -l; dch; balance -l; 
+5
+231.0 16.0
+resub -K 12 -l; resub -K 16 -N 2 -l; 
+2
+222.0 16.0
+resub -K 12 -l; balance -l; resub -K 16 -l; 
+3
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+215.0 18.0
+resub -K 8 -l; balance -l; refactor -z -l; resub -K 8 -N 2 -l; 
+4
+219.0 16.0
+resub -K 10 -l; resub -K 8 -N 2 -l; balance -l; resub -K 10 -l; 
+4
+234.0 16.0
+resub -K 10 -N 2 -l; 
+1
+239.0 16.0
+resub -K 12 -l; 
+1
+239.0 16.0
+resub -K 16 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+222.0 18.0
+rewrite -z -l; 
+1
+232.0 19.0
+refactor -z -l; resub -K 12 -l; resub -K 8 -l; 
+3
+223.0 17.0
+refactor -l; rewrite -z -l; 
+2
+237.0 16.0
+resub -K 12 -l; resub -K 12 -l; 
+2
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+218.0 15.0
+balance -l; resub -K 16 -N 2 -l; 
+2
+218.0 15.0
+balance -l; resub -K 10 -N 2 -l; 
+2
+232.0 16.0
+refactor -l; resub -K 12 -N 2 -l; 
+2
+208.0 13.0
+dc2; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+218.0 15.0
+balance -l; resub -K 8 -N 2 -l; resub -K 10 -N 2 -l; 
+3
+217.0 18.0
+balance -l; resub -K 10 -l; refactor -l; rewrite -z -l; 
+4
+208.0 13.0
+dc2; 
+1
+234.0 16.0
+resub -K 16 -N 2 -l; 
+1
+222.0 15.0
+balance -l; resub -K 10 -l; balance -l; balance -l; resub -K 8 -l; 
+5
+234.0 16.0
+resub -K 8 -N 2 -l; 
+1
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 16 -l; 
+6
+218.0 15.0
+balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; balance -l; balance -l; balance -l; resub -K 12 -N 2 -l; 
+9
+239.0 16.0
+resub -K 12 -l; 
+1
+223.0 15.0
+balance -l; balance -l; resub -K 12 -l; 
+3
+218.0 15.0
+balance -l; resub -K 8 -l; balance -l; balance -l; resub -K 16 -N 2 -l; 
+5
+218.0 15.0
+balance -l; resub -K 12 -l; resub -K 12 -N 2 -l; 
+3
+219.0 15.0
+balance -l; balance -l; balance -l; balance -l; resub -K 10 -N 2 -l; 
+5
+218.0 15.0
+balance -l; resub -K 10 -N 2 -l; 
+2
+219.0 15.0
+balance -l; balance -l; resub -K 12 -N 2 -l; 
+3
+218.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; refactor -z -l; balance -l; balance -l; resub -K 12 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+21
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 16 -l; 
+19
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 16 -l; 
+10
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 16 -l; 
+79
+207.0 13.0
+balance -l; balance -l; balance -l; dc2; 
+4
+208.0 13.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; dc2; 
+51
+207.0 13.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; dc2; 
+64
+218.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -N 2 -l; 
 14
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 12 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+45
+219.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 16 -N 2 -l; 
+33
+224.0 18.0
+balance -l; balance -l; balance -l; rewrite -z -l; 
+4
+222.0 15.0
+balance -l; balance -l; balance -l; balance -l; rewrite -l; 
+5
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 12 -l; balance -l; balance -l; resub -K 12 -l; 
+13
+219.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -N 2 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+101
+222.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; rewrite -l; 
+83
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 12 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 8 -l; balance -l; resub -K 12 -l; 
+121
+223.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; resub -K 12 -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+26
+208.0 13.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; dc2; 
+9
+235.0 15.0
+balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; balance -l; 
+142
+207.0 13.0
+balance -l; balance -l; balance -l; dc2; 
+4
