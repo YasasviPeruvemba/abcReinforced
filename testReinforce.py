@@ -7,21 +7,21 @@ import pandas as pd
 import time
 import multiprocessing as  mp
 
-
+import mtlPy
 import reinforce as RF
 from env import EnvGraph as Env
 from env import EnvGraphBalance as EnvBalance
 from env import EnvGraphDch as EnvDch
-from util import writeABC, runABC, extract_data
+from env import EnvGraphMtlDch as EnvMtlDch
 from abcR_Survey import reinforced_survey
+
 
 import numpy as np
 from tqdm import tqdm
-import statistics
 
 import sys
 
-options = ["dch"]#, "with_balance", "without_balance"]
+options = ["mtl"]#, "with_balance", "without_balance"]
 coefs = ["2_1"]#, "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
@@ -67,6 +67,9 @@ def getActionSpace(option, opt=None):
     elif "dch" in option:
         print("DCH Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; ", "dch; ", "dc2; "]
+    elif "mtl" in option:
+        print("MockTurtle Run\n\n")
+        cmds = ["rewrite; ", "rewrite azg; ", "rewrite udc; ", "rewrite azg udc; ", "balance; ", "balance crit; "]#, "resub; ", "resub udc; ", "resub pd; ", "resub udc pd; "]
     else:    
         print("With Balance Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
@@ -100,12 +103,17 @@ def testReinforce(filename, option, opt=None):
         env = EnvBalance(filename, cmds, coefs)
     elif "dch" in option:
         env = EnvDch(filename, cmds, coefs)
+    elif "mtl" in option:
+        env = EnvMtlDch(filename, cmds, coefs)
     else:
         env = Env(filename, cmds, coefs)
     
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="./models/"+option[4:])
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="./models/"+option[4:])
     reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
+
+    if not os.path.exists("./results/" + option[4:]):
+        os.system("mkdir ./results/" + option[4:])
 
     lastTen = []
     resultName = "./results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
@@ -131,8 +139,6 @@ def testReinforce(filename, option, opt=None):
     reinforce._pi.save(benchmarks)
     reinforce._baseline.save(benchmarks)
 
-    if not os.path.exists("./results/" + option[4:]):
-        os.system("mkdir ./results/" + option[4:])
 
     lastTen = sorted(lastTen)
     line = ""
@@ -173,49 +179,46 @@ def testReinforce(filename, option, opt=None):
 
 if __name__ == "__main__":
     
-    # dir = "./bench/"
-    # for opt in options:
-    #     for coef in coefs:
-    #         option = coef + "_" + opt
-    #         sys.stdout = Logger(option)
-    #         start_c = time.time()
-    #         for subdir, dirs, files in os.walk(dir,topdown=True):
-    #             for file in files:
-    #                 filepath = subdir + os.sep + file
-    #                 if filepath.endswith(".aig"):
-    #                     start = time.time()
-    #                     print("Running Reinforce on ",file,".....",sep='')
-    #                     command = testReinforce(filepath, option, opt="All")
-    #                     print("\n",command,"\n")
-    #                     end = time.time()
-    #                     print("Time Elapsed for ", file, " : ", end-start, "seconds\n")
-    #         end_c = time.time()
-    #         print("Total time taken for option "+option+" : ", end_c - start_c)
-    #         # Collect results over ABC and Custim Optimizations
-    #         reinforced_survey(opt, coef)
-    #         sys.stdout.close()
-
     dir = "./bench/"
-    filepaths = []
-    for subdir, dirs, files in os.walk(dir,topdown=True):
-        for file in files:
-            filepath = subdir + os.sep + file
-            if filepath.endswith(".aig"):
-                filepaths.append(filepath)
-
-    pool = mp.Pool(processes=4)
-    
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt
             sys.stdout = Logger(option)
-            tempreinforce = partial(testReinforce, opt="All")
-            treinforce = partial(tempreinforce, option=option)
             start_c = time.time()
-            commands = pool.map(treinforce, filepaths)
-            print(commands)
+            for subdir, dirs, files in os.walk(dir,topdown=True):
+                for file in files:
+                    filepath = subdir + os.sep + file
+                    if filepath.endswith(".aig"):
+                        start = time.time()
+                        command = testReinforce(filepath, option, opt="All")
+                        end = time.time()
             end_c = time.time()
             print("Total time taken for option "+option+" : ", end_c - start_c)
             # Collect results over ABC and Custim Optimizations
-            reinforced_survey(opt, coef)
+            # reinforced_survey(opt, coef)
             sys.stdout.close()
+
+    # dir = "./bench/"
+    # filepaths = []
+    # for subdir, dirs, files in os.walk(dir,topdown=True):
+    #     for file in files:
+    #         filepath = subdir + os.sep + file
+    #         if filepath.endswith(".aig"):
+    #             filepaths.append(filepath)
+
+    # pool = mp.Pool(processes=4)
+    
+    # for opt in options:
+    #     for coef in coefs:
+    #         option = coef + "_" + opt
+    #         sys.stdout = Logger(option)
+    #         tempreinforce = partial(testReinforce, opt="All")
+    #         treinforce = partial(tempreinforce, option=option)
+    #         start_c = time.time()
+    #         commands = pool.map(treinforce, filepaths)
+    #         print(commands)
+    #         end_c = time.time()
+    #         print("Total time taken for option "+option+" : ", end_c - start_c)
+    #         # Collect results over ABC and Custim Optimizations
+    #         # reinforced_survey(opt, coef)
+    #         sys.stdout.close()

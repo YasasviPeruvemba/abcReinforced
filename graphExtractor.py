@@ -2,7 +2,6 @@ import sys
 #sys.path.append("/afs/pd.inf.tu-dresden.de/users/yape863c/.local/lib/python3.8/site-packages/abc_py-0.0.1-py3.8-linux-x86_64.egg")
 import networkx as nx
 import matplotlib.pyplot as plt
-import abc_py as abcPy
 import numpy as np
 from numpy import linalg as LA
 import numpy as np
@@ -56,3 +55,33 @@ def extract_dgl_graph(abc):
     G.ndata['feat'] = features
     return G
 
+
+def extract_dgl_graph_mtl(mtl):
+    numNodes = mtl.migStats().numMigNodes
+    G = dgl.DGLGraph()
+    G.add_nodes(numNodes)
+    features = torch.zeros(numNodes, 7)
+    for node in range(numNodes):
+        migNode = mtl.migNode(node)
+        nodeType = migNode.nodeType()
+        if nodeType == 9: continue
+        elif nodeType == 8:
+            features[node][0] = 1.0
+            features[node][2] = 1.0
+        elif nodeType == 7:
+            features[node][1] = 1.0
+            features[node][2] = 1.0
+        else:
+            features[node][nodeType] = 1.0
+        if migNode.hasFanin0():
+            f = migNode.fanin0()
+            G.add_edge(f, node)
+        elif migNode.hasFanin1():
+            f = migNode.fanin1()
+            G.add_edge(f, node)
+        elif migNode.hasFanin2():
+            f = migNode.fanin2()
+            G.add_edge(f, node)
+    G = dgl.add_self_loop(G)
+    G.ndata['feat'] = features
+    return G
