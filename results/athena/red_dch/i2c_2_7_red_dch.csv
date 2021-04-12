@@ -1,0 +1,603 @@
+1099.0 15.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+4
+1140.0 16.0
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1049.0 13.0
+rewrite -z -l; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; 
+7
+1131.0 18.0
+rewrite -z -l; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+8
+1055.0 12.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; 
+8
+1076.0 12.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; 
+8
+1060.0 13.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; 
+8
+1049.0 15.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1062.0 12.0
+dc2; dc2; rewrite -z -l; balance -l; 
+4
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1085.0 14.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -z -l; balance -l; 
+6
+1033.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dch; balance -l; 
+6
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1029.0 14.0
+dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; rewrite -z -l; balance -l; 
+8
+1131.0 18.0
+rewrite -z -l; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1052.0 12.0
+dc2; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; 
+6
+1197.0 17.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+9
+1033.0 14.0
+dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+6
+1048.0 14.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1202.0 17.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+9
+1055.0 14.0
+dch; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+7
+1036.0 13.0
+rewrite -z -l; balance -l; dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+7
+1127.0 17.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; rewrite -z -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+11
+1140.0 18.0
+rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+8
+1056.0 13.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; rewrite -z -l; balance -l; 
+7
+1094.0 15.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1048.0 14.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1138.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -z -l; balance -l; 
+8
+1050.0 16.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1040.0 11.0
+rewrite -z -l; balance -l; dch; balance -l; dch; balance -l; 
+6
+1050.0 16.0
+dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1061.0 16.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+7
+1086.0 15.0
+dc2; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+7
+1191.0 17.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+9
+1073.0 14.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+7
+1052.0 14.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1094.0 15.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1028.0 14.0
+dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+9
+1031.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; dc2; 
+9
+1059.0 16.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+7
+1110.0 15.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+10
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1191.0 17.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+9
+1133.0 17.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -z -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+8
+1034.0 13.0
+rewrite -z -l; balance -l; dch; balance -l; dc2; 
+5
+1136.0 17.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1040.0 14.0
+dch; balance -l; dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+6
+1125.0 14.0
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; dc2; 
+5
+1053.0 16.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1047.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; dc2; 
+6
+1201.0 17.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+9
+1058.0 16.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1040.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+10
+1065.0 15.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+7
+1158.0 16.0
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; 
+8
+1074.0 14.0
+dc2; rewrite -z -l; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+6
+1153.0 16.0
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+7
+1040.0 11.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; 
+6
+1052.0 16.0
+dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1031.0 13.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+6
+1040.0 15.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1037.0 13.0
+dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dc2; 
+6
+1029.0 12.0
+dch; balance -l; dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+7
+1053.0 16.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+8
+1069.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+10
+1042.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dc2; 
+5
+1082.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+7
+1041.0 15.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -z -l; balance -l; 
+7
+1065.0 15.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; 
+9
+1033.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dch; balance -l; 
+6
+1040.0 14.0
+dch; balance -l; dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+6
+1031.0 13.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+6
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1049.0 14.0
+dch; balance -l; rewrite -z -l; balance -l; dc2; 
+5
+1048.0 14.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+8
+1042.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dc2; 
+5
+1049.0 15.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1046.0 14.0
+dch; balance -l; dc2; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+6
+1029.0 12.0
+dch; balance -l; dch; balance -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+7
+1031.0 14.0
+rewrite -z -l; balance -l; dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1026.0 14.0
+dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+9
+1031.0 13.0
+dch; balance -l; rewrite -z -l; balance -l; dch; balance -l; dch; balance -l; 
+8
+1058.0 14.0
+dc2; dch; balance -l; rewrite -z -l; balance -l; 
+5
+1040.0 13.0
+dc2; dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+6
+1034.0 12.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dc2; dch; balance -l; 
+6
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1190.0 17.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; 
+9
+1040.0 11.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; 
+6
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1062.0 14.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; 
+5
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1071.0 13.0
+rewrite -z -l; balance -l; dc2; dc2; 
+4
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1071.0 13.0
+rewrite -z -l; balance -l; dc2; dc2; 
+4
+1047.0 13.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+5
+1133.0 17.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; rewrite -z -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+8
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1079.0 14.0
+dc2; rewrite -z -l; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+6
+1047.0 13.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+5
+1061.0 16.0
+dch; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+8
+1046.0 14.0
+dch; balance -l; dc2; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+6
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1030.0 12.0
+dch; balance -l; dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1058.0 12.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; dch; balance -l; 
+7
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1067.0 14.0
+dch; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; 
+6
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1046.0 14.0
+dc2; rewrite -z -l; balance -l; dch; balance -l; dc2; 
+6
+1034.0 13.0
+dc2; dc2; rewrite -z -l; balance -l; dc2; 
+5
+1046.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; dc2; 
+5
+1034.0 13.0
+rewrite -z -l; balance -l; dch; balance -l; dc2; 
+5
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1046.0 14.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dc2; dc2; 
+5
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1036.0 13.0
+dc2; dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+5
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1094.0 15.0
+dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1035.0 13.0
+dch; balance -l; dch; balance -l; dc2; 
+5
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1076.0 13.0
+dc2; dc2; 
+2
+1076.0 14.0
+dch; balance -l; rewrite -z -l; balance -l; 
+4
+1013.0 13.0
+dc2; dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+6
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1047.0 13.0
+dc2; resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dc2; 
+5
+1071.0 13.0
+rewrite -z -l; balance -l; dc2; dc2; 
+4
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1047.0 14.0
+resub -K 12 -l; refactor -z -l; resub -K 12 -N 2 -l; dch; balance -l; dc2; 
+6
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1035.0 13.0
+dch; balance -l; dch; balance -l; dc2; 
+5
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1033.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dch; balance -l; 
+6
+1046.0 12.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; dch; balance -l; 
+7
+1053.0 12.0
+rewrite -z -l; balance -l; dc2; dch; balance -l; 
+5
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1035.0 13.0
+dch; balance -l; dch; balance -l; dc2; 
+5
+1035.0 13.0
+dch; balance -l; dch; balance -l; dc2; 
+5
+1026.0 11.0
+dc2; dch; balance -l; dc2; dch; balance -l; 
+6
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1036.0 13.0
+dc2; dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+5
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1068.0 13.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dc2; rewrite -z -l; balance -l; 
+6
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1071.0 13.0
+rewrite -z -l; balance -l; dc2; dc2; 
+4
+1034.0 13.0
+rewrite -z -l; balance -l; dch; balance -l; dc2; 
+5
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1014.0 11.0
+dc2; dc2; dch; balance -l; dch; balance -l; 
+6
+1042.0 14.0
+dc2; dch; balance -l; dc2; 
+4
+1046.0 14.0
+dch; balance -l; dc2; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+6
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1228.0 17.0
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+6
+1068.0 11.0
+dc2; dch; balance -l; 
+3
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1038.0 11.0
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+1045.0 12.0
+dch; balance -l; dc2; dch; balance -l; 
+5
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1058.0 14.0
+dc2; dch; balance -l; rewrite -z -l; balance -l; 
+5
+1030.0 12.0
+dch; balance -l; dch; balance -l; resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; 
+7
+1041.0 11.0
+dc2; dch; balance -l; dch; balance -l; 
+5
+1042.0 13.0
+resub -K 10 -l; refactor -z -l; resub -K 10 -N 2 -l; dc2; dc2; 
+5
+1047.0 13.0
+dch; balance -l; dc2; dc2; 
+4
+1053.0 12.0
+rewrite -z -l; balance -l; dc2; dch; balance -l; 
+5
+1026.0 11.0
+dc2; dch; balance -l; dc2; dch; balance -l; 
+6
+1040.0 12.0
+dc2; dc2; dc2; 
+3
+1028.0 11.0
+dc2; dc2; dch; balance -l; 
+4
+1026.0 11.0
+dc2; dch; balance -l; dc2; dch; balance -l; 
+6

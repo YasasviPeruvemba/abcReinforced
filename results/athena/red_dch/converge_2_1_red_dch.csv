@@ -1,0 +1,39 @@
+int2float,207,10
+dch; balance -l; 
+2
+router,201,23
+dch; balance -l; 
+2
+priority,670,202
+dch; balance -l; 
+2
+ctrl,91,7
+dch; balance -l; 
+2
+i2c,1050,11
+dch; balance -l; dch; balance -l; 
+4
+cavlc,616,13
+dch; balance -l; dch; balance -l; 
+4
+i10,1720,31
+dch; balance -l; dch; balance -l; 
+4
+max,2828,157
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+bar,2952,12
+dch; balance -l; dch; balance -l; dch; balance -l; 
+6
+sin,5006,161
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; dc2; dc2; dc2; dc2; 
+10
+voter,8025,57
+resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; dch; balance -l; dch; balance -l; dch; balance -l; 
+12
+square,15799,249
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; resub -K 8 -l; refactor -z -l; resub -K 8 -N 2 -l; 
+31
+sqrt,18367,6057
+rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; rewrite -z -l; balance -l; 
+50
