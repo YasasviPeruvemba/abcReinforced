@@ -1,0 +1,444 @@
+Running Reinforce on max.....
+Time  04/10/2021, 20:16:42
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 1.1418734639883041  Baseline Nodes  7056 Baseline Level  159  Total Reward  0
+Input Feat Dim of Graph :  18  Output Channel Dim of Graph :  13
+Running Reinforce on max.....
+Time  04/10/2021, 20:20:56
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.9928545616567135  Baseline Nodes  7056 Baseline Level  159  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 14
+Episode : 10 Seq Length : 9
+Episode : 20 Seq Length : 23
+Episode : 30 Seq Length : 20
+Episode : 40 Seq Length : 25
+Episode : 50 Seq Length : 24
+Episode : 60 Seq Length : 23
+Episode : 70 Seq Length : 25
+Episode : 80 Seq Length : 25
+Episode : 90 Seq Length : 22
+Episode : 100 Seq Length : 23
+Episode : 110 Seq Length : 24
+Episode : 120 Seq Length : 23
+Episode : 130 Seq Length : 24
+Episode : 140 Seq Length : 24
+Episode : 150 Seq Length : 24
+Episode : 160 Seq Length : 25
+Episode : 170 Seq Length : 23
+Episode : 180 Seq Length : 24
+Episode : 190 Seq Length : 23
+
+ rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite;  
+
+Time Elapsed for  max  :  2922.9733703136444 seconds
+
+Running Reinforce on i2c.....
+Time  04/10/2021, 21:09:39
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.3246230613440275  Baseline Nodes  1631 Baseline Level  10  Total Reward  0.3107382550335571
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 14
+Episode : 10 Seq Length : 14
+Episode : 20 Seq Length : 14
+Episode : 30 Seq Length : 14
+Episode : 40 Seq Length : 14
+Episode : 50 Seq Length : 13
+Episode : 60 Seq Length : 14
+Episode : 70 Seq Length : 14
+Episode : 80 Seq Length : 13
+Episode : 90 Seq Length : 14
+Episode : 100 Seq Length : 14
+Episode : 110 Seq Length : 14
+Episode : 120 Seq Length : 14
+Episode : 130 Seq Length : 14
+Episode : 140 Seq Length : 14
+Episode : 150 Seq Length : 10
+Episode : 160 Seq Length : 13
+Episode : 170 Seq Length : 14
+Episode : 180 Seq Length : 14
+Episode : 190 Seq Length : 14
+
+ rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite;  
+
+Time Elapsed for  i2c  :  1022.3394901752472 seconds
+
+Running Reinforce on router.....
+Time  04/10/2021, 21:26:41
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.10208727605640888  Baseline Nodes  514 Baseline Level  17  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 16
+Episode : 10 Seq Length : 15
+Episode : 20 Seq Length : 14
+Episode : 30 Seq Length : 15
+Episode : 40 Seq Length : 15
+Episode : 50 Seq Length : 16
+Episode : 60 Seq Length : 15
+Episode : 70 Seq Length : 15
+Episode : 80 Seq Length : 17
+Episode : 90 Seq Length : 14
+Episode : 100 Seq Length : 17
+Episode : 110 Seq Length : 15
+Episode : 120 Seq Length : 17
+Episode : 130 Seq Length : 16
+Episode : 140 Seq Length : 16
+Episode : 150 Seq Length : 17
+Episode : 160 Seq Length : 15
+Episode : 170 Seq Length : 15
+Episode : 180 Seq Length : 16
+Episode : 190 Seq Length : 17
+
+ rewrite azg; rewrite azg; rewrite azg udc; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg;  
+
+Time Elapsed for  router  :  284.6927525997162 seconds
+
+Running Reinforce on voter.....
+Time  04/10/2021, 21:31:26
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 4.599750876426697  Baseline Nodes  20263 Baseline Level  65  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 26
+Episode : 10 Seq Length : 26
+Episode : 20 Seq Length : 25
+Episode : 30 Seq Length : 26
+Episode : 40 Seq Length : 23
+Episode : 50 Seq Length : 26
+Episode : 60 Seq Length : 25
+Episode : 70 Seq Length : 26
+Episode : 80 Seq Length : 26
+Episode : 90 Seq Length : 23
+Episode : 100 Seq Length : 25
+Episode : 110 Seq Length : 25
+Episode : 120 Seq Length : 24
+Episode : 130 Seq Length : 26
+Episode : 140 Seq Length : 26
+Episode : 150 Seq Length : 25
+Episode : 160 Seq Length : 25
+Episode : 170 Seq Length : 26
+Episode : 180 Seq Length : 26
+Episode : 190 Seq Length : 25
+
+ rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg;  
+
+Time Elapsed for  voter  :  13861.828666687012 seconds
+
+Running Reinforce on priority.....
+Time  04/11/2021, 01:22:28
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.34012601897120476  Baseline Nodes  1885 Baseline Level  145  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 18
+Episode : 10 Seq Length : 18
+Episode : 20 Seq Length : 18
+Episode : 30 Seq Length : 18
+Episode : 40 Seq Length : 18
+Episode : 50 Seq Length : 18
+Episode : 60 Seq Length : 16
+Episode : 70 Seq Length : 18
+Episode : 80 Seq Length : 18
+Episode : 90 Seq Length : 18
+Episode : 100 Seq Length : 18
+Episode : 110 Seq Length : 19
+Episode : 120 Seq Length : 17
+Episode : 130 Seq Length : 19
+Episode : 140 Seq Length : 18
+Episode : 150 Seq Length : 18
+Episode : 160 Seq Length : 18
+Episode : 170 Seq Length : 18
+Episode : 180 Seq Length : 18
+Episode : 190 Seq Length : 17
+
+ rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg;  
+
+Time Elapsed for  priority  :  1023.9745752811432 seconds
+
+Running Reinforce on int2float.....
+Time  04/11/2021, 01:39:32
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.06021373998373747  Baseline Nodes  274 Baseline Level  10  Total Reward  0.3602941176470589
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 16
+Episode : 10 Seq Length : 16
+Episode : 20 Seq Length : 15
+Episode : 30 Seq Length : 15
+Episode : 40 Seq Length : 13
+Episode : 50 Seq Length : 13
+Episode : 60 Seq Length : 15
+Episode : 70 Seq Length : 14
+Episode : 80 Seq Length : 13
+Episode : 90 Seq Length : 13
+Episode : 100 Seq Length : 13
+Episode : 110 Seq Length : 14
+Episode : 120 Seq Length : 14
+Episode : 130 Seq Length : 14
+Episode : 140 Seq Length : 13
+Episode : 150 Seq Length : 13
+Episode : 160 Seq Length : 13
+Episode : 170 Seq Length : 15
+Episode : 180 Seq Length : 13
+Episode : 190 Seq Length : 13
+
+ rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite;  
+
+Time Elapsed for  int2float  :  214.07681941986084 seconds
+
+Running Reinforce on square.....
+Time  04/11/2021, 01:43:06
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 7.705195724964142  Baseline Nodes  30146 Baseline Level  207  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 22
+Episode : 80 Seq Length : 20
+Episode : 90 Seq Length : 22
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 22
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 20
+Episode : 160 Seq Length : 22
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ rewrite azg; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite; rewrite;  
+
+Time Elapsed for  square  :  21234.85967373848 seconds
+
+Running Reinforce on sin.....
+Time  04/11/2021, 07:37:01
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 3.471686080098152  Baseline Nodes  12974 Baseline Level  144  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 18
+Episode : 10 Seq Length : 18
+Episode : 20 Seq Length : 18
+Episode : 30 Seq Length : 17
+Episode : 40 Seq Length : 18
+Episode : 50 Seq Length : 18
+Episode : 60 Seq Length : 18
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 18
+Episode : 90 Seq Length : 20
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 20
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 19
+Episode : 140 Seq Length : 19
+Episode : 150 Seq Length : 20
+Episode : 160 Seq Length : 20
+Episode : 170 Seq Length : 20
+Episode : 180 Seq Length : 20
+Episode : 190 Seq Length : 21
+
+ rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg;  
+
+Time Elapsed for  sin  :  7343.669224500656 seconds
+
+Running Reinforce on i10.....
+Time  04/11/2021, 09:39:25
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.9190422408282757  Baseline Nodes  3663 Baseline Level  26  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 18
+Episode : 10 Seq Length : 18
+Episode : 20 Seq Length : 18
+Episode : 30 Seq Length : 19
+Episode : 40 Seq Length : 18
+Episode : 50 Seq Length : 18
+Episode : 60 Seq Length : 17
+Episode : 70 Seq Length : 19
+Episode : 80 Seq Length : 18
+Episode : 90 Seq Length : 23
+Episode : 100 Seq Length : 24
+Episode : 110 Seq Length : 20
+Episode : 120 Seq Length : 37
+Episode : 130 Seq Length : 28
+Episode : 140 Seq Length : 30
+Episode : 150 Seq Length : 33
+Episode : 160 Seq Length : 25
+Episode : 170 Seq Length : 30
+Episode : 180 Seq Length : 31
+Episode : 190 Seq Length : 34
+
+ rewrite azg udc; balance crit; rewrite azg udc; balance crit; rewrite azg udc; rewrite azg udc; balance crit; balance crit; balance crit; balance crit; rewrite; balance crit; balance crit; balance crit; rewrite azg udc; balance crit; rewrite azg udc; balance crit; rewrite azg udc; balance crit; balance crit; balance crit; balance crit; balance crit; rewrite azg udc; rewrite azg udc; balance crit; balance crit; balance crit; balance crit; balance crit;  
+
+Time Elapsed for  i10  :  3124.625230550766 seconds
+
+Running Reinforce on ctrl.....
+Time  04/11/2021, 10:31:29
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.03446710004936904  Baseline Nodes  139 Baseline Level  6  Total Reward  0.8725274725274725
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 32
+Episode : 10 Seq Length : 50
+Episode : 20 Seq Length : 33
+Episode : 30 Seq Length : 29
+Episode : 40 Seq Length : 32
+Episode : 50 Seq Length : 32
+Episode : 60 Seq Length : 28
+Episode : 70 Seq Length : 33
+Episode : 80 Seq Length : 28
+Episode : 90 Seq Length : 23
+Episode : 100 Seq Length : 25
+Episode : 110 Seq Length : 29
+Episode : 120 Seq Length : 28
+Episode : 130 Seq Length : 30
+Episode : 140 Seq Length : 25
+Episode : 150 Seq Length : 32
+Episode : 160 Seq Length : 31
+Episode : 170 Seq Length : 22
+Episode : 180 Seq Length : 32
+Episode : 190 Seq Length : 27
+
+ balance crit; balance crit; balance crit; balance crit; rewrite azg udc; balance crit; balance crit; balance crit; balance crit; rewrite udc; balance crit; rewrite; balance crit; balance crit; balance crit; rewrite azg udc; rewrite azg; balance crit; balance crit; balance crit; rewrite azg; balance crit; rewrite; balance crit; balance crit; balance crit; rewrite; rewrite udc; rewrite; balance crit; rewrite; balance crit;  
+
+Time Elapsed for  ctrl  :  230.34203433990479 seconds
+
+Running Reinforce on cavlc.....
+Time  04/11/2021, 10:35:20
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.17968988232314587  Baseline Nodes  761 Baseline Level  12  Total Reward  0.08806818181818166
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 23
+Episode : 10 Seq Length : 23
+Episode : 20 Seq Length : 28
+Episode : 30 Seq Length : 28
+Episode : 40 Seq Length : 24
+Episode : 50 Seq Length : 17
+Episode : 60 Seq Length : 20
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 25
+Episode : 90 Seq Length : 24
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 29
+Episode : 120 Seq Length : 24
+Episode : 130 Seq Length : 25
+Episode : 140 Seq Length : 19
+Episode : 150 Seq Length : 28
+Episode : 160 Seq Length : 28
+Episode : 170 Seq Length : 27
+Episode : 180 Seq Length : 25
+Episode : 190 Seq Length : 24
+
+ balance crit; rewrite; rewrite; balance crit; balance crit; balance crit; rewrite azg; balance crit; balance crit; balance crit; rewrite; balance crit; rewrite azg; balance crit; balance crit; rewrite azg udc; balance crit; rewrite azg udc; balance crit; balance crit; balance crit; rewrite azg; rewrite azg udc; balance crit; balance crit;  
+
+Time Elapsed for  cavlc  :  917.679737329483 seconds
+
+Running Reinforce on bar.....
+Time  04/11/2021, 10:50:38
+
+###################################
+
+[2.0, 1.0]
+MockTurtle Run
+
+
+Baseline Time Taken 0.8767216540873051  Baseline Nodes  3615 Baseline Level  12  Total Reward  0
+Input Feat Dim of Graph :  11  Output Channel Dim of Graph :  6
+Episode : 0 Seq Length : 24
+Episode : 10 Seq Length : 16
+Episode : 20 Seq Length : 16
+Episode : 30 Seq Length : 16
+Episode : 40 Seq Length : 16
+Episode : 50 Seq Length : 16
+Episode : 60 Seq Length : 16
+Episode : 70 Seq Length : 16
+Episode : 80 Seq Length : 16
+Episode : 90 Seq Length : 16
+Episode : 100 Seq Length : 16
+Episode : 110 Seq Length : 16
+Episode : 120 Seq Length : 16
+Episode : 130 Seq Length : 16
+Episode : 140 Seq Length : 16
+Episode : 150 Seq Length : 16
+Episode : 160 Seq Length : 16
+Episode : 170 Seq Length : 15
+Episode : 180 Seq Length : 16
+Episode : 190 Seq Length : 16
+
+ rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg; rewrite azg;  
+
+Time Elapsed for  bar  :  2602.161155939102 seconds
+
+Total time taken for option 2_1_mtl :  54784.37948727608
