@@ -48,7 +48,7 @@ class FcModel(nn.Module):
 
 
 class FcModelGraph(nn.Module):
-    def __init__(self, numFeats, outChs):
+    def __init__(self, numFeats, outChs, option):
         super(FcModelGraph, self).__init__()
         self._numFeats = numFeats
         self._outChs = outChs
@@ -57,7 +57,10 @@ class FcModelGraph(nn.Module):
         self.fc2 = nn.Linear(32, 32)
         self.act2 = nn.ReLU()
         self.fc3 = nn.Linear(32, outChs)
-        self.gcn = GCN(6, 12, 4)
+        if "mtl" in option:
+            self.gcn = GCN(7, 12, 4)
+        else:
+            self.gcn = GCN(6, 12, 4)
 
     def forward(self, x, graph):
         graph_state = self.gcn(graph)
@@ -87,7 +90,7 @@ class PiApprox(object):
         self._dimStates = dimStates
         self._numActs = numActs
         self._alpha = alpha
-        self._network = network(dimStates, numActs)
+        self._network = network(dimStates, numActs, option)
         #self._network.cuda()
         self._optimizer = torch.optim.Adam(self._network.parameters(), alpha, [0.9, 0.999])
         self.tau = 0.5 # temperature for gumbel_softmax
@@ -291,7 +294,7 @@ class Reinforce(object):
             rewards.append(nextReward)
             actions.append(action)
             state = nextState
-            if time_elapsed > runtimeBaseline:
+            if time_elapsed > runtimeBaseline * 1.2:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
     
