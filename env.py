@@ -192,7 +192,7 @@ class EnvGraphBalance(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
+        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -388,7 +388,7 @@ class EnvGraph(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
+        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -583,7 +583,7 @@ class EnvGraphDch(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
+        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -742,7 +742,7 @@ class ReducedEnvGraphDch(object):
         return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        return self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
+        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -944,7 +944,174 @@ class EnvGraphMtlDch(object):
         return [self._curStats.numMigNodes , self._curStats.lev]
     
     def statValue(self, stat):
-        return self.and_coef*(float(stat.numMigNodes)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev))
+        return (self.and_coef*(float(stat.numMigNodes)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
+
+
+
+class EnvReplica(object):
+    """
+    @brief the overall concept of environment, the different. use the compress2rs as target
+    """
+    def __init__(self, aigfile, cmds, coefs):
+        self._abc = abcPy.AbcInterface()
+        self._aigfile = aigfile
+        self.and_coef = coefs[0]
+        self.level_coef = coefs[1]
+        self._abc.start()
+        self._actionSpace = cmds
+        self.timeSeq = 0
+        self._readtime = self._abc.read(self._aigfile)
+        self.initStats = self._abc.aigStats() # The initial AIG statistics
+        self.initNumAnd = float(self.initStats.numAnd)
+        self.initLev = float(self.initStats.lev)
+        self._runtimeBaseline = 2*(self.resyn2() + self.resyn2()) 
+        targetStats = self._abc.aigStats()
+        totalReward = self.statValue(self.initStats) - self.statValue(targetStats)# Accounting for 18 steps
+        if totalReward < 0:
+            totalReward = 0 
+        self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
+        print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", targetStats.numAnd, "Baseline Level ", targetStats.lev, " Total Reward ", totalReward)
+
+    def getRuntimeBaseline(self):
+        return self._runtimeBaseline    
+    
+    def resyn2(self):
+        t = 0
+        t += self._abc.balance(l=False)
+        t += self._abc.rewrite(l=False)
+        t += self._abc.refactor(l=False)
+        t += self._abc.balance(l=False)
+        t += self._abc.rewrite(l=False)
+        t += self._abc.rewrite(l=False, z=True)
+        t += self._abc.balance(l=False)
+        t += self._abc.refactor(l=False, z=True)
+        t += self._abc.rewrite(l=False, z=True)
+        t += self._abc.balance(l=False)
+        return t
+
+    def reset(self):
+        self.timeSeq = 0
+        self._abc.end()
+        self._abc.start()
+        self._abc.read(self._aigfile)
+        self._lastStats = self._abc.aigStats() # The initial AIG statistics
+        self._curStats = self._abc.aigStats() # the current AIG statistics
+        self.lastAct = self.numActions() - 1
+        self.lastAct2 = self.numActions() - 1
+        self.lastAct3 = self.numActions() - 1
+        self.lastAct4 = self.numActions() - 1
+        self.actsTaken = np.zeros(self.numActions())
+        self.lenSeq = 0
+        return self.state()
+    
+    def close(self):
+        self.reset()
+    
+    def step(self, actionIdx):
+        self.takeAction(actionIdx)
+        nextState = self.state()
+        reward = self.reward()
+        done = False
+        if (self.timeSeq >= self._runtimeBaseline):
+            done = True
+        return nextState, reward, done, 0
+
+    def takeAction(self, actionIdx):
+        """
+        @return true: episode is end
+        """
+        action = self._actionSpace[actionIdx] # Map User Action Space to the Complete. 
+        self.lastAct4 = self.lastAct3
+        self.lastAct3 = self.lastAct2
+        self.lastAct2 = self.lastAct
+        self.lastAct = actionIdx
+        t = 0
+        if action == 0:
+            t = self._abc.balance(l=False) # b 
+        elif action == 1:
+            t = self._abc.rewrite(l=False) # rw 
+        elif action == 2:
+            t = self._abc.rewrite(l=False, z=True) # rw -z 
+        elif action == 3:
+            t = self._abc.refactor(l=False) # rf 
+        elif action == 4:
+            t = self._abc.refactor(l=False, z=True) # rf - z 
+        elif action == 15:
+            self._abc.end()
+            return True, -1.0
+        else:
+            assert(False)
+
+        # update the statitics
+        self.lenSeq += 1
+        self.timeSeq += t
+        self.lastActionTime = t
+        self._lastStats = self._curStats
+        self._curStats = self._abc.aigStats()
+        return False, t
+    
+    def getCommand(self, actions):
+        """
+        @brief Returns abc command for a list of actions
+        """
+        cmd = ""
+        for action in actions:
+            act = self._actionSpace[action]
+            if act == 0:
+                cmd += "balance; "
+            elif act == 1:
+                cmd += "rewrite; "
+            elif act == 2:
+                cmd += "rewrite -z; "
+            elif act == 3:
+                cmd += "refactor; "
+            elif act == 4:
+                cmd += "refactor -z; "
+        return cmd
+
+    def state(self):
+        """
+        @brief current state
+        """
+        oneHotAct = np.zeros(self.numActions())
+        np.put(oneHotAct, self.lastAct, 1)
+        lastOneHotActs  = np.zeros(self.numActions())
+        lastOneHotActs[self.lastAct2] += 1/3
+        lastOneHotActs[self.lastAct3] += 1/3
+        lastOneHotActs[self.lastAct] += 1/3
+        stateArray = np.array([self._curStats.numAnd / self.initNumAnd, self._curStats.lev / self.initLev,
+            self._lastStats.numAnd / self.initNumAnd, self._lastStats.lev / self.initLev])
+        stepArray = np.array([float(self.timeSeq) / self._runtimeBaseline])
+        combined = np.concatenate((stateArray, lastOneHotActs, stepArray), axis=-1)
+        combined_torch =  torch.from_numpy(combined.astype(np.float32)).float()
+        graph = GE.extract_dgl_graph(self._abc)
+        return (combined_torch, graph)
+    
+    def reward(self):
+        if self.lastAct == self.numActions(): #terminate
+            return 0
+        return (self.statValue(self._lastStats) - self.statValue(self._curStats))/self.lastActionTime - self._rewardBaseline
+    
+    def numActions(self):
+        return len(self._actionSpace)
+    
+    def dimState(self):
+        return 4 + self.numActions() * 1 + 1
+    
+    def returns(self):
+        return [self._curStats.numAnd , self._curStats.lev]
+    
+    def statValue(self, stat):
+        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
+    
+    def curStatsValue(self):
+        return self.statValue(self._curStats)
+    
+    def compress2rs(self):
+        return self._abc.compress2rs()
+
+    def dch(self):
+        return self._abc.dch()

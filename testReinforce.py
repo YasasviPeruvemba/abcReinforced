@@ -13,6 +13,7 @@ from env import EnvGraph as Env
 from env import EnvGraphBalance as EnvBalance
 from env import EnvGraphDch as EnvDch
 from env import EnvGraphMtlDch as EnvMtlDch
+from env import EnvReplica as EnvRep
 from abcR_Survey import reinforced_survey
 
 
@@ -21,8 +22,8 @@ from tqdm import tqdm
 
 import sys
 
-options = ["mtl"]#, "with_balance", "without_balance"]
-coefs = ["2_1"]#, "2_3", "2_7", "2_9", "1_1", "1_0"]
+options = ["replica"]#, "with_balance", "without_balance"]
+coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
     def __init__(self, option):
@@ -70,6 +71,8 @@ def getActionSpace(option, opt=None):
     elif "mtl" in option:
         print("MockTurtle Run\n\n")
         cmds = ["rewrite; ", "rewrite azg; ", "rewrite udc; ", "rewrite azg udc; ", "balance; ", "balance crit; "]#, "resub; ", "resub udc; ", "resub pd; ", "resub udc pd; "]
+    elif "replica" in option:
+        cmds = ["balance; ", "rewrite; ","rewrite -z; ","refactor; ","refactor -z; "]
     else:    
         print("With Balance Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
@@ -105,12 +108,14 @@ def testReinforce(filename, option, opt=None):
         env = EnvDch(filename, cmds, coefs)
     elif "mtl" in option:
         env = EnvMtlDch(filename, cmds, coefs)
+    elif "replica" in option:
+        env = EnvRep(filename, cmds, coefs)
     else:
         env = Env(filename, cmds, coefs)
     
     vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="./models/"+option[4:])
     vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="./models/"+option[4:])
-    reinforce = RF.Reinforce(env, 0.9, vApprox, vbaseline)
+    reinforce = RF.Reinforce(env, 0.95, vApprox, vbaseline)
 
     if not os.path.exists("./results/" + option[4:]):
         os.system("mkdir ./results/" + option[4:])
