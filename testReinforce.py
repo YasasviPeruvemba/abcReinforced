@@ -14,6 +14,7 @@ from env import EnvGraphBalance as EnvBalance
 from env import EnvGraphDch as EnvDch
 from env import EnvGraphMtlDch as EnvMtlDch
 from env import EnvReplica as EnvRep
+from env import EnvGraphDchMap as EnvDchMap
 from abcR_Survey import reinforced_survey
 
 
@@ -22,7 +23,7 @@ from tqdm import tqdm
 
 import sys
 
-options = ["replica"]#, "with_balance", "without_balance"]
+options = ["dch_map"]#, "with_balance", "without_balance"]
 coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
@@ -64,7 +65,7 @@ def getActionSpace(option, opt=None):
     
     if "without_balance" in option:
         print("Without Balance Run\n\n")
-        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]
+        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]        
     elif "dch" in option:
         print("DCH Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; ", "dch; ", "dc2; "]
@@ -104,6 +105,8 @@ def testReinforce(filename, option, opt=None):
     cmds = getActionSpace(option, opt=opt)
     if "without_balance" in option:
         env = EnvBalance(filename, cmds, coefs)
+    elif "dch_map" in option:
+        env = EnvDchMap(filename, cmds, coefs)
     elif "dch" in option:
         env = EnvDch(filename, cmds, coefs)
     elif "mtl" in option:
