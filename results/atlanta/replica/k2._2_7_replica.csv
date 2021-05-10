@@ -1,0 +1,603 @@
+1632.0 17.0
+refactor -z; refactor; 
+2
+1343.0 23.0
+rewrite -z; rewrite -z; 
+2
+1343.0 23.0
+rewrite -z; rewrite -z; 
+2
+1343.0 23.0
+rewrite -z; rewrite -z; 
+2
+1441.0 23.0
+rewrite -z; 
+1
+1436.0 20.0
+refactor; rewrite; 
+2
+1343.0 23.0
+rewrite -z; rewrite -z; 
+2
+1441.0 23.0
+rewrite -z; 
+1
+1493.0 15.0
+refactor -z; balance; refactor; 
+3
+1591.0 18.0
+refactor; refactor -z; 
+2
+1306.0 22.0
+rewrite; rewrite -z; 
+2
+1436.0 20.0
+refactor; rewrite; 
+2
+1474.0 16.0
+balance; refactor; refactor -z; 
+3
+1474.0 22.0
+rewrite; 
+1
+1424.0 22.0
+rewrite; rewrite; 
+2
+1474.0 22.0
+rewrite; 
+1
+1380.0 23.0
+rewrite -z; rewrite; 
+2
+1436.0 20.0
+refactor; rewrite; 
+2
+1441.0 21.0
+rewrite; refactor; 
+2
+1632.0 17.0
+refactor -z; refactor; 
+2
+1475.0 16.0
+balance; refactor -z; refactor -z; 
+3
+1486.0 17.0
+refactor -z; rewrite -z; 
+2
+1380.0 16.0
+balance; rewrite; refactor -z; 
+3
+1380.0 23.0
+rewrite -z; rewrite; 
+2
+1361.0 14.0
+balance; rewrite -z; balance; refactor; 
+4
+1368.0 16.0
+balance; balance; refactor -z; rewrite -z; 
+4
+1448.0 16.0
+balance; balance; refactor -z; refactor; 
+4
+1632.0 17.0
+refactor -z; refactor; 
+2
+1431.0 15.0
+balance; refactor -z; balance; refactor; 
+4
+1276.0 15.0
+rewrite; balance; balance; rewrite -z; 
+4
+1486.0 17.0
+refactor -z; rewrite -z; 
+2
+1669.0 19.0
+refactor; refactor; 
+2
+1402.0 19.0
+rewrite -z; refactor -z; 
+2
+1422.0 15.0
+refactor -z; balance; rewrite; 
+3
+1326.0 15.0
+rewrite; balance; balance; refactor -z; 
+4
+1398.0 15.0
+refactor -z; balance; rewrite -z; 
+3
+1350.0 15.0
+balance; refactor -z; balance; balance; balance; rewrite; 
+6
+1329.0 15.0
+rewrite -z; balance; balance; balance; balance; 
+5
+1389.0 16.0
+balance; refactor -z; rewrite; 
+3
+1384.0 16.0
+balance; rewrite; refactor; 
+3
+1472.0 17.0
+refactor -z; rewrite; 
+2
+1441.0 23.0
+rewrite -z; 
+1
+1474.0 16.0
+balance; refactor; refactor -z; 
+3
+1348.0 15.0
+balance; balance; balance; balance; refactor -z; balance; balance; rewrite; 
+8
+1331.0 15.0
+balance; balance; balance; balance; balance; refactor -z; balance; rewrite -z; 
+8
+1397.0 16.0
+balance; rewrite; 
+2
+1355.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+18
+1329.0 13.0
+balance; balance; balance; balance; balance; balance; rewrite -z; balance; 
+8
+1335.0 13.0
+balance; balance; balance; rewrite -z; balance; balance; 
+6
+1358.0 16.0
+balance; rewrite; balance; balance; balance; 
+5
+1340.0 15.0
+rewrite; balance; balance; balance; balance; balance; 
+6
+1349.0 13.0
+balance; balance; rewrite -z; balance; 
+4
+1308.0 13.0
+balance; balance; rewrite -z; balance; balance; rewrite; 
+6
+1357.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite; 
+8
+1397.0 16.0
+balance; rewrite; 
+2
+1338.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; refactor; balance; balance; balance; rewrite; 
+13
+1361.0 16.0
+balance; balance; balance; balance; rewrite; 
+5
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1397.0 16.0
+balance; rewrite; 
+2
+1360.0 14.0
+balance; rewrite -z; balance; balance; 
+4
+1400.0 15.0
+balance; balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; refactor; 
+12
+1342.0 16.0
+balance; balance; balance; balance; balance; balance; rewrite -z; refactor -z; 
+8
+1446.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+27
+1332.0 15.0
+balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; rewrite; 
+10
+1341.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+11
+1446.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+20
+1306.0 15.0
+rewrite; balance; rewrite; 
+3
+1346.0 16.0
+balance; balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; 
+12
+1355.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+20
+1324.0 16.0
+balance; balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; rewrite; 
+13
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1324.0 15.0
+balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+22
+1357.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite; 
+8
+1397.0 16.0
+balance; rewrite; 
+2
+1355.0 16.0
+balance; balance; balance; balance; balance; rewrite; 
+6
+1352.0 16.0
+balance; rewrite; balance; balance; balance; balance; balance; balance; 
+8
+1342.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; 
+14
+1344.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite; balance; balance; 
+11
+1449.0 16.0
+balance; balance; balance; balance; balance; balance; 
+6
+1358.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+13
+1360.0 14.0
+balance; rewrite -z; balance; balance; 
+4
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+14
+1342.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+19
+1353.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+16
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+15
+1325.0 16.0
+balance; balance; balance; rewrite; balance; rewrite; 
+6
+1426.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+29
+1345.0 16.0
+balance; balance; balance; rewrite; balance; balance; balance; balance; 
+8
+1441.0 23.0
+rewrite -z; 
+1
+1333.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; 
+7
+1342.0 16.0
+balance; balance; balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; balance; 
+14
+1444.0 16.0
+balance; balance; balance; balance; refactor; 
+5
+1329.0 15.0
+balance; balance; balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+17
+1357.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite; 
+8
+1355.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+11
+1349.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+12
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1324.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; refactor -z; 
+8
+1348.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+10
+1345.0 16.0
+balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; 
+11
+1514.0 15.0
+refactor -z; balance; 
+2
+1361.0 16.0
+balance; balance; balance; balance; rewrite; 
+5
+1317.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+13
+1330.0 13.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; balance; 
+12
+1349.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+18
+1358.0 16.0
+balance; balance; balance; rewrite; 
+4
+1483.0 15.0
+refactor -z; balance; balance; 
+3
+1442.0 16.0
+balance; balance; balance; balance; balance; balance; refactor; balance; balance; balance; 
+10
+1441.0 23.0
+rewrite -z; 
+1
+1347.0 16.0
+balance; balance; balance; balance; balance; rewrite -z; 
+6
+1293.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; rewrite -z; 
+11
+1335.0 16.0
+balance; balance; rewrite; balance; balance; rewrite; 
+6
+1348.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+23
+1330.0 15.0
+balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; rewrite; 
+10
+1345.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+17
+1394.0 15.0
+balance; balance; balance; balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+19
+1396.0 16.0
+balance; rewrite -z; 
+2
+1295.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; rewrite -z; 
+7
+1428.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+9
+1349.0 13.0
+balance; balance; rewrite -z; balance; 
+4
+1347.0 16.0
+balance; balance; balance; balance; balance; rewrite -z; 
+6
+1361.0 16.0
+balance; balance; balance; balance; rewrite; 
+5
+1341.0 16.0
+balance; balance; balance; balance; rewrite; balance; balance; balance; balance; balance; balance; refactor; 
+12
+1349.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+12
+1359.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+15
+1349.0 13.0
+balance; balance; rewrite -z; balance; 
+4
+1351.0 16.0
+balance; balance; refactor; balance; rewrite; 
+5
+1356.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+12
+1351.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+8
+1358.0 16.0
+balance; balance; balance; rewrite; 
+4
+1349.0 17.0
+balance; balance; balance; balance; refactor -z; rewrite -z; 
+6
+1360.0 16.0
+balance; balance; rewrite; balance; balance; balance; 
+6
+1429.0 16.0
+balance; balance; balance; balance; balance; balance; refactor -z; 
+7
+1335.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; refactor; balance; balance; balance; rewrite -z; 
+13
+1352.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+14
+1392.0 15.0
+balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+17
+1324.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite; balance; balance; rewrite; 
+12
+1358.0 16.0
+balance; balance; balance; rewrite; 
+4
+1287.0 15.0
+rewrite; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite; 
+15
+1356.0 16.0
+balance; balance; balance; rewrite -z; 
+4
+1345.0 16.0
+balance; balance; balance; balance; rewrite; balance; balance; balance; 
+8
+1424.0 22.0
+rewrite; rewrite; 
+2
+1301.0 13.0
+balance; balance; balance; balance; balance; rewrite -z; balance; rewrite -z; 
+8
+1397.0 16.0
+balance; rewrite; 
+2
+1331.0 15.0
+balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; rewrite -z; 
+10
+1345.0 16.0
+balance; balance; balance; balance; balance; balance; rewrite -z; 
+7
+1394.0 15.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+20
+1355.0 16.0
+balance; balance; balance; balance; balance; balance; rewrite; 
+7
+1358.0 16.0
+balance; balance; balance; rewrite; 
+4
+1368.0 16.0
+balance; balance; refactor -z; rewrite -z; 
+4
+1287.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; rewrite -z; 
+10
+1368.0 16.0
+balance; balance; refactor -z; rewrite -z; 
+4
+1386.0 15.0
+balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+19
+1345.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+17
+1447.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+9
+1449.0 16.0
+balance; balance; balance; balance; balance; balance; 
+6
+1357.0 16.0
+balance; balance; balance; balance; balance; balance; balance; rewrite; 
+8
+1292.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; rewrite -z; 
+8
+1341.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+11
+1395.0 15.0
+balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; refactor -z; 
+11
+1334.0 16.0
+balance; balance; refactor; balance; balance; rewrite -z; 
+6
+1425.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+12
+1301.0 14.0
+balance; rewrite -z; balance; balance; balance; rewrite -z; 
+6
+1287.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+11
+1321.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; 
+16
+1369.0 15.0
+refactor -z; balance; balance; balance; rewrite -z; 
+5
+1396.0 16.0
+balance; rewrite -z; 
+2
+1312.0 16.0
+balance; balance; balance; balance; balance; rewrite -z; rewrite -z; 
+7
+1404.0 15.0
+balance; balance; balance; balance; refactor -z; balance; balance; refactor -z; 
+8
+1337.0 15.0
+balance; balance; balance; balance; balance; balance; balance; balance; refactor -z; balance; rewrite -z; 
+11
+1474.0 22.0
+rewrite; 
+1
+1405.0 15.0
+balance; balance; balance; refactor -z; balance; balance; balance; 
+7
+1330.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; 
+8
+1340.0 14.0
+balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+11
+1446.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+18
+1338.0 15.0
+balance; balance; balance; balance; balance; balance; refactor -z; balance; rewrite -z; 
+9
+1355.0 16.0
+balance; balance; balance; balance; balance; rewrite; 
+6
+1348.0 16.0
+balance; balance; balance; balance; balance; balance; refactor; balance; balance; balance; rewrite -z; 
+11
+1494.0 16.0
+balance; refactor; 
+2
+1402.0 15.0
+balance; balance; balance; refactor -z; balance; balance; refactor -z; 
+7
+1339.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; 
+6
+1329.0 13.0
+balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+29
+1330.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+13
+1319.0 13.0
+balance; balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; balance; balance; balance; 
+15
+1325.0 16.0
+balance; balance; balance; rewrite; rewrite -z; 
+5
+1295.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; rewrite -z; 
+7
+1336.0 15.0
+rewrite; balance; balance; balance; balance; balance; balance; balance; balance; 
+9
+1321.0 16.0
+balance; balance; balance; rewrite -z; rewrite -z; 
+5
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1333.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; refactor; 
+8
+1338.0 15.0
+balance; balance; balance; balance; balance; refactor -z; balance; balance; balance; balance; balance; balance; rewrite; 
+13
+1345.0 16.0
+balance; balance; balance; rewrite; balance; balance; balance; 
+7
+1290.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; rewrite -z; 
+12
+1370.0 16.0
+balance; balance; rewrite -z; 
+3
+1303.0 13.0
+balance; balance; rewrite -z; balance; balance; balance; rewrite; 
+7
+1273.0 15.0
+rewrite; balance; balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+11
+1350.0 16.0
+balance; balance; balance; balance; rewrite -z; 
+5
+1356.0 16.0
+balance; balance; balance; rewrite -z; 
+4
+1346.0 16.0
+balance; balance; balance; balance; balance; balance; balance; balance; rewrite -z; 
+9
+1290.0 13.0
+balance; balance; balance; balance; rewrite -z; balance; balance; balance; balance; balance; balance; rewrite -z; 
+12
