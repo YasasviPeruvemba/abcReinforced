@@ -1274,7 +1274,7 @@ class EnvGraphDchMap(object):
         lastOneHotActs[self.lastAct2] += 1/3
         lastOneHotActs[self.lastAct3] += 1/3
         lastOneHotActs[self.lastAct] += 1/3
-        stateArray = np.array([self._curStats.area / self.initArea, self._curStats.depth / self.initdepth,
+        stateArray = np.array([self._curStats.area / self.initArea, self._curStats.depth / self.initDepth,
             self._lastStats.area / self.initArea, self._lastStats.depth / self.initDepth])
         stepArray = np.array([float(self.timeSeq) / self._runtimeBaseline])
         combined = np.concatenate((stateArray, lastOneHotActs, stepArray), axis=-1)
