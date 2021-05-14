@@ -293,7 +293,7 @@ class Reinforce(object):
             rewards.append(nextReward)
             actions.append(action)
             state = nextState
-            if time_elapsed > runtimeBaseline:
+            if time_elapsed > runtimeBaseline * 1.2:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
     
@@ -305,10 +305,13 @@ class Reinforce(object):
     
     def updateTrajectory(self, trajectory, phaseTrain=True):
         states = trajectory.states
+        self.lenSeq = len(states) # Length of the episode
         rewards = trajectory.rewards
+        self.sumRewards.append(sum(rewards))
+        if not phaseTrain:
+            return
         actions = trajectory.actions
         bisect.insort(self.memTrajectory, trajectory) # memorize this trajectory
-        self.lenSeq = len(states) # Length of the episode
         for tIdx in range(self.lenSeq):
             G = sum(self._gamma ** (k - tIdx - 1) * rewards[k] for k in range(tIdx + 1, self.lenSeq + 1))
             state = states[tIdx]
@@ -324,7 +327,6 @@ class Reinforce(object):
             """
             self._baseline.update(state[0], G)
             self._pi.update(state[0], state[1], action, self._gamma ** tIdx, delta)
-        self.sumRewards.append(sum(rewards))
         # print("\nEpisode Reward : ",sum(rewards))
 
     def replay(self):
