@@ -276,25 +276,18 @@ class Reinforce(object):
         states, rewards, actions = [], [0], []
         time_elapsed = 0
         runtimeBaseline = self._env.getRuntimeBaseline()
-        #print("Runtim_Baseline : ", runtimeBaseline)
+
         while not term:
             action = self._pi(state[0], state[1], phaseTrain)
             term, t = self._env.takeAction(action)
-            """
-            with open('log', 'a', 0) as outLog:
-                line = "take action "+ str(action) + "\n"
-                line += "gain reward "+ str(self._env.reward()) + "\n"
-                outLog.write(line)
-            """
             time_elapsed += t
-           # print(time_elapsed)
             nextState = self._env.state()
             nextReward = self._env.reward()
             states.append(state)
             rewards.append(nextReward)
             actions.append(action)
             state = nextState
-            if time_elapsed > runtimeBaseline * 1.2:
+            if len(actions) > 20:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
     
@@ -305,13 +298,14 @@ class Reinforce(object):
         return self._env.returns(), self._env.getCommand(trajectory.actions)
     
     def updateTrajectory(self, trajectory, phaseTrain=True):
+        states = trajectory.states
+        self.lenSeq = len(states) # Length of the episode
+        rewards = trajectory.rewards
+        self.sumRewards.append(sum(rewards))
+        actions = trajectory.actions
         if not phaseTrain:
             return
-        states = trajectory.states
-        rewards = trajectory.rewards
-        actions = trajectory.actions
         bisect.insort(self.memTrajectory, trajectory) # memorize this trajectory
-        self.lenSeq = len(states) # Length of the episode
         for tIdx in range(self.lenSeq):
             G = sum(self._gamma ** (k - tIdx - 1) * rewards[k] for k in range(tIdx + 1, self.lenSeq + 1))
             state = states[tIdx]
@@ -327,13 +321,4 @@ class Reinforce(object):
             """
             self._baseline.update(state[0], G)
             self._pi.update(state[0], state[1], action, self._gamma ** tIdx, delta)
-        self.sumRewards.append(sum(rewards))
         # print("\nEpisode Reward : ",sum(rewards))
-
-    def replay(self):
-        for idx in range(min(self.memLength, int(len(self.memTrajectory) / 10))):
-            if len(self.memTrajectory) / 10 < 1:
-                return
-            upper = min(len(self.memTrajectory) / 10, 30)
-            r1 = random.randint(0, upper)
-            self.updateTrajectory(self.memTrajectory[idx])

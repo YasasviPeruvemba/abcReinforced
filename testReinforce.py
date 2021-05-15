@@ -15,6 +15,7 @@ from env import EnvGraphDch as EnvDch
 from env import EnvGraphMtlDch as EnvMtlDch
 from env import EnvReplica as EnvRep
 from env import EnvGraphDchMap as EnvDchMap
+from env import EnvReplicaExact as EnvRepEx
 from abcR_Survey import reinforced_survey
 
 
@@ -23,7 +24,7 @@ from tqdm import tqdm
 
 import sys
 
-options = ["dch_map"]#, "with_balance", "without_balance"]
+options = ["replica_exact"]#, "with_balance", "without_balance"]
 coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
@@ -111,13 +112,15 @@ def testReinforce(filename, option, opt=None):
         env = EnvDch(filename, cmds, coefs)
     elif "mtl" in option:
         env = EnvMtlDch(filename, cmds, coefs)
+    elif "replica_exact" in option:
+        env = EnvRepEx(filename, cmds, coefs)
     elif "replica" in option:
         env = EnvRep(filename, cmds, coefs)
     else:
         env = Env(filename, cmds, coefs)
     
-    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="./models/"+option[4:])
-    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="./models/"+option[4:])
+    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path=None)
+    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path=None)
     reinforce = RF.Reinforce(env, 0.95, vApprox, vbaseline)
 
     if not os.path.exists("./results/" + option[4:]):
@@ -187,7 +190,7 @@ def testReinforce(filename, option, opt=None):
 
 if __name__ == "__main__":
     
-    dir = "./bench/"
+    dir = "./bench/Replica"
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt
