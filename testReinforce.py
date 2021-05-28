@@ -119,8 +119,8 @@ def testReinforce(filename, option, opt=None):
     else:
         env = Env(filename, cmds, coefs)
     
-    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path=None)
-    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path=None)
+    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="./models/" + option[4:])
+    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="./models/" + option[4:])
     reinforce = RF.Reinforce(env, 0.95, vApprox, vbaseline)
 
     if not os.path.exists("./results/" + option[4:]):
