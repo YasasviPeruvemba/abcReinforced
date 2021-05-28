@@ -48,7 +48,7 @@ class FcModel(nn.Module):
 
 
 class FcModelGraph(nn.Module):
-    def __init__(self, numFeats, outChs):
+    def __init__(self, numFeats, outChs, option):
         super(FcModelGraph, self).__init__()
         self._numFeats = numFeats
         self._outChs = outChs
@@ -57,7 +57,10 @@ class FcModelGraph(nn.Module):
         self.fc2 = nn.Linear(32, 32)
         self.act2 = nn.ReLU()
         self.fc3 = nn.Linear(32, outChs)
-        self.gcn = GCN(6, 12, 4)
+        if "mtl" in option:
+            self.gcn = GCN(7, 12, 4)
+        else:
+            self.gcn = GCN(6, 12, 4)
 
     def forward(self, x, graph):
         graph_state = self.gcn(graph)
@@ -87,14 +90,13 @@ class PiApprox(object):
         self._dimStates = dimStates
         self._numActs = numActs
         self._alpha = alpha
-        self._network = network(dimStates, numActs)
+        self._network = network(dimStates, numActs, option)
         #self._network.cuda()
         self._optimizer = torch.optim.Adam(self._network.parameters(), alpha, [0.9, 0.999])
         self.tau = 0.5 # temperature for gumbel_softmax
         
         if self._path is not None:
             if os.path.exists(self._path + "/" + self._option + "_pi.pth"): 
-                print("\n\nFound pre-existing Model\n\n")
                 checkpoint = torch.load(self._path + "/" + self._option + "_pi.pth")
                 self._network.load_state_dict(checkpoint['model_state_dict'])
                 self._optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -122,8 +124,7 @@ class PiApprox(object):
             action = m.sample()
             #action = torch.argmax(probs)
         else:
-            m = Categorical(probs)
-            action = m.sample()
+            action = torch.argmax(out)
             #action = torch.argmax(probs)
 
         return action.data.item()
@@ -275,25 +276,18 @@ class Reinforce(object):
         states, rewards, actions = [], [0], []
         time_elapsed = 0
         runtimeBaseline = self._env.getRuntimeBaseline()
-        #print("\n\nRuntime Baseline : ", runtimeBaseline)
+
         while not term:
             action = self._pi(state[0], state[1], phaseTrain)
             term, t = self._env.takeAction(action)
-            """
-            with open('log', 'a', 0) as outLog:
-                line = "take action "+ str(action) + "\n"
-                line += "gain reward "+ str(self._env.reward()) + "\n"
-                outLog.write(line)
-            """
             time_elapsed += t
-            #print("Time_Elapsed : ",time_elapsed)
             nextState = self._env.state()
             nextReward = self._env.reward()
             states.append(state)
             rewards.append(nextReward)
             actions.append(action)
             state = nextState
-            if time_elapsed > runtimeBaseline * 1.2:
+            if len(actions) > 20:
                 term = True
         return Trajectory(states, rewards, actions, self._env.curStatsValue())
     
@@ -308,9 +302,9 @@ class Reinforce(object):
         self.lenSeq = len(states) # Length of the episode
         rewards = trajectory.rewards
         self.sumRewards.append(sum(rewards))
+        actions = trajectory.actions
         if not phaseTrain:
             return
-        actions = trajectory.actions
         bisect.insort(self.memTrajectory, trajectory) # memorize this trajectory
         for tIdx in range(self.lenSeq):
             G = sum(self._gamma ** (k - tIdx - 1) * rewards[k] for k in range(tIdx + 1, self.lenSeq + 1))
@@ -328,11 +322,3 @@ class Reinforce(object):
             self._baseline.update(state[0], G)
             self._pi.update(state[0], state[1], action, self._gamma ** tIdx, delta)
         # print("\nEpisode Reward : ",sum(rewards))
-
-    def replay(self):
-        for idx in range(min(self.memLength, int(len(self.memTrajectory) / 10))):
-            if len(self.memTrajectory) / 10 < 1:
-                return
-            upper = min(len(self.memTrajectory) / 10, 30)
-            r1 = random.randint(0, upper)
-            self.updateTrajectory(self.memTrajectory[idx])

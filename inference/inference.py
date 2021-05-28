@@ -1,26 +1,29 @@
 #!/usr/bin/python3.8
 
+from functools import partial
 from datetime import datetime
 import os
 import pandas as pd
 import time
+import multiprocessing as  mp
 
+import mtlPy
 import reinforce_inference as RF
 from env_inference import EnvGraph as Env
 from env_inference import EnvGraphBalance as EnvBalance
 from env_inference import EnvGraphDch as EnvDch
-from env_inference import EnvGraphMtlDch as EnvMtl
+from env_inference import EnvGraphMtlDch as EnvMtlDch
 from env_inference import EnvReplica as EnvRep
-from util_inference import writeABC, runABC, extract_data
-from inference_survey import reinforced_survey
+from env_inference import EnvGraphDchMap as EnvDchMap
+from env_inference import EnvReplicaExact as EnvRepEx
+
 
 import numpy as np
 from tqdm import tqdm
-import statistics
 
 import sys
 
-options = ["replica"]#, "dch"]
+options = ["replica_exact"]#, "with_balance", "without_balance"]
 coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
@@ -62,12 +65,15 @@ def getActionSpace(option, opt=None):
     
     if "without_balance" in option:
         print("Without Balance Run\n\n")
-        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]
+        cmds = ["rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ","resub -k 16 -l; ","resub -k 16 -k 16 -N 2 -l; "]        
     elif "dch" in option:
         print("DCH Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; ", "dch; ", "dc2; "]
+    elif "mtl" in option:
+        print("MockTurtle Run\n\n")
+        cmds = ["rewrite; ", "rewrite azg; ", "rewrite udc; ", "rewrite azg udc; ", "balance; ", "balance crit; "]#, "resub; ", "resub udc; ", "resub pd; ", "resub udc pd; "]
     elif "replica" in option:
-        cmds = ["balance; ", "rewrite; ", "rewrite -z; ", "refactor; ", "refactor -z;"]
+        cmds = ["balance; ", "rewrite; ","rewrite -z; ","refactor; ","refactor -z; "]
     else:    
         print("With Balance Run\n\n")
         cmds = ["balance -l", "rewrite -l; ","rewrite -z -l; ","refactor -l; ","refactor -z -l; ","resub -K 6 -l; ","resub -K 6 -N 2 -l; ","resub -K 8 -l; ","resub -K 8 -N 2 -l; ","resub -K 10 -l; ","resub -K 10 -N 2 -l; ","resub -K 12 -l; ","resub -K 12 -N 2 -l; ", "resub -k 16 -l; ", "resub -k 16 -N 2 -l; "]
@@ -81,6 +87,8 @@ def getActionSpace(option, opt=None):
     else:
         ids = np.arange(len(cmds))
     return ids
+
+benchmarks = []
 
 def testReinforce(filename, option, opt=None):
 
@@ -97,17 +105,21 @@ def testReinforce(filename, option, opt=None):
     cmds = getActionSpace(option, opt=opt)
     if "without_balance" in option:
         env = EnvBalance(filename, cmds, coefs)
+    elif "dch_map" in option:
+        env = EnvDchMap(filename, cmds, coefs)
     elif "dch" in option:
         env = EnvDch(filename, cmds, coefs)
     elif "mtl" in option:
-        env = EnvMtl(filename, cmds, coefs)
+        env = EnvMtlDch(filename, cmds, coefs)
+    elif "replica_exact" in option:
+        env = EnvRepEx(filename, cmds, coefs)
     elif "replica" in option:
         env = EnvRep(filename, cmds, coefs)
     else:
         env = Env(filename, cmds, coefs)
     
-    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path="../models/"+option[4:])
-    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path="../models/"+option[4:])
+    vApprox = RF.PiApprox(env.dimState(), env.numActions(), 9e-4, RF.FcModelGraph, option, path=None)
+    vbaseline = RF.BaselineVApprox(env.dimState(), 3e-3, RF.FcModel, option, path=None)
     reinforce = RF.Reinforce(env, 0.95, vApprox, vbaseline)
 
     if not os.path.exists("./inference_results/" + option[4:]):
@@ -117,14 +129,12 @@ def testReinforce(filename, option, opt=None):
     resultName = "./inference_results/" + option[4:] + "/" + ben + "_"  + option + ".csv"
     andLog =  open(resultName, 'a')
 
-    for idx in tqdm(range(200), total = 200, ncols = 100, desc ="Episode : "):
-        returns, command = reinforce.episode(phaseTrain=True)
+    for idx in tqdm(range(5), total = 5, ncols = 100, desc ="Episode : "):
+        returns, command = reinforce.episode(phaseTrain=False)
         seqLen = reinforce.lenSeq
         line = "Episode : " + str(idx) + " Seq Length : " + str(seqLen)
-        if idx >= 180:
-            lastTen.append(AbcReturn(returns, command))
-        if idx % 10 == 0:
-            print(line)
+        lastTen.append(AbcReturn(returns, command))
+        print(line)
         line = ""
         line += str(float(returns[0]))
         line += " "
@@ -172,7 +182,7 @@ def testReinforce(filename, option, opt=None):
 
 if __name__ == "__main__":
     
-    dir = "./inference_bench/"
+    dir = "../bench/Replica"
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt
@@ -181,7 +191,7 @@ if __name__ == "__main__":
             for subdir, dirs, files in os.walk(dir,topdown=True):
                 for file in files:
                     filepath = subdir + os.sep + file
-                    if filepath.endswith(".aig"):
+                    if filepath.endswith(".blif"):
                         start = time.time()
                         command = testReinforce(filepath, option, opt="All")
                         end = time.time()

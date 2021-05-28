@@ -1,0 +1,758 @@
+Running Reinforce on sin.aig.....
+Time  03/17/2021, 12:00:22
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 7.613457918167114  Baseline Nodes  7416 Baseline Level  159  Total Reward  -0.44521910388970953
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+Running Reinforce on sin.aig.....
+Time  03/17/2021, 12:01:20
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 5.491469979286194  Baseline Nodes  7416 Baseline Level  159  Total Reward  -0.44521910388970953
+
+ None 
+
+Time Elapsed for  sin.aig  :  2.7844736576080322 seconds
+
+Running Reinforce on div.aig.....
+Time  03/17/2021, 12:01:23
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 25.679014205932617  Baseline Nodes  20934 Baseline Level  4391  Total Reward  1.2642970611723445
+
+ None 
+
+Time Elapsed for  div.aig  :  12.932196855545044 seconds
+
+Running Reinforce on voter.aig.....
+Time  03/17/2021, 12:01:36
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 7.060823678970337  Baseline Nodes  7968 Baseline Level  60  Total Reward  0.9845492492679586
+
+ None 
+
+Time Elapsed for  voter.aig  :  3.5458412170410156 seconds
+
+Running Reinforce on priority.aig.....
+Time  03/17/2021, 12:01:39
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.3420100063085556  Baseline Nodes  758 Baseline Level  58  Total Reward  1.2178977505112474
+
+ None 
+
+Time Elapsed for  priority.aig  :  0.17231082916259766 seconds
+
+Running Reinforce on max.aig.....
+Time  03/17/2021, 12:01:39
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.4870840311050415  Baseline Nodes  4411 Baseline Level  175  Total Reward  -0.6889882092538202
+
+ None 
+
+Time Elapsed for  max.aig  :  0.7472748756408691 seconds
+
+Running Reinforce on adder.aig.....
+Time  03/17/2021, 12:01:40
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.38677601516246796  Baseline Nodes  892 Baseline Level  256  Total Reward  0.24705882352941178
+
+ None 
+
+Time Elapsed for  adder.aig  :  0.23601365089416504 seconds
+
+Running Reinforce on router.aig.....
+Time  03/17/2021, 12:01:40
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.1447399966418743  Baseline Nodes  346 Baseline Level  19  Total Reward  -0.04445885574290287
+
+ None 
+
+Time Elapsed for  router.aig  :  0.07326889038085938 seconds
+
+Running Reinforce on mem_ctrl.aig.....
+Time  03/17/2021, 12:01:40
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 47.06403160095215  Baseline Nodes  76542 Baseline Level  89  Total Reward  -1.0492131558720015
+
+ None 
+
+Time Elapsed for  mem_ctrl.aig  :  23.601869344711304 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  03/17/2021, 12:02:04
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6728799939155579  Baseline Nodes  1126 Baseline Level  16  Total Reward  -1.2496392496392499
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  0.35982346534729004 seconds
+
+Running Reinforce on sqrt.aig.....
+Time  03/17/2021, 12:02:04
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 27.05003261566162  Baseline Nodes  18904 Baseline Level  6018  Total Reward  0.27441483808537503
+
+ None 
+
+Time Elapsed for  sqrt.aig  :  13.57092809677124 seconds
+
+Running Reinforce on dec.aig.....
+Time  03/17/2021, 12:02:18
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.21623999625444412  Baseline Nodes  304 Baseline Level  3  Total Reward  0.0
+
+ None 
+
+Time Elapsed for  dec.aig  :  0.10965085029602051 seconds
+
+Running Reinforce on arbiter.aig.....
+Time  03/17/2021, 12:02:18
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 14.678881645202637  Baseline Nodes  12288 Baseline Level  87  Total Reward  -0.07585100092913244
+
+ None 
+
+Time Elapsed for  arbiter.aig  :  7.377062559127808 seconds
+
+Running Reinforce on i10.aig.....
+Time  03/17/2021, 12:02:25
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.4643380045890808  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+
+ None 
+
+Time Elapsed for  i10.aig  :  0.7410938739776611 seconds
+
+Running Reinforce on multiplier.aig.....
+Time  03/17/2021, 12:02:26
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 20.276315689086914  Baseline Nodes  31397 Baseline Level  264  Total Reward  -0.28387908382319704
+
+ None 
+
+Time Elapsed for  multiplier.aig  :  10.170385122299194 seconds
+
+Running Reinforce on i2c.aig.....
+Time  03/17/2021, 12:02:36
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6870279908180237  Baseline Nodes  1788 Baseline Level  13  Total Reward  -0.3146795827123694
+
+ None 
+
+Time Elapsed for  i2c.aig  :  0.34595799446105957 seconds
+
+Running Reinforce on square.aig.....
+Time  03/17/2021, 12:02:37
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 13.039277791976929  Baseline Nodes  16905 Baseline Level  248  Total Reward  0.17885046526725823
+
+ None 
+
+Time Elapsed for  square.aig  :  6.537040948867798 seconds
+
+Running Reinforce on bar.aig.....
+Time  03/17/2021, 12:02:43
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.7724199891090393  Baseline Nodes  4538 Baseline Level  12  Total Reward  -0.7206235011990407
+
+ None 
+
+Time Elapsed for  bar.aig  :  0.9260213375091553 seconds
+
+Running Reinforce on int2float.aig.....
+Time  03/17/2021, 12:02:44
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.16673799604177475  Baseline Nodes  371 Baseline Level  12  Total Reward  -0.6038461538461539
+
+ None 
+
+Time Elapsed for  int2float.aig  :  0.084381103515625 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  03/17/2021, 12:02:44
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.07777999900281429  Baseline Nodes  136 Baseline Level  10  Total Reward  0.43678160919540243
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  0.0401921272277832 seconds
+
+Running Reinforce on log2.aig.....
+Time  03/17/2021, 12:02:44
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Running Reinforce on sin.aig.....
+['.', 'bench', 'EPFL', 'sin.aig']
+
+ None 
+
+Time Elapsed for  sin.aig  :  6.628036499023438e-05 seconds
+
+Running Reinforce on div.aig.....
+['.', 'bench', 'EPFL', 'div.aig']
+
+ None 
+
+Time Elapsed for  div.aig  :  4.458427429199219e-05 seconds
+
+Running Reinforce on voter.aig.....
+['.', 'bench', 'EPFL', 'voter.aig']
+
+ None 
+
+Time Elapsed for  voter.aig  :  3.218650817871094e-05 seconds
+
+Running Reinforce on priority.aig.....
+['.', 'bench', 'EPFL', 'priority.aig']
+
+ None 
+
+Time Elapsed for  priority.aig  :  3.147125244140625e-05 seconds
+
+Running Reinforce on max.aig.....
+['.', 'bench', 'EPFL', 'max.aig']
+
+ None 
+
+Time Elapsed for  max.aig  :  3.075599670410156e-05 seconds
+
+Running Reinforce on adder.aig.....
+['.', 'bench', 'EPFL', 'adder.aig']
+
+ None 
+
+Time Elapsed for  adder.aig  :  2.9802322387695312e-05 seconds
+
+Running Reinforce on router.aig.....
+['.', 'bench', 'EPFL', 'router.aig']
+
+ None 
+
+Time Elapsed for  router.aig  :  3.075599670410156e-05 seconds
+
+Running Reinforce on mem_ctrl.aig.....
+['.', 'bench', 'EPFL', 'mem_ctrl.aig']
+
+ None 
+
+Time Elapsed for  mem_ctrl.aig  :  3.0279159545898438e-05 seconds
+
+Running Reinforce on cavlc.aig.....
+['.', 'bench', 'EPFL', 'cavlc.aig']
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  3.0517578125e-05 seconds
+
+Running Reinforce on sqrt.aig.....
+['.', 'bench', 'EPFL', 'sqrt.aig']
+
+ None 
+
+Time Elapsed for  sqrt.aig  :  3.0517578125e-05 seconds
+
+Running Reinforce on dec.aig.....
+['.', 'bench', 'EPFL', 'dec.aig']
+
+ None 
+
+Time Elapsed for  dec.aig  :  2.9802322387695312e-05 seconds
+
+Running Reinforce on arbiter.aig.....
+['.', 'bench', 'EPFL', 'arbiter.aig']
+
+ None 
+
+Time Elapsed for  arbiter.aig  :  3.0279159545898438e-05 seconds
+
+Running Reinforce on i10.aig.....
+['.', 'bench', 'EPFL', 'i10.aig']
+
+ None 
+
+Time Elapsed for  i10.aig  :  3.0517578125e-05 seconds
+
+Running Reinforce on multiplier.aig.....
+['.', 'bench', 'EPFL', 'multiplier.aig']
+
+ None 
+
+Time Elapsed for  multiplier.aig  :  3.337860107421875e-05 seconds
+
+Running Reinforce on i2c.aig.....
+['.', 'bench', 'EPFL', 'i2c.aig']
+
+ None 
+
+Time Elapsed for  i2c.aig  :  3.337860107421875e-05 seconds
+
+Running Reinforce on square.aig.....
+['.', 'bench', 'EPFL', 'square.aig']
+
+ None 
+
+Time Elapsed for  square.aig  :  3.075599670410156e-05 seconds
+
+Running Reinforce on bar.aig.....
+['.', 'bench', 'EPFL', 'bar.aig']
+
+ None 
+
+Time Elapsed for  bar.aig  :  2.7418136596679688e-05 seconds
+
+Running Reinforce on int2float.aig.....
+['.', 'bench', 'EPFL', 'int2float.aig']
+
+ None 
+
+Time Elapsed for  int2float.aig  :  2.956390380859375e-05 seconds
+
+Running Reinforce on ctrl.aig.....
+['.', 'bench', 'EPFL', 'ctrl.aig']
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  3.0040740966796875e-05 seconds
+
+Running Reinforce on log2.aig.....
+['.', 'bench', 'EPFL', 'log2.aig']
+
+ None 
+
+Time Elapsed for  log2.aig  :  3.0040740966796875e-05 seconds
+
+Total time taken for option 2_1_dch :  0.001148223876953125
+Option :  2_1_dch 
+
+
+Running Reinforce on sin.aig.....
+sin
+
+ None 
+
+Time Elapsed for  sin.aig  :  3.3855438232421875e-05 seconds
+
+Running Reinforce on div.aig.....
+div
+
+ None 
+
+Time Elapsed for  div.aig  :  2.384185791015625e-05 seconds
+
+Running Reinforce on voter.aig.....
+voter
+
+ None 
+
+Time Elapsed for  voter.aig  :  2.002716064453125e-05 seconds
+
+Running Reinforce on priority.aig.....
+priority
+
+ None 
+
+Time Elapsed for  priority.aig  :  2.09808349609375e-05 seconds
+
+Running Reinforce on max.aig.....
+max
+
+ None 
+
+Time Elapsed for  max.aig  :  2.574920654296875e-05 seconds
+
+Running Reinforce on adder.aig.....
+adder
+
+ None 
+
+Time Elapsed for  adder.aig  :  2.1696090698242188e-05 seconds
+
+Running Reinforce on router.aig.....
+router
+
+ None 
+
+Time Elapsed for  router.aig  :  2.7179718017578125e-05 seconds
+
+Running Reinforce on mem_ctrl.aig.....
+mem_ctrl
+
+ None 
+
+Time Elapsed for  mem_ctrl.aig  :  2.6464462280273438e-05 seconds
+
+Running Reinforce on cavlc.aig.....
+cavlc
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  2.09808349609375e-05 seconds
+
+Running Reinforce on sqrt.aig.....
+sqrt
+
+ None 
+
+Time Elapsed for  sqrt.aig  :  2.1696090698242188e-05 seconds
+
+Running Reinforce on dec.aig.....
+dec
+
+ None 
+
+Time Elapsed for  dec.aig  :  2.3365020751953125e-05 seconds
+
+Running Reinforce on arbiter.aig.....
+arbiter
+
+ None 
+
+Time Elapsed for  arbiter.aig  :  2.2411346435546875e-05 seconds
+
+Running Reinforce on i10.aig.....
+i10
+
+ None 
+
+Time Elapsed for  i10.aig  :  2.1696090698242188e-05 seconds
+
+Running Reinforce on multiplier.aig.....
+multiplier
+
+ None 
+
+Time Elapsed for  multiplier.aig  :  2.3126602172851562e-05 seconds
+
+Running Reinforce on i2c.aig.....
+i2c
+
+ None 
+
+Time Elapsed for  i2c.aig  :  2.1457672119140625e-05 seconds
+
+Running Reinforce on square.aig.....
+square
+
+ None 
+
+Time Elapsed for  square.aig  :  2.2649765014648438e-05 seconds
+
+Running Reinforce on bar.aig.....
+bar
+
+ None 
+
+Time Elapsed for  bar.aig  :  1.33514404296875e-05 seconds
+
+Running Reinforce on int2float.aig.....
+int2float
+
+ None 
+
+Time Elapsed for  int2float.aig  :  1.3828277587890625e-05 seconds
+
+Running Reinforce on ctrl.aig.....
+ctrl
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  1.2874603271484375e-05 seconds
+
+Running Reinforce on log2.aig.....
+log2
+
+ None 
+
+Time Elapsed for  log2.aig  :  1.3589859008789062e-05 seconds
+
+Total time taken for option 2_1_dch :  0.0007946491241455078
+Option :  2_1_dch 
+
+
+Running Reinforce on sin.aig.....
+Running Reinforce on sin.aig.....
+sin
+
+ None 
+
+Time Elapsed for  sin.aig  :  3.600120544433594e-05 seconds
+
+Running Reinforce on div.aig.....
+div
+
+ None 
+
+Time Elapsed for  div.aig  :  2.0742416381835938e-05 seconds
+
+Running Reinforce on voter.aig.....
+voter
+
+ None 
+
+Time Elapsed for  voter.aig  :  2.5033950805664062e-05 seconds
+
+Running Reinforce on priority.aig.....
+priority
+
+ None 
+
+Time Elapsed for  priority.aig  :  2.4080276489257812e-05 seconds
+
+Running Reinforce on max.aig.....
+max
+
+ None 
+
+Time Elapsed for  max.aig  :  2.3603439331054688e-05 seconds
+
+Running Reinforce on adder.aig.....
+adder
+
+ None 
+
+Time Elapsed for  adder.aig  :  2.3365020751953125e-05 seconds
+
+Running Reinforce on router.aig.....
+router
+
+ None 
+
+Time Elapsed for  router.aig  :  2.5033950805664062e-05 seconds
+
+Running Reinforce on mem_ctrl.aig.....
+mem_ctrl
+
+ None 
+
+Time Elapsed for  mem_ctrl.aig  :  1.4543533325195312e-05 seconds
+
+Running Reinforce on cavlc.aig.....
+cavlc
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  1.33514404296875e-05 seconds
+
+Running Reinforce on sqrt.aig.....
+sqrt
+
+ None 
+
+Time Elapsed for  sqrt.aig  :  1.2874603271484375e-05 seconds
+
+Running Reinforce on dec.aig.....
+dec
+
+ None 
+
+Time Elapsed for  dec.aig  :  1.33514404296875e-05 seconds
+
+Running Reinforce on arbiter.aig.....
+arbiter
+
+ None 
+
+Time Elapsed for  arbiter.aig  :  1.33514404296875e-05 seconds
+
+Running Reinforce on i10.aig.....
+i10
+
+ None 
+
+Time Elapsed for  i10.aig  :  1.3828277587890625e-05 seconds
+
+Running Reinforce on multiplier.aig.....
+multiplier
+
+ None 
+
+Time Elapsed for  multiplier.aig  :  1.3828277587890625e-05 seconds
+
+Running Reinforce on i2c.aig.....
+i2c
+
+ None 
+
+Time Elapsed for  i2c.aig  :  1.7881393432617188e-05 seconds
+
+Running Reinforce on square.aig.....
+square
+
+ None 
+
+Time Elapsed for  square.aig  :  1.3113021850585938e-05 seconds
+
+Running Reinforce on bar.aig.....
+bar
+
+ None 
+
+Time Elapsed for  bar.aig  :  1.3589859008789062e-05 seconds
+
+Running Reinforce on int2float.aig.....
+int2float
+
+ None 
+
+Time Elapsed for  int2float.aig  :  1.430511474609375e-05 seconds
+
+Running Reinforce on ctrl.aig.....
+ctrl
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  1.3589859008789062e-05 seconds
+
+Running Reinforce on log2.aig.....
+log2
+
+ None 
+
+Time Elapsed for  log2.aig  :  2.002716064453125e-05 seconds
+
+Total time taken for option 2_1_dch :  0.0006470680236816406
+Option :  2_1_dch 
+
+
+<multiprocessing.pool.ApplyResult object at 0x7f4c72bf6dc0>
+Total time taken for option 2_1_dch :  0.0005083084106445312
+Option :  2_1_dch 
+
+
+<multiprocessing.pool.MapResult object at 0x7fb0f6b99dc0>
+Total time taken for option 2_1_dch :  0.0022025108337402344
+Option :  2_1_dch 
+
+
+<multiprocessing.pool.MapResult object at 0x7f4641ae8d90>
+Total time taken for option 2_1_dch :  0.0001163482666015625
+Option :  2_1_dch 
+
+
+[None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+Total time taken for option 2_1_dch :  50.60849380493164
+Option :  2_1_dch 
+
+

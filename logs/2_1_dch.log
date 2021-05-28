@@ -1,0 +1,303 @@
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:40:24
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.5874959826469421  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:41:44
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.5646539628505707  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:42:48
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.5443640053272247  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/i10_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  i10.aig  :  0.8097524642944336 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  03/08/2021, 11:42:49
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6681699901819229  Baseline Nodes  1126 Baseline Level  16  Total Reward  -1.2496392496392499
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/cavlc_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  0.3374340534210205 seconds
+
+Running Reinforce on bar.aig.....
+Time  03/08/2021, 11:42:49
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 2.427828073501587  Baseline Nodes  4538 Baseline Level  12  Total Reward  -0.7206235011990407
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/bar_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  bar.aig  :  1.2205228805541992 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  03/08/2021, 11:42:50
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.1113200020045042  Baseline Nodes  136 Baseline Level  10  Total Reward  0.43678160919540243
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/ctrl_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  0.05927634239196777 seconds
+
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:44:38
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.528279960155487  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/i10_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  i10.aig  :  0.8023138046264648 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  03/08/2021, 11:44:39
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6603620201349258  Baseline Nodes  1126 Baseline Level  16  Total Reward  -1.2496392496392499
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/cavlc_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  0.3331797122955322 seconds
+
+Running Reinforce on bar.aig.....
+Time  03/08/2021, 11:44:39
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.80772203207016  Baseline Nodes  4538 Baseline Level  12  Total Reward  -0.7206235011990407
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/bar_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  bar.aig  :  0.908794641494751 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  03/08/2021, 11:44:40
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.09484999813139439  Baseline Nodes  136 Baseline Level  10  Total Reward  0.43678160919540243
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/ctrl_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  0.050338029861450195 seconds
+
+Total time taken for option 2_1_dch :  2.0949525833129883
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:45:29
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.5195560455322266  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/i10_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  i10.aig  :  0.7976627349853516 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  03/08/2021, 11:45:30
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6726619899272919  Baseline Nodes  1126 Baseline Level  16  Total Reward  -1.2496392496392499
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/cavlc_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  0.3392977714538574 seconds
+
+Running Reinforce on bar.aig.....
+Time  03/08/2021, 11:45:30
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.8086259961128235  Baseline Nodes  4538 Baseline Level  12  Total Reward  -0.7206235011990407
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/bar_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  bar.aig  :  0.9095041751861572 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  03/08/2021, 11:45:31
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.09877199865877628  Baseline Nodes  136 Baseline Level  10  Total Reward  0.43678160919540243
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/ctrl_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  0.052048683166503906 seconds
+
+Total time taken for option 2_1_dch :  2.0987696647644043
+Option :  2_1__2_1_dch 
+
+
+Running Reinforce on i10.aig.....
+Time  03/08/2021, 11:48:31
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.519826054573059  Baseline Nodes  2696 Baseline Level  36  Total Reward  0.2642990654205608
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/i10_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  i10.aig  :  0.7950091361999512 seconds
+
+Running Reinforce on cavlc.aig.....
+Time  03/08/2021, 11:48:32
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.6836739778518677  Baseline Nodes  1126 Baseline Level  16  Total Reward  -1.2496392496392499
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/cavlc_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  cavlc.aig  :  0.34479188919067383 seconds
+
+Running Reinforce on bar.aig.....
+Time  03/08/2021, 11:48:33
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 1.8122419118881226  Baseline Nodes  4538 Baseline Level  12  Total Reward  -0.7206235011990407
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/bar_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  bar.aig  :  0.910731315612793 seconds
+
+Running Reinforce on ctrl.aig.....
+Time  03/08/2021, 11:48:33
+
+###################################
+
+[2.0, 1.0]
+DCH Run
+
+
+Baseline Time Taken 0.107075996696949  Baseline Nodes  136 Baseline Level  10  Total Reward  0.43678160919540243
+Input Feat Dim of Graph :  20  Output Channel Dim of Graph :  15
+./results/dch/ctrl_2_1_dch.csv
+
+ None 
+
+Time Elapsed for  ctrl.aig  :  0.055960655212402344 seconds
+
+Total time taken for option 2_1_dch :  2.1067569255828857
+Option :  2_1_dch 
+
+
