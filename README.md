@@ -1,7 +1,7 @@
 # abcReinforced
 Clone the repository
 
-Prerequisite : Install the abcPy module provided, dgl, pytorch, matplotlib and pandas. The Berkeley-ABC module within this repository is necessary, as it helps with printing the statistics of the logic networks into text files. (The print_stats command is added with a feature to output necessary details into a text file)
+Prerequisite : Install the abcPy module provided, dgl, pytorch, matplotlib and pandas. The Berkeley-ABC module within the ALS repository is necessary, as it helps with printing the statistics of the logic networks into text files. (The print_stats command is added with a feature to output necessary details into a text file)
 
 Keep the required benchmark files inside the bench directory
 
