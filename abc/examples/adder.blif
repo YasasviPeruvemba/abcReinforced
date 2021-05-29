@@ -1,0 +1,10 @@
+# Benchmark "adder" written by ABC on Mon Aug 10 15:01:27 2020
+.model adder
+.inputs a0 b0 c0
+.outputs s0 s1
+.gate xor2a  a=b0 b=a0 O=new_n6_
+.gate xor2a  a=new_n6_ b=c0 O=s0
+.gate nand2  a=c0 b=a0 O=new_n8_
+.gate oai21  a=c0 b=a0 c=b0 O=new_n9_
+.gate nand2  a=new_n9_ b=new_n8_ O=s1
+.end
