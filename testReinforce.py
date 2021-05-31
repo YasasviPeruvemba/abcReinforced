@@ -24,7 +24,7 @@ from tqdm import tqdm
 
 import sys
 
-options = ["replica_exact"]#, "with_balance", "without_balance"]
+options = ["with_balance"]#, "with_balance", "without_balance"]
 coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
@@ -190,7 +190,7 @@ def testReinforce(filename, option, opt=None):
 
 if __name__ == "__main__":
     
-    dir = "./bench/Replica"
+    dir = "./bench/EPFL/Small"
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt
