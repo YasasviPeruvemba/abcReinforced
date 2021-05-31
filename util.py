@@ -27,7 +27,7 @@ def writeABC_map(filepath, cmd, opt=0):
 # This is used to find the Area and Delay from either mcnc or 6-LUT mapping
 def writeABC(filepath, cmd, opt=0, map=False):
     f = open("run.txt", "w")
-    f.write("read_library ../ALS/abc/mcnc.genlib")
+    f.write("read_library ./abc/mcnc.genlib")
     f.write("\n")
     f.write("read ")
     f.write(filepath)
@@ -71,7 +71,7 @@ def extract_data(map=False):
     return nd, level
 
 def runABC():
-    cmd = "../ALS/abc/abc -f run.txt > survey.log"
+    cmd = "./abc/abc -f run.txt > survey.log"
     os.system(cmd)
 
 
