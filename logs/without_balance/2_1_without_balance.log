@@ -1,0 +1,274 @@
+Total time taken for option 2_1_without_balance :  1.4543533325195312e-05
+Running Reinforce on cavlc.....
+Time  12/27/2022, 09:13:47
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Running Reinforce on cavlc.....
+Time  12/27/2022, 09:15:27
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.2253970056772232  Baseline Gates  1145.0  Total Reward  0.0736245954692557
+Input Feat Dim of Graph :  19  Output Channel Dim of Graph :  14
+Running Reinforce on cavlc.....
+Time  12/27/2022, 09:16:07
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.22259700298309326  Baseline Gates  1145.0  Total Reward  0.0736245954692557
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+Running Reinforce on cavlc.....
+Time  12/27/2022, 09:48:50
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.22167900204658508  Baseline Gates  1145.0  Total Reward  0.0736245954692557
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ refactor -z -l; refactor -z -l; refactor -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; resub -K 12 -N 2 -l; refactor -z -l; refactor -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; refactor -z -l; rewrite -z -l;  
+
+Time Elapsed for  cavlc  :  1828.3656737804413 seconds
+
+Total time taken for option 2_1_without_balance :  1828.5001165866852
+Running Reinforce on cavlc.....
+Time  12/27/2022, 10:28:04
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.20823900401592255  Baseline Gates  1145.0  Total Reward  0.0736245954692557
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ refactor -z -l; refactor -z -l; rewrite -z -l; refactor -z -l; rewrite -z -l; resub -K 6 -N 2 -l; rewrite -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; resub -K 6 -N 2 -l; refactor -z -l; rewrite -z -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; rewrite -z -l; refactor -l; refactor -z -l; refactor -z -l; rewrite -z -l;  
+
+Time Elapsed for  cavlc  :  1798.795917749405 seconds
+
+Total time taken for option 2_1_without_balance :  1798.9480845928192
+Running Reinforce on sin.....
+Time  12/27/2022, 11:16:00
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 1.5346620082855225  Baseline Gates  11133.0  Total Reward  0.06445378151260506
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ refactor -z -l; rewrite -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; refactor -l; resub -K 10 -l; refactor -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; rewrite -z -l; resub -K 6 -N 2 -l; rewrite -z -l; refactor -z -l; rewrite -z -l;  
+
+Time Elapsed for  sin  :  20923.18973183632 seconds
+
+Total time taken for option 2_1_without_balance :  20923.353895425797
+Running Reinforce on bar.....
+Time  12/27/2022, 17:19:40
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.5360890030860901  Baseline Gates  5796.0  Total Reward  0.01945525291828798
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ rewrite -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; refactor -z -l; rewrite -z -l; resub -K 10 -N 2 -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; resub -K 6 -l; resub -K 6 -N 2 -l; refactor -z -l;  
+
+Time Elapsed for  bar  :  9949.44174170494 seconds
+
+Total time taken for option 2_1_without_balance :  9949.578016757965
+Running Reinforce on priority.....
+Time  12/28/2022, 00:21:40
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.10170499980449677  Baseline Gates  1100.0  Total Reward  0.28894634776987715
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ refactor -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; resub -K 6 -N 2 -l; rewrite -z -l; refactor -z -l; resub -K 6 -N 2 -l; refactor -z -l; rewrite -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; rewrite -z -l; refactor -l; refactor -z -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; rewrite -z -l; resub -K 6 -N 2 -l; rewrite -l;  
+
+Time Elapsed for  priority  :  1719.5347847938538 seconds
+
+Total time taken for option 2_1_without_balance :  1719.6701250076294
+Running Reinforce on max.....
+Time  12/28/2022, 10:02:25
+
+###################################
+
+[2.0, 1.0]
+Without Balance Run
+
+
+Baseline Time Taken 0.38856199383735657  Baseline Gates  5826.0  Total Reward  0.024447421299397143
+Input Feat Dim of Graph :  17  Output Channel Dim of Graph :  14
+Episode : 0 Seq Length : 21
+Episode : 10 Seq Length : 21
+Episode : 20 Seq Length : 21
+Episode : 30 Seq Length : 21
+Episode : 40 Seq Length : 21
+Episode : 50 Seq Length : 21
+Episode : 60 Seq Length : 21
+Episode : 70 Seq Length : 21
+Episode : 80 Seq Length : 21
+Episode : 90 Seq Length : 21
+Episode : 100 Seq Length : 21
+Episode : 110 Seq Length : 21
+Episode : 120 Seq Length : 21
+Episode : 130 Seq Length : 21
+Episode : 140 Seq Length : 21
+Episode : 150 Seq Length : 21
+Episode : 160 Seq Length : 21
+Episode : 170 Seq Length : 21
+Episode : 180 Seq Length : 21
+Episode : 190 Seq Length : 21
+
+ refactor -z -l; refactor -z -l; rewrite -z -l; refactor -z -l; resub -K 10 -N 2 -l; refactor -z -l; rewrite -z -l; refactor -l; refactor -z -l; refactor -z -l; resub -K 6 -N 2 -l; refactor -l; rewrite -z -l; refactor -z -l; refactor -z -l; refactor -z -l; rewrite -z -l; resub -K 6 -N 2 -l; resub -K 6 -N 2 -l; resub -K 8 -l; refactor -z -l;  
+
+Time Elapsed for  max  :  9615.608174324036 seconds
+
+Total time taken for option 2_1_without_balance :  9615.755500793457

@@ -24,8 +24,8 @@ from tqdm import tqdm
 
 import sys
 
-options = ["with_balance"]#, "with_balance", "without_balance"]
-coefs = ["2_1", "2_3", "2_7", "2_9", "1_1", "1_0"]
+options = ["without_balance"]#, "with_balance", "without_balance"]
+coefs = ["2_1"]#, "2_3", "2_7", "2_9", "1_1", "1_0"]
 
 class Logger(object):
     def __init__(self, option):
@@ -52,7 +52,8 @@ class Logger(object):
 class AbcReturn:
     def __init__(self, returns, command):
         self.numNodes = float(returns[0])
-        self.level = float(returns[1])
+        # self.level = float(returns[1])
+        self.level = 0
         self.command = command
     def __lt__(self, other):
         if (int(self.level) == int(other.level)):
@@ -140,8 +141,8 @@ def testReinforce(filename, option, opt=None):
             print(line)
         line = ""
         line += str(float(returns[0]))
-        line += " "
-        line += str(float(returns[1]))
+        # line += " "
+        # line += str(float(returns[1]))
         line += "\n"
         line += command + "\n" + str(len(command.split(";"))-1) + "\n"
         andLog.write(line)
@@ -176,8 +177,8 @@ def testReinforce(filename, option, opt=None):
         line = ben+","
         returns, command = reinforce.episode(phaseTrain=False)
         line += str(returns[0])
-        line += ","
-        line += str(returns[1])
+        # line += ","
+        # line += str(returns[1])
         line += "\n"
         line += command + "\n" + str(len(command.split(";"))-1) + "\n"
         convergeLog.write(line)
@@ -190,7 +191,7 @@ def testReinforce(filename, option, opt=None):
 
 if __name__ == "__main__":
     
-    dir = "./bench/EPFL/Small"
+    dir = "./bench/EPFL/Small/test"
     for opt in options:
         for coef in coefs:
             option = coef + "_" + opt

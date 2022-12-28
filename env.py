@@ -24,17 +24,23 @@ class EnvGraphBalance(object):
         self._actionSpace = cmds
         self.timeSeq = 0
         self._readtime = self._abc.read(self._aigfile)
+        self._abc.backup()
         self._abc.balance(l=True)
-        self.initStats = self._abc.aigStats() # The initial AIG statistics
-        self.initNumAnd = float(self.initStats.numAnd)
-        self.initLev = float(self.initStats.lev)
+        self.initStats = self.tech_map()
+        # self.initStats = self._abc.aigStats() # The initial AIG statistics
+        # self.initNumAnd = float(self.initStats.numAnd)
+        # self.initLev = float(self.initStats.lev)
+        self._abc.recall()
         self._runtimeBaseline = self.compress2rs_balance()
-        compress2rsStats = self._abc.aigStats()
+        compress2rsStats = self.tech_map()
+        self._abc.recall()
+        # compress2rsStats = self._abc.aigStats()
         totalReward = self.statValue(self.initStats) - self.statValue(compress2rsStats)# Accounting for 18 steps 
         if totalReward < 0:
             totalReward = 0
         self._rewardBaseline = totalReward / self._runtimeBaseline # Baseline time of compress2rs sequence
-        print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
+        # print("Baseline Time Taken", self._runtimeBaseline, " Baseline Nodes ", compress2rsStats.numAnd, "Baseline Level ", compress2rsStats.lev, " Total Reward ", totalReward)
+        print("Baseline Time Taken", self._runtimeBaseline, " Baseline Gates ", compress2rsStats, " Total Reward ", totalReward)
 
     def getRuntimeBaseline(self):
         return self._runtimeBaseline    
@@ -44,9 +50,14 @@ class EnvGraphBalance(object):
         self._abc.end()
         self._abc.start()
         self._abc.read(self._aigfile)
+        self._abc.backup()
         self._abc.balance(l=True)
-        self._lastStats = self._abc.aigStats() # The initial AIG statistics
-        self._curStats = self._abc.aigStats() # the current AIG statistics
+        # self._lastStats = self._abc.aigStats() # The initial AIG statistics
+        # self._curStats = self._abc.aigStats() # the current AIG statistics
+        stat = self.tech_map()
+        self._abc.recall()
+        self._lastStats = stat
+        self._curStats = stat
         self.lastAct = self.numActions() - 1
         self.lastAct2 = self.numActions() - 1
         self.lastAct3 = self.numActions() - 1
@@ -117,7 +128,8 @@ class EnvGraphBalance(object):
         self.timeSeq += t
         self.lastActionTime = t
         self._lastStats = self._curStats
-        self._curStats = self._abc.aigStats()
+        self._curStats = self.tech_map()
+        self._abc.recall()
         return False, t
     
     def getCommand(self, actions):
@@ -167,8 +179,9 @@ class EnvGraphBalance(object):
         lastOneHotActs[self.lastAct2] += 1/3
         lastOneHotActs[self.lastAct3] += 1/3
         lastOneHotActs[self.lastAct] += 1/3
-        stateArray = np.array([self._curStats.numAnd / self.initNumAnd, self._curStats.lev / self.initLev,
-            self._lastStats.numAnd / self.initNumAnd, self._lastStats.lev / self.initLev])
+        # stateArray = np.array([self._curStats.numAnd / self.initNumAnd, self._curStats.lev / self.initLev,
+        #     self._lastStats.numAnd / self.initNumAnd, self._lastStats.lev / self.initLev])
+        stateArray = np.array([self._curStats / self.initStats, self._lastStats / self.initStats])
         stepArray = np.array([float(self.timeSeq) / self._runtimeBaseline])
         combined = np.concatenate((stateArray, lastOneHotActs, stepArray), axis=-1)
         #combined = np.expand_dims(combined, axis=0)
@@ -186,13 +199,16 @@ class EnvGraphBalance(object):
         return len(self._actionSpace)
     
     def dimState(self):
-        return 4 + self.numActions() * 1 + 1
+        return 2 + self.numActions() * 1 + 1
+        # return 4 + self.numActions() * 1 + 1
     
     def returns(self):
-        return [self._curStats.numAnd , self._curStats.lev]
+        return [self._curStats]
+        # return [self._curStats.numAnd , self._curStats.lev]
     
     def statValue(self, stat):
-        return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
+        return (float(stat)/float(self.initStats))
+        # return (self.and_coef*(float(stat.numAnd)/float(self.initNumAnd)) + self.level_coef*(float(stat.lev)/float(self.initLev)))/(self.and_coef + self.level_coef)
     
     def curStatsValue(self):
         return self.statValue(self._curStats)
@@ -203,7 +219,12 @@ class EnvGraphBalance(object):
     def compress2rs_balance(self):
         return self._abc.compress2rs_balance()
 
-
+    def tech_map(self):
+        self._abc.aigStats()
+        self._abc.read_lib()
+        self._abc.tech_map()
+        self._abc.cec()
+        return self._abc.print_gates()
 
 class EnvGraph(object):
     """
